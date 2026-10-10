@@ -372,5 +372,15 @@ window.onload=()=>{
     }
 };
 </script>
+	<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/ICT-3RD-SEMESTER/sw.js', { scope: '/ICT-3RD-SEMESTER/' })
+        .then((reg) => console.log('SW registered!', reg))
+        .catch((err) => console.log('SW registration failed!', err));
+    });
+  }
+	</script>
+	
 </body>
 </html>
