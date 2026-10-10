@@ -7,7 +7,6 @@ const urlsToCache = [
   '/ICT-3RD-SEMESTER/icons/icon-512.png'
 ];
 
-// Install Event
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
@@ -17,7 +16,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate Event
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -32,7 +30,6 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
