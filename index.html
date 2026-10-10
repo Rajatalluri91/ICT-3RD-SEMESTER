@@ -119,15 +119,10 @@
         .list-title{font-size:13px;font-weight:600;line-height:1.55;word-break:break-word}
         .action-group{display:flex;align-items:center;gap:8px;flex:none}
         .action{
-            padding:9px 12px;border-radius:12px;border:1px solid rgba(52,211,153,.2);
+            padding:9px 14px;border-radius:12px;border:1px solid rgba(52,211,153,.2);
             background:rgba(52,211,153,.09);color:#6ee7b7;font-size:11px;font-weight:700;display:flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none
         }
         .list-card:hover .action{background:#10b981;color:#04130d;border-color:#10b981}
-        .print-action{
-            padding:9px 12px;border-radius:12px;border:1px solid rgba(96,165,250,.2);
-            background:rgba(96,165,250,.09);color:#93c5fd;font-size:11px;font-weight:700;display:flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none
-        }
-        .list-card:hover .print-action{background:#3b82f6;color:#ffffff;border-color:#3b82f6}
         .empty{padding:45px 20px;text-align:center;border:1px dashed #334155;border-radius:22px;color:#64748b}
         footer{text-align:center;color:#475569;font-size:11px;padding:20px;border-top:1px solid var(--line)}
         .hidden{display:none!important}
@@ -136,7 +131,7 @@
             .brand-title{font-size:13px}.brand-sub{display:none}.brand-icon{width:36px;height:36px;border-radius:12px}
             .hero{padding:20px;border-radius:23px}.hero h2{font-size:20px}.grid{grid-template-columns:1fr;gap:10px}
             .card{padding:14px;border-radius:18px}.subject-icon{width:48px;height:48px}
-            .action, .print-action{padding:8px 9px;font-size:10px}.list-card{padding:13px;border-radius:17px}
+            .action{padding:8px 10px;font-size:10px}.list-card{padding:13px;border-radius:17px}
             .action-group{gap:5px}
         }
         @media(max-width:430px){.list-title{font-size:12px}}
@@ -166,7 +161,7 @@
             <div>
                 <div class="eyebrow">Vyshnavi Degree College</div>
                 <h2>ICT & Academic Study Notes</h2>
-                <p>Explore your subjects, read notes online, and download or print materials instantly.</p>
+                <p>Explore your subjects, read notes online, and access materials instantly.</p>
             </div>
             <div class="fire"><i class="fa-solid fa-fire-flame-curved"></i></div>
         </div>
@@ -196,28 +191,49 @@
                     className: "DEGREE 3RD SEMESTER SKILL PAPER",
                     sections: [
                         {
-                            sectionName: "UNIT 1",
+                            sectionName: "UNIT 1 - Essay Questions",
                             lessons: [
-                                { title: "Q.1. What is Internet? Write the evolution of Internet.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.1.html", printable: true },
-								{ title: "Q.3. Explain about IP addresses and about IP V6", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.3.html", printable: true },
-								{ title: "Q.5. What is search engine ? How it works ?", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.5.html", printable: true },
-								{ title: "Q.7. What is a browser? Explain its operation.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.7.html", printable: true },
-								{ title: "Q.8. What are the various types of browsers? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.8.html", printable: true },
-								{ title: "Q.14. Explain the following terms", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.14.html", printable: true },
-								{ title: "Q.17. What is social networking ? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.17.html", printable: true },
-								{ title: "Q.19. What are the social networking Apps?", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.19-1.29.html", printable: true }
+                                { title: "Q.1. What is Internet? Write the evolution of Internet.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.1.html" },
+                                { title: "Q.3. Explain about IP addresses and about IP V6", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.3.html" },
+                                { title: "Q.5. What is search engine ? How it works ?", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.5.html" },
+                                { title: "Q.7. What is a browser? Explain its operation.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.7.html" },
+                                 { title: "Q.8. What are the various types of browsers? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.8.html" },
+                                { title: "Q.14. Explain the following terms", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.14.html" },
+                                { title: "Q.17. What is social networking ? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.17 .html" },
+                                { title: "Q.19. What are the social networking Apps?", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.19-1.29.html" }
                             ]
                         },
-						{
-                            sectionName: "UNIT 2",
+                        {
+                            sectionName: "UNIT 1 - Short Answer Questions",
                             lessons: [
-                                { title: "Q.8 What are the various types of browsers? (Desktop, Mobile & Specialized)", githubLink: "#", printable: true }
+                                { title: "Q.8. What are the various types of browsers? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.8.html" },
+                                { title: "Q.14. Explain the following terms", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.14.html" },
+                                { title: "Q.17. What is social networking ? Explain.", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.17.html" },
+                                { title: "Q.19. What are the social networking Apps?", githubLink: "https://rajatalluri91.github.io/ICT-3RD-SEMESTER/ICT%201.19-1.29.html" }
                             ]
                         },
-						{
-                            sectionName: "UNIT 3",
+                        {
+                            sectionName: "UNIT 2 - Essay Questions",
                             lessons: [
-                                { title: "Q.8 What are the various types of browsers? (Desktop, Mobile & Specialized)", githubLink: "#", printable: true }
+                                { title: "Q.1. Explain the architecture and components of web browsers.", githubLink: "#" }
+                            ]
+                        },
+                        {
+                            sectionName: "UNIT 2 - Short Answer Questions",
+                            lessons: [
+                                { title: "Q.2. What are browser extensions and plugins?", githubLink: "#" }
+                            ]
+                        },
+                        {
+                            sectionName: "UNIT 3 - Essay Questions",
+                            lessons: [
+                                { title: "Q.1. Describe network topologies and communication protocols in detail.", githubLink: "#" }
+                            ]
+                        },
+                        {
+                            sectionName: "UNIT 3 - Short Answer Questions",
+                            lessons: [
+                                { title: "Q.2. Define TCP/IP and its layers.", githubLink: "#" }
                             ]
                         }
                     ]
@@ -279,7 +295,7 @@ function renderApp(filteredData=dscData){
     }
 
     const sec=cls.sections[selectedSectionIndex];
-    c.innerHTML=`${crumb(`<i class="fa-solid fa-book-open"></i>`,sec.sectionName,'Lessons, Print & Study Notes')}<div class="list">
+    c.innerHTML=`${crumb(`<i class="fa-solid fa-book-open"></i>`,sec.sectionName,'Study Notes & Questions')}<div class="list">
         ${sec.lessons.map(les=>{
             const disabled=!les.githubLink || les.githubLink==='#';
             return `<div class="list-card">
@@ -290,9 +306,6 @@ function renderApp(filteredData=dscData){
                 <div class="action-group">
                     <a class="action" href="${disabled?'javascript:void(0)':les.githubLink}" ${disabled?'aria-disabled="true" onclick="return false" style="color:#94a3b8;background:rgba(148,163,184,.07);border-color:rgba(148,163,184,.12)"':''}>
                         <i class="fa-solid ${disabled?'fa-lock':'fa-book-open'}"></i>${disabled?'Coming Soon':'Read'}
-                    </a>
-                    <a class="print-action" href="${disabled?'javascript:void(0)':les.githubLink}" ${disabled?'onclick="return false" style="opacity:0.5;pointer-events:none"':''} onclick="window.print();return false;" title="Print or Save as PDF">
-                        <i class="fa-solid fa-print"></i> Print / Download
                     </a>
                 </div>
             </div>`;
