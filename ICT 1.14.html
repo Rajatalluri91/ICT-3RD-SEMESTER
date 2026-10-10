@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 14. Complete Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --pr-card: #ede7f6; --pr-border: #512da8;
+            --ht-card: #e3f2fd; --ht-border: #1e88e5;
+            --hl-card: #e8f5e9; --hl-border: #43a047;
+            --web-card: #fff3e0; --web-border: #fb8c00;
+            --br-card: #f3e5f5; --br-border: #8e24aa;
+            --wb-card: #ffebee; --wb-border: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0a3d34 0%, #115e47 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --pr-card: #221a38; --pr-border: #7e57c2;
+            --ht-card: #152738; --ht-border: #42a5f5;
+            --hl-card: #182e1c; --hl-border: #66bb6a;
+            --web-card: #332a15; --web-border: #ffb74d;
+            --br-card: #281a2e; --br-border: #ab47bc;
+            --wb-card: #331a1d; --wb-border: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-pr { background-color: var(--pr-card); border-left-color: var(--pr-border); }
+        .card-ht { background-color: var(--ht-card); border-left-color: var(--ht-border); }
+        .card-hl { background-color: var(--hl-card); border-left-color: var(--hl-border); }
+        .card-web { background-color: var(--web-card); border-left-color: var(--web-border); }
+        .card-br { background-color: var(--br-card); border-left-color: var(--br-border); }
+        .card-wb { background-color: var(--wb-card); border-left-color: var(--wb-border); }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 14. Explain the following terms </h1>
+            <p>క్రింది పదాలు పూర్తి వివరణ</p>
+        </header>
+
+
+        <!-- 1. Hyper Text -->
+        <div class="card card-ht">
+            <h2>(1) Hyper Text / హైపర్ టెక్స్ట్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>Hyper Text</strong> is a method of preparing and publishing Text in which users can choose their own paths through the material.</span>
+                    <span class="tel-text"><strong>హైపర్ టెక్స్ట్</strong> అనేది టెక్స్ట్‌ను తయారు చేసి ప్రచురించే ఒక పద్ధతి, దీని ద్వారా వినియోగదారులు మెటీరియల్‌లో తమకు నచ్చిన మార్గాలను ఎంచుకోవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 2. Hyper Link -->
+        <div class="card card-hl">
+            <h2>(2) Hyper Link / హైపర్ లింక్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A <strong>hyper link</strong> is an underlined or an emphasized word that when clicked with a mouse displays another document.</span>
+                    <span class="tel-text">ఒక <strong>హైపర్ లింక్</strong> అనేది అండర్‌లైన్ చేయబడిన లేదా నొక్కి చెప్పబడిన పదం, దీనిని మౌస్‌తో క్లిక్ చేసినప్పుడు వేరొక డాక్యుమెంట్ కనిపిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">These documents can come from other sites on the <strong>internet</strong>.</span>
+                    <span class="tel-text">ఈ డాక్యుమెంట్లు ఇంటర్నెట్‌లోని <strong>ఇతర సైట్ల</strong> నుండి రావచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Clicking on these links activates the necessary protocols and pulls up the <strong>chosen site</strong>.</span>
+                    <span class="tel-text">ఈ లింక్‌లపై క్లిక్ చేయడం ద్వారా అవసరమైన ప్రోటోకాల్‌లు యాక్టివేట్ అయ్యి, ఎంచుకున్న <strong>సైట్ ఓపెన్ అవుతుంది</strong>.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 3. Web -->
+        <div class="card card-web">
+            <h2>(3) Web / వెబ్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A collection of documents <strong>inter-linked by hyper-links</strong> is called a <strong>Web</strong>.</span>
+                    <span class="tel-text">హైపర్-లింక్‌ల ద్వారా ఒకదానికొకటి కనెక్ట్ చేయబడిన డాక్యుమెంట్ల సేకరణను <strong>'వెబ్'</strong> అంటారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">A web page is synonymous with Web documents and is defined as a <strong>Hyper Text information system</strong>.</span>
+                    <span class="tel-text">ఒక వెబ్ పేజీ అనేది వెబ్ డాక్యుమెంట్‌లతో సమానమైనది మరియు దీనిని <strong>హైపర్ టెక్స్ట్ సమాచార వ్యవస్థ</strong>గా నిర్వచించవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. Browsing -->
+        <div class="card card-br">
+            <h2>(4) Browsing / బ్రౌజింగ్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The process of navigating among the documents is called <strong>browsing</strong> (sometimes referred to as <strong>Net Surfing</strong>).</span>
+                    <span class="tel-text">డాక్యుమెంట్ల మధ్య నావిగేట్ చేసే ప్రక్రియను <strong>బ్రౌజింగ్</strong> అంటారు (కొన్నిసార్లు దీనిని <strong>నెట్ సర్ఫింగ్</strong> అంటారు).</span>
+                </li>
+                <li>
+                    <span class="eng-text">Users need client software like <strong>Netscape Navigator</strong> to actually retrieve and browse information on the <strong>WWW</strong>.</span>
+                    <span class="tel-text">WWW లోని సమాచారాన్ని పొందడానికి మరియు బ్రౌజ్ చేయడానికి వినియోగదారులకు <strong>నెట్‌స్కేప్ నేవిగేటర్ (Netscape Navigator)</strong> వంటి క్లయింట్ సాఫ్ట్‌వేర్ అవసరం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">WWW supports many kinds of documents such as <strong>text, pictures, video and audio</strong>.</span>
+                    <span class="tel-text">డబ్ల్యూడబ్ల్యూడబ్ల్యూ (WWW) టెక్స్ట్, చిత్రాలు, వీడియో మరియు ఆడియో వంటి అనేక రకాల <strong>డాక్యుమెంట్‌లకు మద్దతు ఇస్తుంది</strong>.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 5. Web Browser -->
+        <div class="card card-wb">
+            <h2>(5) Web Browser / వెబ్ బ్రౌజర్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">It is basically a program that runs on an Internet connected computer and provides access to <strong>WWW resources</strong>.</span>
+                    <span class="tel-text">ఇది ప్రాథమికంగా ఇంటర్నెట్‌కు కనెక్ట్ చేయబడిన కంప్యూటర్‌లో నడిచే ఒక ప్రోగ్రామ్ మరియు <strong>WWW వనరులకు ప్రాప్యతను</strong> అందిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
