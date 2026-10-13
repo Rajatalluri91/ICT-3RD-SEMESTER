@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Important Questions & Answers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --q2-card: #e3f2fd; --q2-border: #1e88e5;
+            --q3-card: #e8f5e9; --q3-border: #43a047;
+            --q7-card: #fff3e0; --q7-border: #fb8c00;
+            --q8-card: #f3e5f5; --q8-border: #8e24aa;
+            --q22-card: #ffebee; --q22-border: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --q2-card: #152738; --q2-border: #42a5f5;
+            --q3-card: #182e1c; --q3-border: #66bb6a;
+            --q7-card: #332a15; --q7-border: #ffb74d;
+            --q8-card: #281a2e; --q8-border: #ab47bc;
+            --q22-card: #331a1d; --q22-border: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-q2 { background-color: var(--q2-card); border-left-color: var(--q2-border); }
+        .card-q3 { background-color: var(--q3-card); border-left-color: var(--q3-border); }
+        .card-q7 { background-color: var(--q7-card); border-left-color: var(--q7-border); }
+        .card-q8 { background-color: var(--q8-card); border-left-color: var(--q8-border); }
+        .card-q22 { background-color: var(--q22-card); border-left-color: var(--q22-border); }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>ICT Important Questions & Answers</h1>
+            <p>Complete Chapter Notes with Detailed Explanations in English & Telugu</p>
+        </header>
+
+        <!-- Q. 2 -->
+        <div class="card card-q2">
+            <h2>Q. 2. What is a Protocol? (ప్రోటోకాల్ అంటే ఏమిటి?)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Each LAN is governed by a <strong>protocol</strong>, which is an agreed upon format for transmitting data between two devices.</span>
+                    <span class="tel-text">ప్రతి LAN ఒక ప్రోటోకాల్ ద్వారా నిర్వహించబడుతుంది. ఇది రెండు పరికరాల మధ్య డేటాను ప్రసారం చేయడానికి అంగీకరించబడిన ఒక ఫార్మాట్/నియమం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">There are many standard protocols. Each has particular <strong>advantages and disadvantages</strong>.</span>
+                    <span class="tel-text">అనేక ప్రామాణిక ప్రోటోకాల్‌లు ఉన్నాయి. ప్రతిదానికి నిర్దిష్ట అనుకూలతలు (Advantages) మరియు ప్రతికూలతలు (Disadvantages) ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Some protocols are simple than others, some are more reliable and some are faster.</span>
+                    <span class="tel-text">కొన్ని ప్రోటోకాల్‌లు ఇతర వాటి కంటే సరళంగా ఉంటాయి, కొన్ని మరిన్ని విశ్వసనీయంగా ఉంటాయి మరియు కొన్ని వేగంగా ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">To effectively communicate, a user must have the same protocol installed on that <strong>local PC and the remote PC</strong> to make a connection.</span>
+                    <span class="tel-text">సమర్థవంతంగా కమ్యూనికేట్ చేయడానికి, కనెక్షన్ ఏర్పరచడానికి లోకల్ PC మరియు రిమోట్ PC రెండింటిలోనూ ఒకే ప్రోటోకాల్ ఇన్‌స్టాల్ చేయబడి ఉండాలి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Protocols take the form of <strong>software or hardware</strong> that must be installed on every computer on the network.</span>
+                    <span class="tel-text">ప్రోటోకాల్‌లు సాఫ్ట్‌వేర్ లేదా హార్డ్‌వేర్ రూపంలో నెట్‌వర్క్‌లోని ప్రతి కంప్యూటర్‌లో తప్పనిసరిగా ఇన్‌స్టాల్ చేయబడాలి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Protocols using their own methods, break down data into small <strong>packets</strong> in preparation for transportation.</span>
+                    <span class="tel-text">ప్రోటోకాల్‌లు తమ స్వంత పద్ధతులను ఉపయోగించి, రవాణా/ప్రసారం కోసం డేటాను చిన్న చిన్న ప్యాకెట్లుగా (Packets) విడగొడతాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Linking devices pass these packets to the various pieces of equipment, including other computers and printers that are attached to the network.</span>
+                    <span class="tel-text">లింకింగ్ పరికరాలు ఈ ప్యాకెట్లను నెట్‌వర్క్‌కు అనుసంధానించబడిన ఇతర కంప్యూటర్లు మరియు ప్రింటర్లతో సహా వివిధ పరికరాలకు చేరవేస్తాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">A packet is a data segment that includes a <strong>header, payload and control elements</strong> that are transmitted together.</span>
+                    <span class="tel-text">ప్యాకెట్ అనేది ఒక డేటా సెగ్మెంట్, ఇందులో హెడర్ (Header), పేలోడ్ (Payload - అసలు సమాచారం) మరియు కంట్రోల్ ఎలిమెంట్స్ (Control elements) కలిసి ప్రసారం చేయబడతాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The receiving computer reconstructs the packets into their <strong>original structure</strong>.</span>
+                    <span class="tel-text">స్వీకరించే కంప్యూటర్ (Receiving computer) ఆ ప్యాకెట్లను మళ్లీ వాటి అసలు రూపంలోకి పునర్నిర్మిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">A single LAN may utilize <strong>more than one protocol</strong>.</span>
+                    <span class="tel-text">ఒకే LAN ఒకటి కంటే ఎక్కువ ప్రోటోకాల్‌లను ఉపయోగించవచ్చు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Common Protocols (సాధారణంగా ఉపయోగించే ప్రోటోకాల్‌లు):</div>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>1. TCP/IP:</strong> TCP/IP is the protocol of internet and is required on any computer that must communicate across internet.</span>
+                    <span class="tel-text"><strong>1. TCP/IP:</strong> TCP/IP అనేది ఇంటర్నెట్ ప్రోటోకాల్. ఇంటర్నెట్ ద్వారా కమ్యూనికేట్ చేయాలనుకునే ఏ కంప్యూటర్‌కైనా ఇది తప్పనిసరి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>2. IPX/SPX:</strong> It is used in most versions of Novell Netware-which is a networking operating system.</span>
+                    <span class="tel-text"><strong>2. IPX/SPX:</strong> ఇది నోవెల్ నెట్‌వేర్ (Novell Netware - ఒక నెట్‌వర్కింగ్ ఆపరేటింగ్ సిస్టమ్) యొక్క అనేక వెర్షన్లలో ఉపయోగించబడుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>3. Net BIOS:</strong> This protocol sends messages to every computer that can receive them. It is an excellent protocol for small offices or homes.</span>
+                    <span class="tel-text"><strong>3. Net BIOS:</strong> ఈ ప్రోటోకాల్ మెసేజ్‌లను స్వీకరించగల ప్రతి కంప్యూటర్‌కు పంపుతుంది. ఇది చిన్న ఆఫీసులు లేదా ఇళ్ల కోసం చాలా ఉపయోగకరమైన ప్రోటోకాల్.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Q. 3 -->
+        <div class="card card-q3">
+            <h2>Q. 3. Write about URL (URL గురించి రాయండి)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Web page address is a <strong>URL</strong>. Typing a URL in the location area and hitting the return key will cause the browser to attempt to retrieve that page.</span>
+                    <span class="tel-text">వెబ్ పేజీ యొక్క చిరునామానే URL అంటారు. అడ్రస్ బార్ (Location area) లో URL టైప్ చేసి ఎంటర్ కొడితే, బ్రౌజర్ ఆ పేజీని పొందడానికి ప్రయత్నిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">If the browser is successful in finding the page, the browser will display it.</span>
+                    <span class="tel-text">బ్రౌజర్ ఆ పేజీని కనుగొనడంలో సఫలమైతే, దానిని డిస్ప్లే చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The URL is designed to incorporate sufficient information.</span>
+                    <span class="tel-text">సరిపడా సమాచారాన్ని కలిగి ఉండేలా URL రూపొందించబడింది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Quite naturally, the URL has <strong>three parts</strong>: (e.g., http://pubpages.uninu.edu/index.html)</span>
+                    <span class="tel-text">సాధారణంగా, URL లో మూడు భాగాలు ఉంటాయి: (ఉదాహరణ: http://pubpages.uninu.edu/index.html)</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Parts of URL (URL లోని భాగాలు):</div>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>(1) http :</strong> Defines the protocol or schema by which to access the page (Hyper Text Transfer Protocol). This protocol is the set of rules by which an HTML document is transferred over the web.</span>
+                    <span class="tel-text"><strong>(1) http :</strong> పేజీని యాక్సెస్ చేయడానికి ఉపయోగించే ప్రోటోకాల్ లేదా స్కీమాను నిర్వచిస్తుంది. ఈ ప్రోటోకాల్ ఆధారంగా వెబ్‌లో HTML డాక్యుమెంట్లు బదిలీ అవుతాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(2) Pubpages.uninu.edu :</strong> Identifies the domain name of the computer where the pages resides. The computer is a web server that "serves" web pages.</span>
+                    <span class="tel-text"><strong>(2) Pubpages.uninu.edu :</strong> పేజీలు ఉన్న కంప్యూటర్ యొక్క డొమైన్ నేమ్‌ను గుర్تیస్తుంది. ఈ కంప్యూటర్ అనేది పేజీ రిక్వెస్టులను పూర్తిచేసే ఒక వెబ్ సర్వర్.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(3) Index.html :</strong> Provides the local name uniquely identifying the specific page. If no name is specified, the server may supply a default file named index.html or Index.HTML.</span>
+                    <span class="tel-text"><strong>(3) Index.html :</strong> నిర్దిష్ట పేజీని ప్రత్యేకంగా గుర్తించే లోకల్ నేమ్‌ను అందిస్తుంది. పేరు ఏదీ పేర్కొనకపోతే, డిఫాల్ట్ ఫైల్ పేరు index.html లేదా Index.HTML అని ఉంటుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Q. 7 -->
+        <div class="card card-q7">
+            <h2>Q. 7. What are the major services of Internet? (ఇంటర్నెట్ యొక్క ప్రధాన సేవలు ఏమిటి?)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The Internet acts as a carrier for several different services.</span>
+                    <span class="tel-text">ఇంటర్నెట్ అనేది అనేక రకాల విభిన్న సేవలను అందించే ఒక మాధ్యమంగా పనిచేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">To use any of these services, you need a computer that is connected to the Internet in some way.</span>
+                    <span class="tel-text">ఈ సేవలలో దేనినైనా ఉపయోగించడానికి, ఏదో ఒక విధంగా ఇంటర్నెట్‌కు కనెక్ట్ చేయబడిన కంప్యూటర్ అవసరం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">The most commonly used Internet services are:</div>
+            <ul>
+                <li><span class="eng-text"><strong>(1) The World Wide Web (WWW)</strong></span></li>
+                <li><span class="eng-text"><strong>(2) Electronic mail (E-mail)</strong></span></li>
+                <li><span class="eng-text"><strong>(3) News</strong></span></li>
+                <li><span class="eng-text"><strong>(4) File Transfer Protocol (FTP)</strong></span></li>
+                <li><span class="eng-text"><strong>(5) Chat</strong></span></li>
+                <li><span class="eng-text"><strong>(6) Instant messaging</strong></span></li>
+                <li><span class="eng-text"><strong>(7) Online Services</strong></span></li>
+                <li><span class="eng-text"><strong>(8) Peer-to-peer services</strong></span></li>
+            </ul>
+        </div>
+
+        <!-- Q. 8 -->
+        <div class="card card-q8">
+            <h2>Q. 8. What is URL? (URL అంటే ఏమిటి?)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The hypertext transfer protocol uses internet addresses in a special format, called a <strong>uniform resource locator or URL</strong>.</span>
+                    <span class="tel-text">హైపర్‌టెక్స్ట్ ట్రాన్స్‌ఫర్ ప్రోటోకాల్ ఇంటర్నెట్ అడ్రస్‌లను ఒక ప్రత్యేక ఫార్మాట్‌లో ఉపయోగిస్తుంది, దీనిని Uniform Resource Locator లేదా URL అంటారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">URLs look like this: <strong>type : // address / path</strong></span>
+                    <span class="tel-text">URL లు ఈ క్రింది విధంగా కనిపిస్తాయి: type : // address / path</span>
+                </li>
+                <li>
+                    <span class="eng-text">In a URL, <strong>type</strong> specifies the server type, <strong>address</strong> is the server address, and <strong>path</strong> is the location/folders within the file structure.</span>
+                    <span class="tel-text">URL లో, type అనేది ఫైల్ ఏ సర్వర్‌లో ఉందో నిర్ణయిస్తుంది, address అనేది సర్వర్ అడ్రస్, మరియు path అనేది సర్వర్‌లోని ఫైల్ నిల్వ ఉన్న మార్గాన్ని/ఫోల్డర్‌ను సూచిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <div class="image-box">
+                <code>http://www.loc.gov/exhibits/treasures</code>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 15px;">
+                    <li><strong>http:// :</strong> Indicates it uses http protocol (ఇంటర్నెట్ HTTP ఉపయోగిస్తుందని సూచిస్తుంది).</li>
+                    <li><strong>www :</strong> This site is part of www (ఈ సైట్ World Wide Web లో భాగం).</li>
+                    <li><strong>loc.gov :</strong> This site is run by government (ఈ సైట్ ప్రభుత్వం ద్వారా నిర్వహించబడుతోంది).</li>
+                    <li><strong>/exhibits/treasures :</strong> Browser follows this path to retrieve info (సమాచారాన్ని పొందడానికి బ్రౌజర్ ఈ పాత్‌ను అనుసరిస్తుంది).</li>
+                </ul>
+                <div class="image-caption">Example Breakdown: URL Structure</div>
+            </div>
+        </div>
+
+        <!-- Q. 22 -->
+        <div class="card card-q22">
+            <h2>Q. 22. What are the different types of Browser? (వివిధ రకాల బ్రౌజర్లు ఏవి?)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">There are <strong>two kinds of Browsers</strong>:</span>
+                    <span class="tel-text">బ్రౌజర్లు ప్రధానంగా రెండు రకాలు:</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(1) Textual Browsers (టెక్స్చువల్ బ్రౌజర్లు):</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Text only browsers such as <strong>Lynx</strong> and used on Shell accounts.</span>
+                    <span class="tel-text">షెల్ ఖాతాలలో (Shell accounts) ఉపయోగించే Lynx వంటి కేవలం వచనాన్ని (Text) మాత్రమే చూపించే బ్రౌజర్లు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">This is faster but does not provide GUI features and so not that user friendly.</span>
+                    <span class="tel-text">ఇది చాలా వేగంగా ఉంటుంది కానీ GUI (Graphical User Interface) సౌకర్యాలను అందించదు, కాబట్టి వినియోగదారులకు అంత సులభంగా ఉండదు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(2) Graphical Web Browsers (గ్రాఫికల్ వెబ్ బ్రౌజర్లు):</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Graphical Web Browsers such as <strong>Netscape Navigator, Internet Explorer</strong> are more popular. Hot Java and Mosaic are also Web browsers.</span>
+                    <span class="tel-text">నెట్‌స్కేప్ నేవిగేటర్, ఇంటర్నెట్ ఎక్స్‌ప్లోరర్ వంటి గ్రాఫికల్ వెబ్ బ్రౌజర్లు చాలా ప్రసిద్ధమైనవి. హాట్ జావా మరియు మొజాయిక్ కూడా వెబ్ బ్రౌజర్లే.</span>
+                </li>
+                <li>
+                    <span class="eng-text">These browsers provide you with <strong>Inline images, fonts and document layouts</strong>.</span>
+                    <span class="tel-text">ఈ బ్రౌజర్లు ఇన్-లైన్ ఇమేజెస్ (చిత్రాలు), విభిన్న ఫాంట్‌లు మరియు డాక్యుమెంట్ లేఅవుట్‌లతో సమాచారాన్ని అందిస్తాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
