@@ -1,7 +1,7 @@
 {
   "name": "ICT 3rd Semester",
   "short_name": "ICT Sem 3",
-  "start_url": "/ICT-3RD-SEMESTER/index.html",
+  "start_url": "/ICT-3RD-SEMESTER/index.html?v=2",
   "scope": "/ICT-3RD-SEMESTER/",
   "display": "standalone",
   "background_color": "#ffffff",
