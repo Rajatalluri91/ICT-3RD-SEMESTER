@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ict-sem3-v1';
+const CACHE_NAME = 'ict-sem3-v2'; // Version ni v1 nunchi v2 ki marchamu[cite: 2]
 const urlsToCache = [
   '/ICT-3RD-SEMESTER/',
   '/ICT-3RD-SEMESTER/index.html',
@@ -22,6 +22,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
+            console.log('Paatha cache delete chesthunnam:', cache);
             return caches.delete(cache);
           }
         })
@@ -30,10 +31,15 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Network First strategy - Mundhu internet nunchi latest techukuntundi, lekapothe cache vaduthundi
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then((response) => {
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 });
