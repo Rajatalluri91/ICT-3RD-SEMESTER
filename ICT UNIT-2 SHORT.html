@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Short Answer Questions 1 to 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Accent Card Colors */
+            --q1-card: #e3f2fd; --q1-border: #1e88e5;
+            --q2-card: #ffebee; --q2-border: #e53935;
+            --q3-card: #f3e5f5; --q3-border: #8e24aa;
+            --q4-card: #e8f5e9; --q4-border: #43a047;
+            --q5-card: #fff3e0; --q5-border: #fb8c00;
+            --q6-card: #e0f2f1; --q6-border: #00897b;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --q1-card: #152738; --q1-border: #42a5f5;
+            --q2-card: #331a1d; --q2-border: #ef5350;
+            --q3-card: #281a2e; --q3-border: #ab47bc;
+            --q4-card: #182e1c; --q4-border: #66bb6a;
+            --q5-card: #332a15; --q5-border: #ffb74d;
+            --q6-card: #112926; --q6-border: #26a69a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-q1 { background-color: var(--q1-card); border-left-color: var(--q1-border); }
+        .card-q2 { background-color: var(--q2-card); border-left-color: var(--q2-border); }
+        .card-q3 { background-color: var(--q3-card); border-left-color: var(--q3-border); }
+        .card-q4 { background-color: var(--q4-card); border-left-color: var(--q4-border); }
+        .card-q5 { background-color: var(--q5-card); border-left-color: var(--q5-border); }
+        .card-q6 { background-color: var(--q6-card); border-left-color: var(--q6-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Information & Communication Technology</h1>
+            <p>Short Answer Questions (Q.1 - Q.6) - Complete Notes in English & Telugu</p>
+        </header>
+
+        <!-- Question 1 -->
+        <div class="card card-q1">
+            <h2>Q. 1. What is web based e-mail service? / వెబ్ ఆధారిత ఈ-మెయిల్ సేవ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">You don't need to have a <strong>stand-alone e-mail program</strong> to send and receive messages.</span>
+                    <span class="tel-text">సందేశాలను పంపడానికి మరియు స్వీకరించడానికి మీకు ప్రత్యేకమైన (stand-alone) ఈ-మెయిల్ ప్రోగ్రామ్ ఉండాల్సిన అవసరం లేదు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can easily manage e-mail by using one of the many <strong>web-based e-mail services</strong>. These services offer several advantages over standard e-mail programs.</span>
+                    <span class="tel-text">అనేక వెబ్ ఆధారిత ఈ-మెయిల్ సేవల్లో ఒకదానిని ఉపయోగించడం ద్వారా మీరు ఈ-మెయిల్‌ను సులభంగా నిర్వహించవచ్చు. ఈ సేవలు సాధారణ ఈ-మెయిల్ ప్రోగ్రామ్‌ల కంటే అనేక ప్రయోజనాలను అందిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Advantages / ప్రయోజనాలు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>(1) Cost:</strong> Web-based e-mail services such as <strong>hotmail and Mail.com</strong> offer free e-mail accounts, although storage capacity can be limited.</span>
+                    <span class="tel-text"><strong>(1) ఖర్చు (Cost):</strong> Hotmail మరియు Mail.com వంటి వెబ్ ఆధారిత ఈ-మెయిల్ సేవలు ఉచిత ఈ-మెయిల్ ఖాతాలను అందిస్తాయి, అయితే స్టోరేజ్ సామర్థ్యం పరిమితంగా ఉండవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(2) Ease of use:</strong> Web-based e-mail services offer the same tools as standard e-mail programs, all within the familiar confines of your browser, so they are <strong>easy to use</strong>.</span>
+                    <span class="tel-text"><strong>(2) ఉపయోగించడం సులభం (Ease of use):</strong> వెబ్ ఆధారిత ఈ-మెయిల్ సేవలు సాధారణ ఈ-మెయిల్ ప్రోగ్రామ్‌ల మాదిరిగానే సాధనాలను మీ బ్రౌజర్‌లోనే అందిస్తాయి, కాబట్టి ఇవి ఉపయోగించడానికి చాలా సులభం.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(3) Accessibility:</strong> You can access web-based e-mail account from <strong>any computer that has web access</strong>. You do not need to log into your ISP's account, which may be impossible if you are travelling.</span>
+                    <span class="tel-text"><strong>(3) యాక్సెసిబిలిటీ (Accessibility):</strong> ఇంటర్నెట్ సౌకర్యం ఉన్న ఏ కంప్యూటర్ నుండైనా మీ వెబ్ ఆధారిత ఈ-మెయిల్ ఖాతాను యాక్సెస్ చేయవచ్చు. మీరు ప్రయాణంలో ఉన్నప్పుడు కూడా మీ ISP ఖాతాలోకి లాగిన్ అవ్వాల్సిన అవసరం లేదు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card card-q2">
+            <h2>Q. 2. What is spam ? What is spam filter ? / స్పామ్ అంటే ఏమిటి? స్పామ్ ఫిల్టర్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>Spam</strong> is unsolicited e-mail on the Internet.</span>
+                    <span class="tel-text"><strong>స్పామ్ (Spam)</strong> అనేది ఇంటర్నెట్‌లో కోరని/కోరుకోని (unsolicited) ఈ-మెయిల్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">From the sender's point-of-view, spam is a form of <strong>bulk mail</strong>, often sent to a list obtained from a spambot or from companies that specialize in creating e-mail distribution lists.</span>
+                    <span class="tel-text">పంపేవారి కోణం నుండి, స్పామ్ అనేది బల్క్ మెయిల్ రూపం. ఇది స్పాంబోట్ నుండి లేదా ఈ-మెయిల్ జాబితాలను తయారుచేసే కంపెనీల నుండి పొందిన జాబితాకు పంపబడుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">To the receiver, it usually seems like <strong>junk e-mail</strong>.</span>
+                    <span class="tel-text">స్వీకరించేవారికి ఇది సాధారణంగా <strong>జంక్ ఈ-మెయిల్ (Junk mail)</strong> లాగా కనిపిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">A <strong>spam filter</strong> is a program that is used to detect unsolicited and unwanted email and prevent those messages from getting to a user's inbox.</span>
+                    <span class="tel-text"><strong>స్పామ్ ఫిల్టర్ (Spam Filter)</strong> అనేది అనవసరమైన మరియు కోరుకోని ఈ-మెయిల్‌లను గుర్తించి, ఆ సందేశాలు వినియోగదారు ఇన్‌బాక్స్‌కు చేరకుండా నిరోధించే ఒక ప్రోగ్రామ్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Like other filtering programs, a spam filter looks for certain criteria (e.g., watching for particular words in subject line, <strong>Bayesian filters</strong>, or word frequency) to identify spam through suspicious patterns.</span>
+                    <span class="tel-text">ఇతర ఫిల్టరింగ్ ప్రోగ్రామ్‌ల మాదిరిగానే, స్పామ్ ఫిల్టర్ కొన్ని ప్రమాణాల ఆధారంగా (సబ్జెక్ట్ లైన్‌లోని నిర్దిష్ట పదాలు, బయేషియన్ ఫిల్టర్లు, పదాల పౌనఃపున్యం మొదలైనవి) సందేహాస్పద నమూనాల ద్వారా స్పామ్‌ను గుర్తిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <div class="image-box">
+                <svg width="320" height="60" viewBox="0 0 320 60" style="max-width: 100%;">
+                    <rect x="10" y="10" width="90" height="40" rx="5" fill="#e53935" opacity="0.2" stroke="#e53935" stroke-width="2"/>
+                    <text x="55" y="35" font-size="12" text-anchor="middle" fill="currentColor" font-weight="bold">Incoming Mail</text>
+                    
+                    <text x="115" y="35" font-size="16" text-anchor="middle" fill="currentColor">→</text>
+
+                    <polygon points="135,10 185,10 175,50 145,50" fill="#fb8c00" opacity="0.3" stroke="#fb8c00" stroke-width="2"/>
+                    <text x="160" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Filter</text>
+
+                    <text x="200" y="35" font-size="16" text-anchor="middle" fill="currentColor">→</text>
+
+                    <rect x="215" y="10" width="95" height="40" rx="5" fill="#43a047" opacity="0.2" stroke="#43a047" stroke-width="2"/>
+                    <text x="262" y="35" font-size="12" text-anchor="middle" fill="currentColor" font-weight="bold">User Inbox</text>
+                </svg>
+                <div class="image-caption">Diagram: Working of Spam Filter (Blocking Junk Emails)</div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="card card-q3">
+            <h2>Q. 3. What is e-mail header? How to view it? / ఈ-మెయిల్ హెడర్ అంటే ఏమిటి? దానిని ఎలా చూడాలి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">There are different reasons why a user may want to view an e-mail header:</span>
+                    <span class="tel-text">వినియోగదారు ఈ-మెయిల్ హెడర్‌ను చూడాలనుకోవడానికి వివిధ కారణాలు ఉన్నాయి:</span>
+                </li>
+            </ul>
+            <ul style="padding-left: 20px;">
+                <li><span class="eng-text">(1) Troubleshoot issues with e-mail.</span><span class="tel-text">(1) ఈ-మెయిల్ సమస్యలను పరిష్కరించడం (Troubleshoot).</span></li>
+                <li><span class="eng-text">(2) Grab information that can be used to help treat future messages as Spam.</span><span class="tel-text">(2) భవిష్యత్తులో వచ్చే సందేశాలను స్పామ్‌గా పరిగణించడంలో సహాయపడే సమాచారాన్ని పొందడం.</span></li>
+                <li><span class="eng-text">(3) Determine who really sent an e-mail.</span><span class="tel-text">(3) ఈ-మెయిల్‌ను అసలు ఎవరు పంపారో నిర్ధారించడం.</span></li>
+            </ul>
+
+            <div class="sub-heading">Viewing e-mail header in Google Gmail / గూగుల్ జిమెయిల్‌లో హెడర్ చూడటం ఎలా:</div>
+            <ol style="padding-left: 20px; list-style-type: decimal;">
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Open the e-mail in Google Gmail.</span>
+                    <span class="tel-text">గూగుల్ జిమెయిల్‌లో ఈ-మెయిల్‌ను ఓపెన్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click the down arrow in the top-right portion of the e-mail.</span>
+                    <span class="tel-text">ఈ-మెయిల్ ఎగువ కుడి భాగంలో ఉన్న డౌన్ బాణాన్ని (down arrow) క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">In the menu that appears after clicking the down arrow click <strong>show original</strong>. After clicking this, a new window will appear with the complete original message including the e-mail header.</span>
+                    <span class="tel-text">కనిపించే మెనూ నుండి <strong>"Show original"</strong> ని క్లిక్ చేయండి. దీనిపై క్లిక్ చేసిన తర్వాత ఈ-మెయిల్ హెడర్‌తో కూడిన పూర్తి ఒరిజినల్ మెసేజ్ కొత్త విండోలో కనిపిస్తుంది.</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="card card-q4">
+            <h2>Q. 4. How to send and receive pictures in e-mail? / ఈ-మెయిల్‌లో చిత్రాలను ఎలా పంపాలి మరియు స్వీకరించాలి?</h2>
+            
+            <div class="sub-heading">Attaching pictures to a Gmail e-mail / జిమెయిల్‌లో చిత్రాలను జతచేయడం (Attaching):</div>
+            <ol style="padding-left: 20px; list-style-type: decimal;">
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Log into your Gmail account at <strong>http://www.gmail.com</strong>.</span>
+                    <span class="tel-text">http://www.gmail.com లో మీ జిమెయిల్ ఖాతాలోకి లాగిన్ అవ్వండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click the <strong>Compose</strong> link.</span>
+                    <span class="tel-text"><strong>Compose</strong> లింక్‌ను క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click the <strong>Attach File link or paperclip icon</strong> (or Attach files).</span>
+                    <span class="tel-text"><strong>Attach File లింక్ లేదా పేపర్‌క్లిప్ (paperclip) ఐకాన్</strong> పై క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click the <strong>Browse button</strong> and navigate to the image file you want to attach.</span>
+                    <span class="tel-text"><strong>Browse బటన్</strong> ను క్లిక్ చేసి మీరు జతచేయాలనుకుంటున్న ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click <strong>Ok</strong>.</span>
+                    <span class="tel-text"><strong>Ok</strong> క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">If the attachment is successful, you should see a link and usually an icon with the file name(s) in your message. Once you're ready to send the message, click the <strong>Send button</strong>.</span>
+                    <span class="tel-text">అటాచ్‌మెంట్ విజయవంతమైతే, ఫైల్ పేరుతో ఒక లింక్ లేదా ఐకాన్ కనిపిస్తుంది. మెసేజ్ సిద్ధమయ్యాక <strong>Send బటన్</strong> క్లిక్ చేయండి.</span>
+                </li>
+            </ol>
+
+            <div class="sub-heading">Viewing pictures in a Gmail e-mail / జిమెయిల్‌లో చిత్రాలను చూడటం (Viewing):</div>
+            <ol style="padding-left: 20px; list-style-type: decimal;">
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Open the e-mail with the desired picture.</span>
+                    <span class="tel-text">మీకు కావలసిన చిత్రం ఉన్న ఈ-మెయిల్‌ను ఓపెన్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Many common image types are shown in the message without having to open them.</span>
+                    <span class="tel-text">సాధారణ రకం చిత్రాలు ఏవీ ఓపెన్ చేయాల్సిన అవసరం లేకుండానే నేరుగా మెసేజ్‌లో కనిపిస్తాయి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">If not, click the <strong>View or Download link</strong> to view the image.</span>
+                    <span class="tel-text">ఒకవేళ కనిపించకపోతే, చిత్రాన్ని చూడటానికి <strong>View లేదా Download లింక్</strong> పై క్లిక్ చేయండి.</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="card card-q5">
+            <h2>Q. 5. Are e-mail addresses case sensitive? / ఈ-మెయిల్ చిరునామాలు కేస్ సెన్సిటివ్ (Case Sensitive) నా?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Yes, according to <strong>RFC 2821</strong>, the local mailbox (the portion before @) is considered case-sensitive.</span>
+                    <span class="tel-text">అవును, <strong>RFC 2821</strong> నిబంధనల ప్రకారం, లోకల్ మెయిల్‌బాక్స్ (@ కు ముందు ఉండే భాగం) కేస్-సెన్సిటివ్‌గా పరిగణించబడుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">However, typically e-mail addresses are <strong>not case-sensitive</strong> because of the difficulties and confusion it would cause between users, the server, and the administrator.</span>
+                    <span class="tel-text">అయినప్పటికీ, వినియోగదారులు, సర్వర్ మరియు అడ్మినిస్ట్రేటర్ మధ్య వచ్చే గందరగోళాలు మరియు ఇబ్బందుల వల్ల సాధారణంగా ఈ-మెయిల్ చిరునామాలు <strong>కేస్-సెన్సిటివ్‌గా ఉండవు</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Therefore, when sending an e-mail, it's safe to assume an e-mail address like <strong>"SUPPORT@technicalpublishers.com"</strong> is the same as <strong>support@technicalpublishers.com</strong>.</span>
+                    <span class="tel-text">కాబట్టి, మెయిల్ పంపేటప్పుడు <strong>"SUPPORT@technicalpublishers.com"</strong> మరియు <strong>support@technicalpublishers.com</strong> రెండూ ఒకటే అని భావించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">As a general rule, when creating an account <strong>username it is always suggested that using a lowercase username is safe</strong>.</span>
+                    <span class="tel-text">సాధారణ నియమంగా, ఖాతాను సృష్టించేటప్పుడు <strong>చిన్న అక్షరాల (lowercase) యూజర్‌నేమ్‌ను ఉపయోగించడం ఎల్లప్పుడూ సురక్షితం</strong>.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="card card-q6">
+            <h2>Q. 6. How to e-mail a folder? / ఒక ఫోల్డర్‌ను ఈ-మెయిల్ చేయడం ఎలా?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">All modern Web-based or graphical e-mail clients allow their users to attach various files to messages. If you want to attach a folder that contains one or more files, it <strong>needs to be compressed</strong>.</span>
+                    <span class="tel-text">అన్ని ఆధునిక వెబ్ ఆధారిత ఈ-మెయిల్ క్లయింట్లు ఫైళ్లను అటాచ్ చేయడానికి అనుమతిస్తాయి. మీరు ఒకటి కంటే ఎక్కువ ఫైళ్లు ఉన్న ఒక ఫోల్డర్‌ను అటాచ్ చేయాలనుకుంటే, దానిని తప్పనిసరిగా <strong>కంప్రెస్ (Compress/Zip) చేయాలి</strong>.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Creating and sending a compressed folder / కంప్రెస్డ్ ఫోల్డర్‌ను తయారు చేసి పంపడం:</div>
+            <ol style="padding-left: 20px; list-style-type: decimal;">
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Right-click any blank area on your Windows desktop.</span>
+                    <span class="tel-text">విండోస్ డెస్క్‌టాప్‌లోని ఖాళీ ప్రదేశంలో రైట్-క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">In the drop-down menu that appears, select <strong>New</strong>, then <strong>Folder</strong>.</span>
+                    <span class="tel-text">కనిపించే మెనూ నుండి <strong>New</strong>, ఆపై <strong>Folder</strong> ను ఎంచుకోండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Copy and paste your desired folder's contents into the New folder.</span>
+                    <span class="tel-text">మీకు కావలసిన ఫైళ్లను ఈ కొత్త ఫోల్డర్‌లోకి కాపీ మరియు పేస్ట్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Right-click the New folder, select <strong>Send to</strong>, and then <strong>Compressed (zipped) folder</strong>.</span>
+                    <span class="tel-text">కొత్త ఫోల్డర్‌పై రైట్-క్లిక్ చేసి, <strong>Send to</strong> ఎంచుకుని, ఆపై <strong>Compressed (zipped) folder</strong> పై క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Type in a name relevant to the newly compressed folder's contents and press Enter.</span>
+                    <span class="tel-text">జిప్ ఫోల్డర్‌కు తగిన పేరు ఇచ్చి Enter నొక్కండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Open your e-mail client of choice, and attach the folder just as you would any other file.</span>
+                    <span class="tel-text">మీ ఈ-మెయిల్‌ను ఓపెన్ చేసి, ఇతర ఫైళ్లలాగే ఈ జిప్ ఫోల్డర్‌ను అటాచ్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Fill in the recipient's e-mail address, a subject, type your message, and click <strong>Send</strong>.</span>
+                    <span class="tel-text">స్వీకరించేవారి ఈ-మెయిల్ అడ్రస్, సబ్జెక్ట్ మరియు మెసేజ్ టైప్ చేసి <strong>Send</strong> క్లిక్ చేయండి.</span>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

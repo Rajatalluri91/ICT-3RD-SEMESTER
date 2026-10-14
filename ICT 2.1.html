@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Question 1 - E-mail Advantages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Colors */
+            --intro-card: #e3f2fd; --intro-border: #1e88e5;
+            --adv1-card: #e8f5e9; --adv1-border: #43a047;
+            --adv2-card: #fff3e0; --adv2-border: #fb8c00;
+            --adv3-card: #f3e5f5; --adv3-border: #8e24aa;
+            --adv4-card: #ffebee; --adv4-border: #e53935;
+            --adv5-card: #e0f2f1; --adv5-border: #00897b;
+            --adv6-card: #fbe9e7; --adv6-border: #d84315;
+            --adv7-card: #f3e5f5; --adv7-border: #7b1fa2;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0a3d34 0%, #115e47 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #152738; --intro-border: #42a5f5;
+            --adv1-card: #182e1c; --adv1-border: #66bb6a;
+            --adv2-card: #332a15; --adv2-border: #ffb74d;
+            --adv3-card: #281a2e; --adv3-border: #ab47bc;
+            --adv4-card: #331a1d; --adv4-border: #ef5350;
+            --adv5-card: #112926; --adv5-border: #26a69a;
+            --adv6-card: #331e1a; --adv6-border: #ff8a65;
+            --adv7-card: #23122b; --adv7-border: #ba68c8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-adv1 { background-color: var(--adv1-card); border-left-color: var(--adv1-border); }
+        .card-adv2 { background-color: var(--adv2-card); border-left-color: var(--adv2-border); }
+        .card-adv3 { background-color: var(--adv3-card); border-left-color: var(--adv3-border); }
+        .card-adv4 { background-color: var(--adv4-card); border-left-color: var(--adv4-border); }
+        .card-adv5 { background-color: var(--adv5-card); border-left-color: var(--adv5-border); }
+        .card-adv6 { background-color: var(--adv6-card); border-left-color: var(--adv6-border); }
+        .card-adv7 { background-color: var(--adv7-card); border-left-color: var(--adv7-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Essay Questions - Unit Notes</h1>
+            <p>Q. 1. What are the E-mail advantages? / ఈ-మెయిల్ యొక్క ప్రయోజనాలు ఏమిటి?</p>
+        </header>
+
+        <!-- Introduction -->
+        <div class="card card-intro">
+            <h2>Introduction / పరిచయం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">E-mail began as a system in which an individual user could send a <strong>plain text message</strong> via the internet to the user.</span>
+                    <span class="tel-text">ఈ-మెయిల్ అనేది ఒక సాధారణ టెక్స్ట్ మెసేజ్‌ను ఇంటర్నెట్ ద్వారా వినియోగదారునికి పంపే వ్యవస్థగా ప్రారంభమైంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">E-mail has grown in ways that no one predicted.</span>
+                    <span class="tel-text">ఎవరూ ఊహించని విధంగా ఈ-మెయిల్ చాలా వేగంగా అభివృద్ధి చెందింది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 1 -->
+        <div class="card card-adv1">
+            <h2>(1) Convenience / సౌకర్యం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Sending a memo or short note is easy.</span>
+                    <span class="tel-text">ఒక మెమో లేదా చిన్న నోట్‌ను పంపడం చాలా సులభం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">A message can be <strong>informal or formal</strong>.</span>
+                    <span class="tel-text">ఈ సందేశం అనధికారికం (informal) లేదా అధికారికం (formal) గా ఉండవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">No need of post office, no need to search for stationery and stamps.</span>
+                    <span class="tel-text">పోస్ట్ ఆఫీస్‌తో పనిలేదు, కాగితాలు (stationery) మరియు స్టాంపుల కోసం వెతకాల్సిన అవసరం లేదు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 2 -->
+        <div class="card card-adv2">
+            <h2>(2) Speed / వేగం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">E-mail is fast based on the speed of the underlying communication network.</span>
+                    <span class="tel-text">ఆధారిత కమ్యూనికేషన్ నెట్‌వర్క్ వేగాన్ని బట్టి ఈ-మెయిల్ చాలా వేగంగా పనిచేస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 3 -->
+        <div class="card card-adv3">
+            <h2>(3) Inexpensive / చౌకైనది (తక్కువ ఖర్చు)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Once you are in online, the cost of sending a message is small.</span>
+                    <span class="tel-text">మీరు ఆన్‌లైన్‌లో ఉన్నప్పుడు, సందేశాన్ని పంపడానికి అయ్యే ఖర్చు చాలా స్వల్పం.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 4 -->
+        <div class="card card-adv4">
+            <h2>(4) Printable / ప్రింట్ తీయవచ్చు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A <strong>hard copy</strong> is easy to obtain.</span>
+                    <span class="tel-text">ప్రింటెడ్ కాపీని (hard copy) సులభంగా పొందవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 5 -->
+        <div class="card card-adv5">
+            <h2>(5) Reliable / విశ్వసనీయమైనది</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Although messages are occasionally lost, that is rare.</span>
+                    <span class="tel-text">అప్పుడప్పుడు సందేశాలు మిస్ అయినప్పటికీ, అలా జరగడం చాలా అరుదు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Many mail systems will notify the sender if an email message was undelivered.</span>
+                    <span class="tel-text">ఈ-మెయిల్ సందేశం డెలివరీ కాకపోతే చాలా మెయిల్ వ్యవస్థలు ఆ విషయాన్ని పంపినవారికి తెలియజేస్తాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 6 -->
+        <div class="card card-adv6">
+            <h2>(6) Global / ప్రపంచవ్యాప్తం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Ever increasingly, people and business all over the world are using e-mail.</span>
+                    <span class="tel-text">ప్రపంచవ్యాప్తంగా ప్రజలు మరియు వ్యాపార సంస్థలు రోజురోజుకూ ఎక్కువగా ఈ-మెయిల్‌ను ఉపయోగిస్తున్నాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advantage 7 -->
+        <div class="card card-adv7">
+            <h2>(7) Generality / బహుళ ప్రయోజనకారి (సాధారణత)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">E-mail is not limited to text. It allows the transfer of <strong>graphics, programs, and even sounds</strong>.</span>
+                    <span class="tel-text">ఈ-మెయిల్ కేవలం టెక్స్ట్‌కే పరిమితం కాలేదు. ఇది గ్రాఫిక్స్, ప్రోగ్రామ్‌లు మరియు శబ్దాలను (sounds) కూడా పంపడానికి అనుమతిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <!-- Visual Diagram Box -->
+            <div class="image-box">
+                <svg width="340" height="70" viewBox="0 0 340 70" style="max-width: 100%;">
+                    <rect x="5" y="15" width="70" height="40" rx="5" fill="#1e88e5" opacity="0.2" stroke="#1e88e5" stroke-width="2"/>
+                    <text x="40" y="39" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Text</text>
+                    
+                    <rect x="85" y="15" width="75" height="40" rx="5" fill="#43a047" opacity="0.2" stroke="#43a047" stroke-width="2"/>
+                    <text x="122" y="39" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Graphics</text>
+
+                    <rect x="170" y="15" width="80" height="40" rx="5" fill="#fb8c00" opacity="0.2" stroke="#fb8c00" stroke-width="2"/>
+                    <text x="210" y="39" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Programs</text>
+
+                    <rect x="260" y="15" width="75" height="40" rx="5" fill="#8e24aa" opacity="0.2" stroke="#8e24aa" stroke-width="2"/>
+                    <text x="297" y="39" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Sounds</text>
+                </svg>
+                <div class="image-caption">Diagram: Media Types Supported by E-mail (Generality)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 24. What is Google Forms & Its Features</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #673ab7 0%, #512da8 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --c1: #f3e5f5; --b1: #8e24aa;
+            --c2: #e8f5e9; --b2: #43a047;
+            --c3: #e3f2fd; --b3: #1e88e5;
+            --c4: #fff3e0; --b4: #fb8c00;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #311b92 0%, #4527a0 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --c1: #281a2e; --b1: #ab47bc;
+            --c2: #182e1c; --b2: #66bb6a;
+            --c3: #152738; --b3: #42a5f5;
+            --c4: #332a15; --b4: #ffb74d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-1 { background-color: var(--c1); border-left-color: var(--b1); }
+        .card-2 { background-color: var(--c2); border-left-color: var(--b2); }
+        .card-3 { background-color: var(--c3); border-left-color: var(--b3); }
+        .card-4 { background-color: var(--c4); border-left-color: var(--b4); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li {
+            counter-increment: item;
+            padding-left: 25px;
+        }
+
+        ol li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #673ab7;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 24. What is Google Forms? How to create a Google Forms document? Explain its features.</h1>
+            <p>గూగుల్ ఫారమ్స్ అంటే ఏమిటి?</p>
+        </header>
+
+        <!-- Section 1: Definition & Overview -->
+        <div class="card card-1">
+            <h2>1. What is Google Forms? / గూగుల్ ఫారమ్స్ పరిచయం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Google Forms is a <strong>free survey tool</strong> that's part of G Suite—Google's complete office suite.</span>
+                    <span class="tel-text">గూగుల్ ఫారమ్స్ అనేది గూగుల్ ఆఫీస్ సూట్ (G Suite) లో భాగమైన ఒక <strong>ఉచిత సర్వే టూల్</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Google Forms lets you <strong>collect information from people</strong> via personalized quizzes or surveys.</span>
+                    <span class="tel-text">వ్యక్తిగతీకరించిన క్విజ్‌లు లేదా సర్వేల ద్వారా <strong>ప్రజల నుండి సమాచారాన్ని సేకరించడానికి</strong> ఇది అనుమతిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can then connect the info to a spreadsheet on Sheets to automatically record the answers.</span>
+                    <span class="tel-text">సమాధానాలను స్వయంచాలకంగా రికార్డ్ చేయడానికి మీరు ఈ సమాచారాన్ని షీట్స్‌లోని స్ప్రెడ్‌షీట్‌కు కనెక్ట్ చేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The spreadsheet then populates with the responses from the quiz or survey in <strong>real-time</strong>.</span>
+                    <span class="tel-text">క్విజ్ లేదా సర్వే నుండి వచ్చే ప్రతిస్పందనలతో స్ప్రెడ్‌షీట్ <strong>రియల్-టైమ్‌లో</strong> స్వయంచాలకంగా నింపబడుతుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Features and Uses -->
+        <div class="card card-2">
+            <h2>2. Features and Uses / ముఖ్య లక్షణాలు మరియు ఉపయోగాలు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">This makes Google Forms one of the easiest ways to save data directly into a spreadsheet.</span>
+                    <span class="tel-text">ఇది డేటాను నేరుగా స్ప్రెడ్‌షీట్‌లో భద్రపరచడానికి అత్యంత సులభమైన మార్గాలలో ఒకటిగా చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">With Forms, you can collect RSVPs, start surveys, or create quizzes for students with a <strong>simple online form</strong>.</span>
+                    <span class="tel-text">ఫారమ్‌ల సహాయంతో మీరు RSVPలను సేకరించవచ్చు, సర్వేలను ప్రారంభించవచ్చు లేదా విద్యార్థుల కోసం <strong>సాధారణ ఆన్‌లైన్ ఫారమ్</strong> రూపంలో క్విజ్‌లను సృష్టించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can share your form via email, a direct link, or on social media and ask everyone to participate.</span>
+                    <span class="tel-text">మీరు ఈమెయిల్, డైరెక్ట్ లింక్ లేదా సోషల్ మీడియా ద్వారా మీ ఫారమ్‌ను పంచుకోవచ్చు మరియు ప్రతి ఒక్కరినీ పాల్గొనమని కోరవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">And since Forms is an online tool, you can share and collaborate with multiple people on the same form in <strong>real-time</strong>.</span>
+                    <span class="tel-text">ఇది ఆన్‌లైన్ టూల్ కాబట్టి, మీరు ఒకే ఫారమ్‌పై బ అనేక మంది వ్యక్తులతో కలిసి <strong>రియల్-టైమ్‌లో</strong> పని చేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Google Forms allows you to create and completely customize forms and surveys for <strong>tests, surveys, event registration, event planning</strong>, and more.</span>
+                    <span class="tel-text">పరీక్షలు, సర్వేలు, ఈవెంట్ రిజిస్ట్రేషన్, ఈవెంట్ ప్లానింగ్ మొదలైన వాటి కోసం ఫారమ్‌లను పూర్తిగా అనుకూలీకరించడానికి (customize) గూగుల్ ఫారమ్స్ అనుమతిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 3: How to Create a Google Forms Document -->
+        <div class="card card-3">
+            <h2>3. How to Create a New Google Forms Document / కొత్త గూగుల్ ఫారమ్‌ను సృష్టించే విధానం</h2>
+            <p style="margin-bottom: 10px; font-weight: 500;">There are three ways to create a new Google Forms document:</p>
+            <ol>
+                <li>
+                    <span class="eng-text"><strong>Navigate to the Forms app on Google</strong> (on the top right side of any Google site).</span>
+                    <span class="tel-text">ఏదైనా గూగుల్ సైట్ కుడి పైన ఉండే గూగుల్ యాప్స్ మెనూ నుండి <strong>Forms యాప్‌కు వెళ్లడం</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>On Google Drive, hit New > More > Google Forms</strong>.</span>
+                    <span class="tel-text">గూగుల్ డ్రైవ్‌లో, <strong>New > More > Google Forms</strong> పై క్లిక్ చేయడం.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Go to forms.google.com</strong> and create a new form from there.</span>
+                    <span class="tel-text"><strong>forms.google.com</strong> వెబ్‌సైట్‌కి వెళ్లి అక్కడి నుండి కొత్త ఫారమ్‌ను సృష్టించడం.</span>
+                </li>
+            </ol>
+            <ul style="margin-top: 10px;">
+                <li>
+                    <span class="eng-text">Once you create a new Form and title it or do any work on it, it will show up in your <strong>Google Drive</strong>.</span>
+                    <span class="tel-text">మీరు కొత్త ఫారమ్‌ను సృష్టించి దానికి పేరు పెట్టిన తర్వాత లేదా ఏదైనా పని చేసిన తర్వాత, అది మీ <strong>గూగుల్ డ్రైవ్‌లో</strong> కనిపిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container for Creating Forms -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.24.1.png?raw=true" alt="Creating Google Forms from Drive">
+                <div class="image-caption">Figure: Creating Google Forms via Drive (New > More > Google Forms)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

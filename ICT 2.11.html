@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 11. Creating New Files Using Google Drive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #0f9d58 0%, #00796b 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --login-card: #e3f2fd; --login-border: #1e88e5;
+            --create-card: #e8f5e9; --create-border: #43a047;
+            --type-card: #f3e5f5; --type-border: #8e24aa;
+            --edit-card: #fff3e0; --edit-border: #fb8c00;
+            --rename-card: #ffebee; --rename-border: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #004d40 0%, #1b5e20 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --login-card: #152738; --login-border: #42a5f5;
+            --create-card: #182e1c; --create-border: #66bb6a;
+            --type-card: #281a2e; --type-border: #ab47bc;
+            --edit-card: #332a15; --edit-border: #ffb74d;
+            --rename-card: #331a1d; --rename-border: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-login { background-color: var(--login-card); border-left-color: var(--login-border); }
+        .card-create { background-color: var(--create-card); border-left-color: var(--create-border); }
+        .card-type { background-color: var(--type-card); border-left-color: var(--type-border); }
+        .card-edit { background-color: var(--edit-card); border-left-color: var(--edit-border); }
+        .card-rename { background-color: var(--rename-card); border-left-color: var(--rename-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 11. How to create new files using Google drive ? Explain creating new documents.</h1>
+            <p>గూగుల్ డ్రైవ్ ఉపయోగించి కొత్త ఫైళ్లను ఎలా సృష్టించాలి?</p>
+        </header>
+
+        <!-- Section 1: Logging in to Google Drive -->
+        <div class="card card-login">
+            <h2>1. Accessing Google Drive / గూగుల్ డ్రైవ్‌లోకి లాగిన్ అవ్వడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">To use Google Drive, you can sign in with an <strong>existing Google account</strong> or create one.</span>
+                    <span class="tel-text">గూగుల్ డ్రైవ్‌ను ఉపయోగించడానికి మీ వద్ద ఉన్న <strong>గూగుల్ ఖాతాతో లాగిన్ కావచ్చు</strong> లేదా కొత్త ఖాతాను సృష్టించుకోవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Since it's cloud-based, you can access your files from any device just by logging into your Google account and going to <strong>drive.google.com</strong>.</span>
+                    <span class="tel-text">ఇది క్లౌడ్ ఆధారితమైనది కావడంతో, మీ గూగుల్ ఖాతాలోకి లాగిన్ అయి <strong>drive.google.com</strong> వెబ్‌సైట్‌కి వెళ్లడం ద్వారా ఏ పరికరం (Device) నుండైనా మీ ఫైళ్లను యాక్సెస్ చేయవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Step-by-Step File Creation -->
+        <div class="card card-create">
+            <h2>2. Steps to Create a New File / కొత్త ఫైల్‌ను సృష్టించే దశలు</h2>
+            <ol style="padding-left: 20px; list-style-type: decimal;">
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Click the red <strong>"NEW"</strong> button in the left sidebar.</span>
+                    <span class="tel-text">ఎడమ సైడ్‌బార్‌లో ఉన్న ఎరుపు రంగు <strong>"NEW"</strong> బటన్‌పై క్లిక్ చేయండి.</span>
+                </li>
+                <li style="padding-left: 5px;">
+                    <span class="eng-text">Choose which file type you wish to create (e.g., <strong>Folder, File upload, Google Docs, Google Sheets, Google Slides</strong>).</span>
+                    <span class="tel-text">మీరు సృష్టించాలనుకుంటున్న ఫైల్ రకాన్ని ఎంచుకోండి (ఉదాహరణకు: <strong>ఫోల్డర్, ఫైల్ అప్‌లోడ్, గూగుల్ డాక్స్, గూగుల్ షీట్స్, గూగుల్ స్లైడ్స్</strong>).</span>
+                </li>
+            </ol>
+
+            <!-- Menu UI Illustration -->
+            <div class="image-box">
+                <svg width="280" height="150" viewBox="0 0 280 150" style="max-width: 100%;">
+                    <rect x="10" y="10" width="260" height="130" rx="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+                    
+                    <!-- NEW Button -->
+                    <rect x="25" y="20" width="80" height="28" rx="4" fill="#d32f2f"/>
+                    <text x="65" y="38" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">+ NEW</text>
+                    
+                    <!-- Dropdown Options -->
+                    <rect x="25" y="55" width="230" height="75" rx="4" fill="#f5f5f5" stroke="#cccccc"/>
+                    <text x="40" y="73" font-size="11" fill="#333333">📁 Folder</text>
+                    <text x="40" y="91" font-size="11" fill="#333333">📤 File upload</text>
+                    <text x="40" y="109" font-size="11" font-weight="bold" fill="#1e88e5">📄 Google Docs</text>
+                    <text x="40" y="124" font-size="11" fill="#43a047">📊 Google Sheets</text>
+                </svg>
+                <div class="image-caption">Diagram: Google Drive "NEW" Menu & File Selection UI</div>
+            </div>
+        </div>
+
+        <!-- Section 3: Opening and Editing -->
+        <div class="card card-edit">
+            <h2>3. Opening & Working on the Document / ఫైల్ ఓపెన్ చేయడం మరియు పనిచేయడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Your file will open in a <strong>new browser tab</strong> and you can start working on it immediately.</span>
+                    <span class="tel-text">మీరు ఎంచుకున్న ఫైల్ బ్రౌజర్‌లోని ఒక <strong>కొత్త ట్యాబ్‌లో ఓపెన్ అవుతుంది</strong> మరియు మీరు వెంటనే దానిపై పనిచేయడం ప్రారంభించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The Google Docs editor features standard menu bar options including: <strong>File, Edit, View, Insert, Format, Tools, Table, Add-ons, Help</strong>.</span>
+                    <span class="tel-text">గూగుల్ డాక్స్ ఎడిటర్‌లో సాధారణ మెనూ బార్ ఆప్షన్‌లు ఉంటాయి: <strong>File, Edit, View, Insert, Format, Tools, Table, Add-ons, Help</strong>.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Naming the File -->
+        <div class="card card-rename">
+            <h2>4. Naming / Renaming the Document / ఫైల్‌కు పేరు పెట్టడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Give your file a name by clicking where it says <strong>"Untitled Document"</strong> (or Spreadsheet, etc.) in the upper left corner.</span>
+                    <span class="tel-text">ఎగువ ఎడమ మూలన <strong>"Untitled Document"</strong> (లేదా Spreadsheet మొదలైనవి) అని ఉన్న చోట క్లిక్ చేసి మీ ఫైల్‌కు కావలసిన పేరును ఇవ్వండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Type the new title for your document and press <strong>Enter</strong> to save the name.</span>
+                    <span class="tel-text">మీ డాక్యుమెంట్ కోసం కొత్త పేరును టైప్ చేసి, ఆ పేరును సేవ్ చేయడానికి <strong>Enter</strong> నొక్కండి.</span>
+                </li>
+            </ul>
+
+            <!-- Document Title Bar Illustration -->
+            <div class="image-box">
+                <svg width="320" height="70" viewBox="0 0 320 70" style="max-width: 100%;">
+                    <rect x="5" y="10" width="310" height="50" rx="6" fill="#f8f9fa" stroke="#1e88e5" stroke-width="2"/>
+                    
+                    <!-- File Icon -->
+                    <rect x="15" y="20" width="20" height="26" fill="#1e88e5" rx="2"/>
+                    
+                    <!-- Title Box Pointer -->
+                    <rect x="45" y="20" width="130" height="26" rx="4" fill="#ffffff" stroke="#cccccc"/>
+                    <text x="52" y="37" font-size="11" font-weight="bold" fill="#333333">Untitled Document</text>
+                    
+                    <text x="182" y="37" font-size="14" fill="#d32f2f">← Click here to rename</text>
+                </svg>
+                <div class="image-caption">Diagram: Renaming "Untitled Document" in Upper Left Corner</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 10. What is Google Drive & Its Key Features</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #e3f2fd; --intro-border: #1e88e5;
+            --docs-card: #e8f5e9; --docs-border: #43a047;
+            --sheets-card: #e0f2f1; --sheets-border: #00897b;
+            --slides-card: #fff3e0; --slides-border: #fb8c00;
+            --forms-card: #f3e5f5; --forms-border: #8e24aa;
+            --usage-card: #ffebee; --usage-border: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #152738; --intro-border: #42a5f5;
+            --docs-card: #182e1c; --docs-border: #66bb6a;
+            --sheets-card: #112926; --sheets-border: #26a69a;
+            --slides-card: #332a15; --slides-border: #ffb74d;
+            --forms-card: #281a2e; --forms-border: #ab47bc;
+            --usage-card: #331a1d; --usage-border: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-docs { background-color: var(--docs-card); border-left-color: var(--docs-border); }
+        .card-sheets { background-color: var(--sheets-card); border-left-color: var(--sheets-border); }
+        .card-slides { background-color: var(--slides-card); border-left-color: var(--slides-border); }
+        .card-forms { background-color: var(--forms-card); border-left-color: var(--forms-border); }
+        .card-usage { background-color: var(--usage-card); border-left-color: var(--usage-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 10. What is Google drive ? How to use it ? What are its key features ?</h1>
+            <p>ICT UNIT-2</p>
+        </header>
+
+        <!-- Section 1: Definition & Overview -->
+        <div class="card card-intro">
+            <h2>1. What is Google Drive? / గూగుల్ డ్రైవ్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Google Drive is simply a <strong>cloud-based storage option</strong> that gives you the ability to keep your photos, emails, and other files on their server.</span>
+                    <span class="tel-text">గూగుల్ డ్రైవ్ అనేది ఒక <strong>క్లౌడ్ ఆధారిత స్టోరేజ్ ఆప్షన్</strong>, ఇది మీ ఫోటోలు, ఈ-మెయిల్‌లు మరియు ఇతర ఫైళ్లను వారి సర్వర్‌లో భద్రపరచుకునే వెసులుబాటును కల్పిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Having extra storage is just the beginning; it also comes with a suite of office tools rivaling Microsoft Office.</span>
+                    <span class="tel-text">అదనపు స్టోరేజ్ మాత్రమే కాకుండా, మైక్రోసాఫ్ట్ ఆఫీస్‌తో పోటీపడే ఆఫీస్ టూల్స్ సమితిని కూడా ఇది అందిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can share these documents and make edits in <strong>real-time</strong> so collaborating with your team has never been easier.</span>
+                    <span class="tel-text">మీరు ఈ డాక్యుమెంట్లను ఇతరులతో పంచుకోవడమే (share) కాకుండా, <strong>రియల్-టైమ్‌లో సవరణలు (edits)</strong> చేయవచ్చు, దీనివల్ల మీ టీమ్‌తో కలిసి పనిచేయడం చాలా సులభమవుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Price Tag:</strong> You can start using Drive right away at no cost, getting <strong>15GB of free storage</strong> with your free account.</span>
+                    <span class="tel-text"><strong>ఉచిత సేవ:</strong> మీరు ఎటువంటి ఖర్చు లేకుండా వెంటనే ఉచిత ఖాతాతో <strong>15GB లభిించే ఉచిత స్టోరేజ్</strong> తో గూగుల్ డ్రైవ్‌ను ఉపయోగించడం ప్రారంభించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It is a suite of free cloud-based tools for creating, sharing, storing and collaborating on files.</span>
+                    <span class="tel-text">ఇది ఫైళ్లను తయారు చేయడం, పంచుకోవడం, నిల్వ చేయడం మరియు కలిసి పనిచేయడానికి ఉపయోగపడే ఉచిత క్లౌడ్ ఆధారిత టూల్స్ సమితి.</span>
+                </li>
+            </ul>
+
+            <!-- Free Storage Visual -->
+            <div class="image-box">
+                <svg width="320" height="60" viewBox="0 0 320 60" style="max-width: 100%;">
+                    <rect x="10" y="15" width="300" height="30" rx="6" fill="#1e88e5" opacity="0.2" stroke="#1e88e5" stroke-width="2"/>
+                    <rect x="10" y="15" width="200" height="30" rx="6" fill="#43a047" opacity="0.7"/>
+                    <text x="110" y="35" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">15 GB Free Storage</text>
+                    <text x="250" y="35" font-size="12" font-weight="bold" fill="currentColor" text-anchor="middle">Cloud Drive</text>
+                </svg>
+                <div class="image-caption">Diagram: Google Drive Free Cloud Storage Allocation</div>
+            </div>
+        </div>
+
+        <!-- Section 2: Google Docs -->
+        <div class="card card-docs">
+            <h2>2. Key Feature: Google Docs / గూగుల్ డాక్స్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A <strong>word processing tool</strong>, like Microsoft Word or Pages for Mac.</span>
+                    <span class="tel-text">ఇది మైక్రోసాఫ్ట్ వర్డ్ లేదా మాక్ కోసం పేజెస్ లాంటి ఒక <strong>వర్డ్ ప్రాసెసింగ్ టూల్</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It contains everything you need for drafting and editing documents.</span>
+                    <span class="tel-text">డాక్యుమెంట్లను ముసాయిదా తయారు చేయడానికి మరియు ఎడిట్ చేయడానికి అవసరమైన అన్ని ఫీచర్లు ఇందులో ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can format your text and paragraphs, insert links and images, and use tools like <strong>spellcheck and word count</strong>.</span>
+                    <span class="tel-text">మీరు టెక్స్ట్ మరియు పేరాగ్రాఫ్‌లను ఫార్మాట్ చేయవచ్చు, లింక్‌లు మరియు చిత్రాలను చొప్పించవచ్చు (insert), అలాగే <strong>స్పెల్‌చెక్ మరియు వర్డ్ కౌంట్</strong> వంటి సాధనాలను ఉపయోగించవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Google Sheets -->
+        <div class="card card-sheets">
+            <h2>3. Key Feature: Google Sheets / గూగుల్ షీట్స్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The <strong>Excel spreadsheet</strong> of the Google Drive family.</span>
+                    <span class="tel-text">గూగుల్ డ్రైవ్ కుటుంబంలో ఇది మైక్రోసాఫ్ట్ <strong>ఎక్సెల్ స్ప్రెడ్‌షీట్</strong> వంటిది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Perfect for working with data, or for organizing just about any set of information.</span>
+                    <span class="tel-text">డేటాతో పనిచేయడానికి లేదా ఏదైనా సమాచారాన్ని చక్కగా అమర్చడానికి ఇది చాలా అనుకూలమైనది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Includes <strong>formulas</strong> and the ability to create <strong>charts and graphs</strong> from your data.</span>
+                    <span class="tel-text">ఇందులో <strong>ఫార్ములాలు</strong> ఉపయోగించవచ్చు మరియు మీ డేటా నుండి <strong>చార్టులు మరియు గ్రాఫ్‌లను</strong> తయారు చేసే వెసులుబాటు ఉంటుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Google Slides -->
+        <div class="card card-slides">
+            <h2>4. Key Feature: Google Slides / గూగుల్ స్లైడ్స్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">For creating presentations, this is Google's version of <strong>PowerPoint or Keynote</strong>.</span>
+                    <span class="tel-text">ప్రెజెంటేషన్లను తయారు చేయడానికి, ఇది గూగుల్ యొక్క <strong>పవర్‌పాయింట్ (PowerPoint) లేదా కీనోట్</strong> వర్షన్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Since it's cloud-based, you don't have to email yourself a huge file or worry about hooking up your laptop at the presentation location.</span>
+                    <span class="tel-text">ఇది క్లౌడ్ ఆధారితమైనది కావడంతో, పెద్ద ఫైళ్లను ఈ-మెయిల్ చేసుకోవాల్సిన అవసరం లేదా ప్రెజెంటేషన్ స్థలంలో లాప్‌టాప్‌ను కనెక్ట్ చేయడం గురించి ఆందోళన చెందాల్సిన అవసరం లేదు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You can access your presentation from anywhere with an internet connection (or use offline mode).</span>
+                    <span class="tel-text">ఇంటర్నెట్ కనెక్షన్ ఉన్న ఏ ప్రదేశం నుండైనా (లేదా ఆఫ్‌లైన్ మోడ్ ద్వారా) మీ ప్రెజెంటేషన్‌ను యాక్సెస్ చేయవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Google Forms -->
+        <div class="card card-forms">
+            <h2>5. Key Feature: Google Forms / గూగుల్ ఫారమ్స్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Need to send out a survey to your customers, or have a new client answer questions about their business? Google Forms makes it super easy.</span>
+                    <span class="tel-text">మీ కస్టమర్లకు సర్వేలు పంపాలన్నా లేదా కొత్త క్లయింట్ల నుండి వారి వ్యాపార సమాచారాన్ని సేకరించాలన్నా గూగుల్ ఫారమ్స్ చాలా సులభతరం చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Create <strong>polls and surveys</strong> or collect info from people.</span>
+                    <span class="tel-text">పోల్స్ మరియు సర్వేలను తయారు చేసి ప్రజల నుండి సమాచారాన్ని సేకరించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The responses automatically get put into a <strong>spreadsheet</strong> so you can easily review them.</span>
+                    <span class="tel-text">వచ్చిన సమాధానాలు (responses) స్వయంచాలకంగా ఒక <strong>స్ప్రెడ్‌షీట్‌లోకి</strong> చేర్చబడతాయి, తద్వారా మీరు వాటిని సులభంగా సమీక్షించవచ్చు.</span>
+                </li>
+            </ul>
+
+            <!-- Suite Tools Overview Diagram -->
+            <div class="image-box">
+                <svg width="340" height="60" viewBox="0 0 340 60" style="max-width: 100%;">
+                    <rect x="5" y="10" width="75" height="40" rx="4" fill="#43a047" opacity="0.2" stroke="#43a047" stroke-width="2"/>
+                    <text x="42" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Docs</text>
+                    
+                    <rect x="85" y="10" width="75" height="40" rx="4" fill="#1e88e5" opacity="0.2" stroke="#1e88e5" stroke-width="2"/>
+                    <text x="122" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Sheets</text>
+
+                    <rect x="165" y="10" width="75" height="40" rx="4" fill="#fb8c00" opacity="0.2" stroke="#fb8c00" stroke-width="2"/>
+                    <text x="202" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Slides</text>
+
+                    <rect x="245" y="10" width="85" height="40" rx="4" fill="#8e24aa" opacity="0.2" stroke="#8e24aa" stroke-width="2"/>
+                    <text x="287" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Forms</text>
+                </svg>
+                <div class="image-caption">Diagram: Google Drive Suite Office Tools[cite: 22, 23]</div>
+            </div>
+        </div>
+
+        <!-- Section 6: How to Use Google Drive -->
+        <div class="card card-usage">
+            <h2>6. How to Use Google Drive & Create Files / గూగుల్ డ్రైవ్ ఎలా ఉపయోగించాలి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">To use Google Drive, you can sign in with an existing Google account or create one.</span>
+                    <span class="tel-text">గూగుల్ డ్రైవ్‌ను ఉపయోగించడానికి మీ వద్ద ఉన్న గూగుల్ ఖాతాతో సైన్ ఇన్ అవ్వవచ్చు లేదా కొత్త ఖాతాను సృష్టించుకోవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Since it's cloud-based, you can access your files from any device just by logging into your Google account and going to <strong>drive.google.com</strong>.</span>
+                    <span class="tel-text">ఇది క్లౌడ్ ఆధారితమైనది కావడం వల్ల మీ గూగుల్ ఖాతాలోకి లాగిన్ అయ్యి <strong>drive.google.com</strong> కి వెళ్లడం ద్వారా ఏ పరికరం (Device) నుండైనా మీ ఫైళ్లను యాక్సెస్ చేయవచ్చు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Creating New Files / కొత్త ఫైళ్లను సృష్టించడం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Click the red <strong>"New"</strong> button in the left sidebar and choose which file type you wish to create.</span>
+                    <span class="tel-text">ఎడమ వైపు సైడ్‌బార్‌లో ఉన్న ఎరుపు రంగు <strong>"New"</strong> బటన్‌పై క్లిక్ చేసి, మీరు సృష్టించాలనుకుంటున్న ఫైల్ రకాన్ని ఎంచుకోండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Your file will open in a new tab/window ready for editing.</span>
+                    <span class="tel-text">మీరు ఎంచుకున్న ఫైల్ కొత్త ట్యాబ్‌లో ఓపెన్ అయ్యి ఎడిట్ చేయడానికి సిద్ధంగా ఉంటుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

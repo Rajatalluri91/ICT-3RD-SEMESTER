@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 19. How to Create a New Google Spreadsheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #0f9d58 0%, #00796b 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --c1: #e8f5e9; --b1: #43a047;
+            --c2: #e3f2fd; --b2: #1e88e5;
+            --c3: #fff3e0; --b3: #fb8c00;
+            --c4: #f3e5f5; --b4: #8e24aa;
+            --c5: #ffebee; --b5: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #004d40 0%, #1b5e20 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --c1: #182e1c; --b1: #66bb6a;
+            --c2: #152738; --b2: #42a5f5;
+            --c3: #332a15; --b3: #ffb74d;
+            --c4: #281a2e; --b4: #ab47bc;
+            --c5: #331a1d; --b5: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-1 { background-color: var(--c1); border-left-color: var(--b1); }
+        .card-2 { background-color: var(--c2); border-left-color: var(--b2); }
+        .card-3 { background-color: var(--c3); border-left-color: var(--b3); }
+        .card-4 { background-color: var(--c4); border-left-color: var(--b4); }
+        .card-5 { background-color: var(--c5); border-left-color: var(--b5); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Information & Communication Technology</h1>
+            <p>Q. 19. How to create a new Google spreadsheet? Explain step by step procedure. / కొత్త గూగుల్ స్ప్రెడ్‌షీట్‌ను ఎలా సృష్టించాలి?</p>
+        </header>
+
+        <!-- Step 1 -->
+        <div class="card card-1">
+            <h2>Step 1: Selecting Google Sheets / దశ 1: గూగుల్ షీట్స్ ఎంచుకోవడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">While viewing your Google Drive, click <strong>New</strong> and select <strong>Google Sheets</strong> from the drop-down menu.</span>
+                    <span class="tel-text">మీ గూగుల్ డ్రైవ్‌ను చూస్తున్నప్పుడు, <strong>New</strong> బటన్‌పై క్లిక్ చేసి, డ్రాప్-డౌన్ మెనూ నుండి <strong>Google Sheets</strong> ను ఎంచుకోండి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 1 -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.19.1.png?raw=true" alt="Google Drive New Menu">
+                <div class="image-caption">Figure 1: Selecting Google Sheets from Drive "NEW" Drop-down Menu</div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card card-2">
+            <h2>Step 2: Spreadsheet Interface / దశ 2: స్ప్రెడ్‌షీట్ ఇంటర్‌ఫేస్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The spreadsheet will appear in a <strong>new browser tab</strong>.</span>
+                    <span class="tel-text">ఈ స్ప్రెడ్‌షీట్ బ్రౌజర్‌లో <strong>కొత్త ట్యాబ్‌లో ఓపెన్ అవుతుంది</strong>.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 2 -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.19.2.png?raw=true" alt="New Spreadsheet View in Browser Tab">
+                <div class="image-caption">Figure 2: New Spreadsheet Opened in a Browser Tab</div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card card-3">
+            <h2>Step 3: Naming the Spreadsheet / దశ 3: స్ప్రెడ్‌షీట్‌కు పేరు పెట్టడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">To name your spreadsheet, locate and select <strong>Untitled spreadsheet</strong> at the top of the page.</span>
+                    <span class="tel-text">మీ స్ప్రెడ్‌షీట్‌కు పేరు పెట్టడానికి, పేజీ ఎగువన ఉన్న <strong>Untitled spreadsheet</strong> పై క్లిక్ చేసి ఎంచుకోండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Type a name for your spreadsheet, then press <strong>Enter</strong> on your keyboard.</span>
+                    <span class="tel-text">మీ స్ప్రెడ్‌షీట్ కోసం కావలసిన పేరును టైప్ చేసి, మీ కీబోర్డ్ పై <strong>Enter</strong> నొక్కండి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 3 -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.19.3.png?raw=true" alt="Renaming Untitled Spreadsheet">
+                <div class="image-caption">Figure 3: Renaming the Spreadsheet Title at Top Left Corner</div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card card-4">
+            <h2>Step 4: Renamed Result / దశ 4: పేరు మార్పు ఫలితం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Your spreadsheet will be renamed (e.g., <strong>Field Trip Checklist</strong>).</span>
+                    <span class="tel-text">మీ స్ప్రెడ్‌షీట్ పేరు విజయవంతంగా మార్చబడుతుంది (ఉదాహరణకు: <strong>Field Trip Checklist</strong>).</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 4 -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.19.4.png?raw=true" alt="Renamed Spreadsheet Result">
+                <div class="image-caption">Figure 4: Renamed Spreadsheet Confirmation</div>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="card card-5">
+            <h2>Step 5: Automatic Saving & Access / దశ 5: ఆటోమేటిక్ సేవింగ్ మరియు యాక్సెస్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Whenever you need to view or edit your spreadsheet, you can access it again from your Google Drive, where it will be <strong>saved automatically</strong>.</span>
+                    <span class="tel-text">మీరు ఎప్పుడైనా మీ స్ప్రెడ్‌షీట్‌ను చూడాలన్నా లేదా ఎడిట్ చేయాలన్నా గూగుల్ డ్రైవ్ నుండి యాక్సెస్ చేయవచ్చు. ఫైళ్లు అన్నీ <strong>ఆటోమేటిక్‌గా సేవ్ అవుతాయి</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>No Save Button:</strong> You may notice that there is no save button because Google Drive uses <strong>autosave</strong>, which automatically and immediately saves your files as you edit them.</span>
+                    <span class="tel-text"><strong>సేవ్ బటన్ లేదు:</strong> గూగుల్ డ్రైవ్‌లో సేవ్ బటన్ ఉండదు, ఎందుకంటే ఇది ఆటోసేవ్ (autosave) ఫీచర్‌ను ఉపయోగిస్తుంది. మీరు ఎడిట్ చేస్తున్న కొద్దీ ఫైల్ వెంటనే స్వయంచాలకంగా సేవ్ అవుతుంది.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 5 -->
+            <div class="github-img-box">
+                <!-- Replace src with your actual GitHub Raw image URL -->
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%202.19.5.png?raw=true" alt="Google Drive Autosave and File List">
+                <div class="image-caption">Figure 5: Google Drive Autosave and Saved File in Drive Dashboard</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.4 - Steps involved in the creation of E-mail id</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #e3f2fd; --intro-border: #1e88e5;
+            --opt-card: #fff3e0; --opt-border: #fb8c00;
+            --step1-card: #e8f5e9; --step1-border: #43a047;
+            --step2-card: #f3e5f5; --step2-border: #8e24aa;
+            --step3-card: #ffebee; --step3-border: #e53935;
+            --step4-card: #e0f2f1; --step4-border: #00897b;
+            --step5-card: #fbe9e7; --step5-border: #d84315;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0a3d34 0%, #115e47 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #152738; --intro-border: #42a5f5;
+            --opt-card: #332a15; --opt-border: #ffb74d;
+            --step1-card: #182e1c; --step1-border: #66bb6a;
+            --step2-card: #281a2e; --step2-border: #ab47bc;
+            --step3-card: #331a1d; --step3-border: #ef5350;
+            --step4-card: #112926; --step4-border: #26a69a;
+            --step5-card: #331e1a; --step5-border: #ff8a65;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-opt { background-color: var(--opt-card); border-left-color: var(--opt-border); }
+        .card-step1 { background-color: var(--step1-card); border-left-color: var(--step1-border); }
+        .card-step2 { background-color: var(--step2-card); border-left-color: var(--step2-border); }
+        .card-step3 { background-color: var(--step3-card); border-left-color: var(--step3-border); }
+        .card-step4 { background-color: var(--step4-card); border-left-color: var(--step4-border); }
+        .card-step5 { background-color: var(--step5-card); border-left-color: var(--step5-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 4. Write steps involved in the creation of E-mail id.</h1>
+            <p>ఈ-మెయిల్ ఐడి సృష్టిలోని దశలను రాయండి.</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <div class="card card-intro">
+            <h2>Introduction & Initial Procedure / ప్రారంభ ప్రక్రియ</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Before you actually use e-mail facility, we first need to <strong>create an e-mail account</strong>. There are innumerable sites in the Internet where you can create an e-mail account.</span>
+                    <span class="tel-text">మీరు ఈ-మెయిల్ సదుపాయాన్ని ఉపయోగించే ముందు, ముందుగా ఒక <strong>ఈ-మెయిల్ ఖాతాను సృష్టించుకోవాలి</strong>. ఇంటర్నెట్‌లో మీరు ఈ-మెయిల్ ఖాతాను సృష్టించుకోవడానికి లెక్కలేనన్ని వెబ్‌సైట్‌లు ఉన్నాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The following is the procedure to make an account in the site <strong>www.indrg.com</strong> (or indya).</span>
+                    <span class="tel-text"><strong>www.indrg.com</strong> (లేదా indya) వెబ్‌సైట్‌లో ఖాతాను తయారు చేయడానికి క్రిందిది విధానం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">First open this site by typing its URL in the address base of browser and pressing <strong>Enter Key</strong>.</span>
+                    <span class="tel-text">ముందుగా బ్రౌజర్ అడ్రస్ బార్‌లో దాని URL ని టైప్ చేసి <strong>Enter Key</strong> నొక్కడం ద్వారా ఈ సైట్‌ను ఓపెన్ చేయండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">In this page, two boxes are displayed: One for the <strong>Log in ID</strong> and another for the <strong>password</strong>.</span>
+                    <span class="tel-text">ఈ పేజీలో రెండు బాక్స్‌లు కనిపిస్తాయి: ఒకటి <strong>Log in ID</strong> కోసం మరియు మరొకటి <strong>password</strong> కోసం.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Four Options -->
+        <div class="card card-opt">
+            <h2>Options Available Below Login Boxes / ల్యాండింగ్ పేజీలోని 4 ఆప్షన్‌లు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Just below these boxes, there are <strong>four options</strong>:</span>
+                    <span class="tel-text">ఆ లాగిన్ బాక్స్‌ల క్రింద సరిగ్గా <strong>నాలుగు ఆప్షన్‌లు</strong> ఉంటాయి:</span>
+                </li>
+                <li><span class="eng-text"><strong>(1) New user ? Sign Up ;</strong></span> <span class="tel-text">(1) కొత్త వినియోగదారుడా? సైన్ అప్ (Sign Up) చేయండి;</span></li>
+                <li><span class="eng-text"><strong>(2) Change password ;</strong></span> <span class="tel-text">(2) పాస్‌వర్డ్ మార్చండి (Change password);</span></li>
+                <li><span class="eng-text"><strong>(3) Forgot password ;</strong></span> <span class="tel-text">(3) పాస్‌వర్డ్ మరిచిపోయారా (Forgot password);</span></li>
+                <li><span class="eng-text"><strong>(4) New ? Try chatting.</strong></span> <span class="tel-text">(4) కొత్తవారా? చాటింగ్ ప్రయత్నించండి.</span></li>
+            </ul>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="card card-step1">
+            <h2>Step 1: Select New User Option / దశ 1: న్యూ యూజర్ ఆప్షన్‌ను ఎంచుకోవడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Take the mouse pointer to the <strong>New user? Sign up</strong> option. Instantly, the cursor turns into the shape of a <strong>palm</strong>.</span>
+                    <span class="tel-text">మౌస్ పాయింటర్‌ను <strong>New user? Sign up</strong> ఆప్షన్ వద్దకు తీసుకెళ్ళండి. వెంటనే కర్సర్ ఒక <strong>అరచేతి (palm)</strong> ఆకారంలోకి మారుతుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card card-step2">
+            <h2>Step 2: Navigate to Registration Form / దశ 2: రిజిస్ట్రేషన్ ఫారమ్‌కు వెళ్లడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Click the left mouse button once. A new page opens up which displays a page with the title <strong>register with indya</strong>.</span>
+                    <span class="tel-text">ఎడమ మౌస్ బటన్‌ను ఒకసారి క్లిక్ చేయండి. <strong>Register with indya</strong> అనే టైటిల్‌తో కొత్త పేజీ ఓపెన్ అవుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Read the page and go to the end of the page and click on <strong>CONTINUE</strong> button. This makes a new page appear. This page is the <strong>registration form</strong>.</span>
+                    <span class="tel-text">పేజీని చదివి, పేజీ చివరకి వెళ్లి <strong>CONTINUE</strong> బటన్‌పై క్లిక్ చేయండి. ఇది కొత్త పేజీని చూపుతుంది. ఈ పేజీనే <strong>రిజిస్ట్రేషన్ ఫారమ్ (registration form)</strong>.</span>
+                </li>
+            </ul>
+
+            <!-- Process Flow Visual -->
+            <div class="image-box">
+                <svg width="340" height="60" viewBox="0 0 340 60" style="max-width: 100%;">
+                    <rect x="5" y="10" width="95" height="40" rx="5" fill="#1e88e5" opacity="0.2" stroke="#1e88e5" stroke-width="2"/>
+                    <text x="52" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Click Sign Up</text>
+                    
+                    <text x="110" y="35" font-size="16" text-anchor="middle" fill="currentColor">→</text>
+
+                    <rect x="125" y="10" width="95" height="40" rx="5" fill="#8e24aa" opacity="0.2" stroke="#8e24aa" stroke-width="2"/>
+                    <text x="172" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Click Continue</text>
+
+                    <text x="230" y="35" font-size="16" text-anchor="middle" fill="currentColor">→</text>
+
+                    <rect x="245" y="10" width="90" height="40" rx="5" fill="#43a047" opacity="0.2" stroke="#43a047" stroke-width="2"/>
+                    <text x="290" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Form Opens</text>
+                </svg>
+                <div class="image-caption">Diagram: Initial Steps for E-mail Registration</div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card card-step3">
+            <h2>Step 3: Enter Credentials / దశ 3: వివరాలు మరియు పాస్‌వర్డ్ నమోదు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">In the registration form, enter the <strong>login-id</strong> of your choice and also the <strong>password</strong> of your choice.</span>
+                    <span class="tel-text">రిజిస్ట్రేషన్ ఫారమ్‌లో, మీకు కావలసిన <strong>login-id</strong> ని మరియు మీకు ఇష్టమైన <strong>పాస్‌వర్డ్ (password)</strong> ని నమోదు చేయండి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card card-step4">
+            <h2>Step 4: Submit Registration / దశ 4: ఫారమ్ సమర్పణ (Submit)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Now after finishing filling up the Registration form, click on the <strong>submit</strong> button that is located at the end of the page.</span>
+                    <span class="tel-text">రిజిస్ట్రేషన్ ఫారమ్‌ను పూరించడం పూర్తయిన తర్వాత, పేజీ చివరన ఉండే <strong>submit</strong> బటన్‌పై క్లిక్ చేయండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Instantly, a new page appears which <strong>confirms your registration</strong>.</span>
+                    <span class="tel-text">వెంటనే మీ <strong>రిజిస్ట్రేషన్‌ను ధృవీకరించే (confirms)</strong> కొత్త పేజీ కనిపిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="card card-step5">
+            <h2>Step 5: Logging into Account Later / దశ 5: ఖాతాలోకి లాగిన్ అవ్వడం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Hereafter, whenever you want to open your account, open the site, enter your <strong>ID and the password</strong>, then click <strong>Go button</strong> to enter your e-mail account[cite: 17].</span>
+                    <span class="tel-text">ఇకపై, మీరు ఎప్పుడు మీ ఖాతాను ఓపెన్ చేయాలన్నా, వెబ్‌సైట్ ఓపెన్ చేసి, మీ <strong>ID మరియు పాస్‌వర్డ్‌ను</strong> నమోదు చేసి, మీ ఈ-మెయిల్ ఖాతాలోకి ప్రవేశించడానికి <strong>Go బటన్</strong> పై క్లిక్ చేయండి[cite: 17].</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

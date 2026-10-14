@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 18. Google Sheets Features & Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #0f9d58 0%, #00796b 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --c1: #e8f5e9; --b1: #43a047;
+            --c2: #e3f2fd; --b2: #1e88e5;
+            --c3: #fff3e0; --b3: #fb8c00;
+            --c4: #f3e5f5; --b4: #8e24aa;
+            --c5: #ffebee; --b5: #e53935;
+            --c6: #e0f2f1; --b6: #00897b;
+            --c7: #fbe9e7; --b7: #d84315;
+            --c8: #f3e5f5; --b8: #7b1fa2;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #004d40 0%, #1b5e20 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --c1: #182e1c; --b1: #66bb6a;
+            --c2: #152738; --b2: #42a5f5;
+            --c3: #332a15; --b3: #ffb74d;
+            --c4: #281a2e; --b4: #ab47bc;
+            --c5: #331a1d; --b5: #ef5350;
+            --c6: #112926; --b6: #26a69a;
+            --c7: #331e1a; --b7: #ff8a65;
+            --c8: #23122b; --b8: #ba68c8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-1 { background-color: var(--c1); border-left-color: var(--b1); }
+        .card-2 { background-color: var(--c2); border-left-color: var(--b2); }
+        .card-3 { background-color: var(--c3); border-left-color: var(--b3); }
+        .card-4 { background-color: var(--c4); border-left-color: var(--b4); }
+        .card-5 { background-color: var(--c5); border-left-color: var(--b5); }
+        .card-6 { background-color: var(--c6); border-left-color: var(--b6); }
+        .card-7 { background-color: var(--c7); border-left-color: var(--b7); }
+        .card-8 { background-color: var(--c8); border-left-color: var(--b8); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(0,0,0,0.05);
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] th {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+            table, th, td {
+                font-size: 0.85rem;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 18. Explain the features of Google Sheets (Google spreadsheet). Compare Excel and Google sheets.</h1>
+            <p>ICT UNIT-2</p>
+        </header>
+
+        <!-- Intro Card -->
+        <div class="card card-1">
+            <h2>Overview / పరిచయం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The following are important features (advantages) of Google sheets and its comparison with Microsoft Excel.</span>
+                    <span class="tel-text">గూగుల్ షీట్స్ యొక్క ముఖ్యమైన ఫీచర్లు (ప్రయోజనాలు) మరియు మైక్రోసాఫ్ట్ ఎక్సెల్‌తో పోలిక క్రింద ఇవ్వబడ్డాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Features Section -->
+        <div class="card card-2">
+            <h2>Features & Advantages of Google Sheets / గూగుల్ షీట్స్ ఫీచర్లు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>(a) Free Cost:</strong> It's free!</span>
+                    <span class="tel-text"><strong>ఉచితం:</strong> ఇది అందరికీ ఉచితంగా లభిస్తుంది!</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(b) Real-time Collaboration:</strong> It's collaborative, so teams can all see and work with the same spreadsheet in real-time.</span>
+                    <span class="tel-text"><strong>రియల్-టైమ్ సహకారం:</strong> ఇది కొల్లాబరేటివ్ సాధనం, కాబట్టి టీమ్ సభ్యులందరూ ఒకే స్ప్రెడ్‌షీట్‌ను రియల్-టైమ్‌లో చూడవచ్చు మరియు పనిచేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(c) Analysis Capability:</strong> It has enough features to do complex analysis...</span>
+                    <span class="tel-text"><strong>విశ్లేషణ సామర్థ్యం:</strong> సంక్లిష్టమైన డేటా విశ్లేషణ చేయడానికి కావలసినన్ని ఫీచర్లు ఇందులో ఉన్నాయి...</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(d) Ease of Use:</strong> ...it's also really easy to use.</span>
+                    <span class="tel-text"><strong>ఉపయోగించడం సులభం:</strong> ఇది ఉపయోగించడానికి చాలా సులభంగా ఉంటుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- SVG Diagram -->
+        <div class="image-box">
+            <svg width="320" height="70" viewBox="0 0 320 70" style="max-width: 100%;">
+                <rect x="10" y="15" width="135" height="40" rx="6" fill="#0f9d58" opacity="0.2" stroke="#0f9d58" stroke-width="2"/>
+                <text x="77" y="32" font-size="11" font-weight="bold" fill="currentColor" text-anchor="middle">Google Sheets</text>
+                <text x="77" y="46" font-size="10" fill="currentColor" text-anchor="middle">(Cloud-based / Apps Script)</text>
+
+                <text x="160" y="40" font-size="14" font-weight="bold" fill="currentColor" text-anchor="middle">VS</text>
+
+                <rect x="175" y="15" width="135" height="40" rx="6" fill="#107c41" opacity="0.2" stroke="#107c41" stroke-width="2"/>
+                <text x="242" y="32" font-size="11" font-weight="bold" fill="currentColor" text-anchor="middle">MS Excel</text>
+                <text x="242" y="46" font-size="10" fill="currentColor" text-anchor="middle">(Desktop / VBA)</text>
+            </svg>
+            <div class="image-caption">Diagram: Google Sheets vs MS Excel Platform Comparison</div>
+        </div>
+
+        <!-- Direct Comparison Points -->
+        <div class="card card-3">
+            <h2>Detailed Comparison Points / ఎక్సెల్ మరియు గూగుల్ షీట్స్ పోలికలు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>(e) Cloud vs Desktop:</strong> Google Sheets is cloud-based whereas Excel is a desktop program. With Sheets, you'll no longer have versions of your work floating around. Everyone always sees the same, most up-to-date version of Sheets, showing the same spreadsheet data.</span>
+                    <span class="tel-text"><strong>క్లౌడ్ మరియు డెస్క్‌టాప్:</strong> గూగుల్ షీట్స్ క్లౌడ్ ఆధారితమైనది, కానీ ఎక్సెల్ డెస్క్‌టాప్ ప్రోగ్రామ్. షీట్స్‌తో విభిన్న వెర్షన్ల గందరగోళం ఉండదు, అందరూ ఎల్లప్పుడూ ఒకే తాజా (up-to-date) డేటాను చూస్తారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(f) Built-in Collaboration:</strong> Collaboration is baked into Sheets, so it works extremely well. Excel is still trying to play catch up here.</span>
+                    <span class="tel-text"><strong>సహకారం (Collaboration):</strong> షీట్స్‌లో కొల్లాబరేషన్ అంతర్నిర్మితంగా చాలా అద్భుతంగా పనిచేస్తుంది. ఎక్సెల్ ఈ విషయంలో ఇంకా పోటీపడుతోంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(g) Charting & Pivot Tables:</strong> Both have charting tools and Pivot Table tools for data analysis, although Excel's are more powerful in both cases.</span>
+                    <span class="tel-text"><strong>చార్టింగ్ మరియు పివట్ టేబుల్స్:</strong> రెండింటిలోనూ చార్టింగ్ మరియు పివట్ టేబుల్స్ ఉన్నాయి, కానీ ఎక్సెల్ పరికరాలు మరింత శక్తివంతమైనవి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(h) Data Limits:</strong> Excel can handle much bigger datasets than Sheets, which has a limit of 2 million cells.</span>
+                    <span class="tel-text"><strong>డేటా పరిమితి:</strong> ఎక్సెల్ చాలా పెద్ద డేటాసెట్‌లను హ్యాండిల్ చేయగలదు, గూగుల్ షీట్స్ పరిమితి 2 మిలియన్ కణాలు (2 million cells).</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(i) Google Services Integration:</strong> Being a cloud-based program, Google Sheets integrates really well with other online Google services and third-party sites.</span>
+                    <span class="tel-text"><strong>గూగుల్ సర్వీసెస్ ఇంటిగ్రేషన్:</strong> క్లౌడ్ ఆధారితం కావడం వల్ల, గూగుల్ షీట్స్ ఇతర గూగుల్ ఆన్‌లైన్ సేవలు మరియు థర్డ్-పార్టీ సైట్‌లతో సులభంగా అనుసంధానమవుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(j) Scripting Languages:</strong> Both have scripting languages to extend their functionality and build custom tools. Google Sheets uses Apps Script (a variant of Javascript) and Excel uses VBA.</span>
+                    <span class="tel-text"><strong>స్క్రిప్టింగ్ భాషలు:</strong> రెండింటిలోనూ కొత్త ఫీచర్ల కోసం స్క్రిప్టింగ్ భాషలు ఉన్నాయి. గూగుల్ షీట్స్ <strong>Apps Script</strong> (జావాస్క్రిప్ట్ వేరియంట్) ని, ఎక్సెల్ <strong>VBA</strong> ని ఉపయోగిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Comparison Summary Table -->
+        <div class="card card-4">
+            <h2>Comparison Table / పోలిక పట్టిక</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature / ఫీచర్</th>
+                        <th>Google Sheets</th>
+                        <th>Microsoft Excel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Platform / వేదిక</strong></td>
+                        <td>Cloud-based</td>
+                        <td>Desktop Program</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost / ధర</strong></td>
+                        <td>Free</td>
+                        <td>Paid / License</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Collaboration / సహకారం</strong></td>
+                        <td>Real-time & Seamless</td>
+                        <td>Limited / Catching up</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Limit / డేటా పరిమితి</strong></td>
+                        <td>2 Million cells limit</td>
+                        <td>Handles much bigger datasets</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scripting / స్క్రిప్టింగ్</strong></td>
+                        <td>Apps Script (JavaScript)</td>
+                        <td>VBA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

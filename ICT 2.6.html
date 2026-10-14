@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 6. Userids, Passwords and E-mail Addresses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #e3f2fd; --intro-border: #1e88e5;
+            --uid-card: #e8f5e9; --uid-border: #43a047;
+            --pwd-card: #fff3e0; --pwd-border: #fb8c00;
+            --pwd-rules-card: #ffebee; --pwd-rules-border: #e53935;
+            --email-card: #f3e5f5; --email-border: #8e24aa;
+            --email-rules-card: #e0f2f1; --email-rules-border: #00897b;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #152738; --intro-border: #42a5f5;
+            --uid-card: #182e1c; --uid-border: #66bb6a;
+            --pwd-card: #332a15; --pwd-border: #ffb74d;
+            --pwd-rules-card: #331a1d; --pwd-rules-border: #ef5350;
+            --email-card: #281a2e; --email-border: #ab47bc;
+            --email-rules-card: #112926; --email-rules-border: #26a69a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-uid { background-color: var(--uid-card); border-left-color: var(--uid-border); }
+        .card-pwd { background-color: var(--pwd-card); border-left-color: var(--pwd-border); }
+        .card-pwd-rules { background-color: var(--pwd-rules-card); border-left-color: var(--pwd-rules-border); }
+        .card-email { background-color: var(--email-card); border-left-color: var(--email-border); }
+        .card-email-rules { background-color: var(--email-rules-card); border-left-color: var(--email-rules-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.04);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .image-box {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Information & Communication Technology</h1>
+            <p>Q. 6. Explain userids, passwords and E-mail addresses. / యూజర్‌ఐడిలు, పాస్‌వర్డ్‌లు మరియు ఈ-మెయిల్ అడ్రస్‌ల వివరణ.</p>
+        </header>
+
+        <!-- Section 1: Introduction & Userids -->
+        <div class="card card-intro">
+            <h2>1. Introduction & Userids / పరిచయం మరియు యూజర్ ఐడి (Userid)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The important items you must know to access a computer system are your <strong>userid (or) login name and your password</strong>.</span>
+                    <span class="tel-text">కంప్యూటర్ సిస్టమ్‌ను యాక్సెస్ చేయడానికి మీరు తప్పనిసరిగా తెలుసుకోవలసిన ముఖ్యమైన విషయాలు మీ <strong>యూజర్‌ఐడి (లేదా) లాగిన్ పేరు మరియు మీ పాస్‌వర్డ్</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Userids:</strong> Your userid identifies you to the computer. Userid is the concatenation of the word user and the abbreviation "id", stands for <strong>identification</strong>.</span>
+                    <span class="tel-text"><strong>యూజర్‌ఐడిలు:</strong> మీ యూజర్‌ఐడి కంప్యూటర్‌కు మిమ్మల్ని గుర్తిస్తుంది. యూజర్‌ఐడి అనేది 'user' అనే పదం మరియు ఐడెంటిఫికేషన్‌కు సంక్షిప్త రూపమైన "id" ల కలయిక.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Userids have some <strong>mnemonic meaning</strong>. For example, Sesha Srinivas might be his first and last name. Such userids are much easier to remember than something like Y197511.</span>
+                    <span class="tel-text">యూజర్‌ఐడిలు గుర్తుంచుకోవడానికి వీలుగా (mnemonic) ఉంటాయి. ఉదాహరణకు, Sesha Srinivas అనేది మొదటి మరియు చివరి పేరు కావచ్చు. Y197511 వంటి సంఖ్యల కంటే ఇటువంటి ఐడిలు గుర్తుంచుకోవడం చాలా సులభం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">If you have a choice pick as descriptive name as possible, but one that is also easy to type and associated with you.</span>
+                    <span class="tel-text">మీకు అవకాశం ఉంటే స్పష్టమైన పేరును ఎంచుకోండి, అయితే అది టైప్ చేయడానికి సులభంగా మరియు మీకు సంబంధించి ఉండాలి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Naming Userids & ISP Practice -->
+        <div class="card card-uid">
+            <h2>2. Guidelines for Choosing Userids / యూజర్‌ఐడి ఎంపిక సూత్రాలు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">If your name is V. Sesha Srinivas, sensible login names are <strong>VS Srinivas, V Srinivas, S Srinivas, Srinivas, VSS</strong> etc.</span>
+                    <span class="tel-text">మీ పేరు V. Sesha Srinivas అయితే, తగిన లాగిన్ పేర్లు: <strong>VS Srinivas, V Srinivas, S Srinivas, Srinivas, VSS</strong> మొదలైనవి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Note that <strong>upper case or lower case is normally not significant</strong> in e-mail names (i.e., SESHU and seshu are treated the same). However, lower case is easier to read and shows respect.</span>
+                    <span class="tel-text">ఈ-మెయిల్ పేర్లలో <strong>పెద్ద అక్షరాలు (Upper case) లేదా చిన్న అక్షరాలు (Lower case) పెద్దగా తేడాను చూపవు</strong> (అంటే, SESHU మరియు seshu రెండూ ఒకేలా పరిగణించబడతాయి).</span>
+                </li>
+                <li>
+                    <span class="eng-text">If your name is Srinivas, do not pick a username of "srinivas", since millions of people share this name and it won't uniquely identify you. If necessary, append a number.</span>
+                    <span class="tel-text">మీ పేరు శ్రీనివాస్ అయితే, కేవలం "srinivas" ని యూజర్‌నేమ్‌గా ఎంచుకోకండి, ఎందుకంటే మిలియన్ల మందికి అదే పేరు ఉంటుంది కాబట్టి అది మిమ్మల్ని ప్రత్యేకంగా గుర్తించలేదు. అవసరమైతే సంఖ్యను జోడించండి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Vanity Plate:</strong> ISPs sometimes assign random alphanumeric userids like car license plates. It is recommended to get a <strong>"vanity plate"</strong> (custom descriptive userid) as you may keep it for years.</span>
+                    <span class="tel-text"><strong>వానిటీ ప్లేట్ (Vanity Plate):</strong> ఐఎస్‌పీలు కార్ లైసెన్స్ ప్లేట్ల లాగా యాదృచ్ఛిక సంఖ్యలను ఐడిలుగా ఇస్తుంటాయి. కానీ చాలా కాలం వాడతాం కాబట్టి మంచి గుర్తింపు ఉండేలా "వానిటీ ప్లేట్" (సొంతంగా ఎంచుకున్న యూజర్‌ఐడి) పొందడం మంచిది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Passwords -->
+        <div class="card card-pwd">
+            <h2>3. Passwords / పాస్‌వర్డ్ (Secret Code)</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>Passwords:</strong> Your password is a <strong>secret code that authenticates you</strong> to the computer. This checks that you are who you say you are.</span>
+                    <span class="tel-text"><strong>పాస్‌వర్డ్:</strong> మీ పాస్‌వర్డ్ అనేది కంప్యూటర్‌కు <strong>మిమ్మల్ని నిర్ధారించే (authenticates) ఒక రహస్య కోడ్</strong>. మీరు చెప్పే వ్యక్తి మీరేనా అని ఇది సరిచూస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You are the only person who knows the password to your computer account, and no one except you should be able to login to your account.</span>
+                    <span class="tel-text">మీ కంప్యూటర్ ఖాతా పాస్‌వర్డ్ మీకు మాత్రమే తెలుస్తుంది, మీరు తప్ప మరెవరూ లాగిన్ కాలేరు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">If your password is a dictionary word, a program might easily break into your account by testing dictionary words online.</span>
+                    <span class="tel-text">మీ పాస్‌వర్డ్ డిక్షనరీలోని సాధారణ పదం అయితే, ప్రోగ్రామర్లు డిక్షనరీ పదాలను పరీక్షించి మీ ఖాతాను హ్యాక్ చేసే ప్రమాదం ఉంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Rules for a Good Password -->
+        <div class="card card-pwd-rules">
+            <h2>4. Rules for a Good Password / మంచి పాస్‌వర్డ్ లక్షణాలు</h2>
+            <div class="sub-heading">A good password should:</div>
+            <ul>
+                <li><span class="eng-text"><strong>(1) Be at least five characters long.</strong></span><span class="tel-text">(1) కనీసం ఐదు అక్షరాల నిడివి కలిగి ఉండాలి.</span></li>
+                <li><span class="eng-text"><strong>(2) Contain non-alphabetical symbols such as #, @, &, %, ! etc.</strong></span><span class="tel-text">(2) #, @, &, %, ! వంటి ఆల్ఫాబెట్ కాని గుర్తులను కలిగి ఉండాలి.</span></li>
+                <li><span class="eng-text"><strong>(3) Contain a number.</strong></span><span class="tel-text">(3) ఒక సంఖ్యను కలిగి ఉండాలి.</span></li>
+                <li><span class="eng-text"><strong>(4) Possess uppercase and lowercase letters.</strong></span><span class="tel-text">(4) పెద్ద (Uppercase) మరియు చిన్న (Lowercase) అక్షరాలను కలిగి ఉండాలి.</span></li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="eng-text">Hard-to-guess examples: <code>OG & $ JaNP</code>, <code>Mul ( ) a #</code>, and <code>V * P*! CA</code>. Change passwords regularly and avoid writing them in online files[cite: 19, 20].</span>
+                    <span class="tel-text">ఊహించడం కష్టంగా ఉండే ఉదాహరణలు: <code>OG & $ JaNP</code>, <code>Mul ( ) a #</code>, మరియు <code>V * P*! CA</code>. పాస్‌వర్డ్‌లను క్రమం తప్పకుండా మారుస్తూ ఉండాలి.</span>
+                </li>
+            </ul>
+
+            <div class="image-box">
+                <svg width="340" height="60" viewBox="0 0 340 60" style="max-width: 100%;">
+                    <rect x="5" y="10" width="75" height="40" rx="4" fill="#43a047" opacity="0.2" stroke="#43a047" stroke-width="2"/>
+                    <text x="42" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">5+ Chars</text>
+                    
+                    <rect x="85" y="10" width="80" height="40" rx="4" fill="#1e88e5" opacity="0.2" stroke="#1e88e5" stroke-width="2"/>
+                    <text x="125" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Aa (Cases)</text>
+
+                    <rect x="170" y="10" width="75" height="40" rx="4" fill="#fb8c00" opacity="0.2" stroke="#fb8c00" stroke-width="2"/>
+                    <text x="207" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Numbers (0-9)</text>
+
+                    <rect x="250" y="10" width="85" height="40" rx="4" fill="#e53935" opacity="0.2" stroke="#e53935" stroke-width="2"/>
+                    <text x="292" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Symbols (@#$)</text>
+                </svg>
+                <div class="image-caption">Diagram: Components of a Strong & Secure Password</div>
+            </div>
+        </div>
+
+        <!-- Section 5: E-mail Addresses Structure -->
+        <div class="card card-email">
+            <h2>5. E-mail Addresses Structure / ఈ-మెయిల్ అడ్రస్ నిర్మాణం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The basic form of an e-mail address is: <strong>user name @ host name . sub domain . domain</strong></span>
+                    <span class="tel-text">ఈ-మెయిల్ చిరునామా ప్రాథమిక రూపం: <strong>user name @ host name . sub domain . domain</strong></span>
+                </li>
+                <li>
+                    <span class="eng-text">Text <strong>before @</strong> specifies the user name of the individual. Text <strong>after @</strong> indicates how the system locates that mailbox.</span>
+                    <span class="tel-text"><strong>@ కి ముందు ఉన్న టెక్స్ట్</strong> వ్యక్తి యొక్క యూజర్ నేమ్‌ను సూచిస్తుంది. <strong>@ తర్వాత ఉన్న టెక్స్ట్</strong> కంప్యూటర్ ఆ మెయిల్‌బాక్స్‌ను ఎలా కనుగొనాలో సూచిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Example 1:</strong> <code>Seshu @ CS. Colorado.edu</code></span>
+                    <span class="tel-text">దిగువ నుండి పైకి అర్ధం చేసుకుంటే: edu అనేది Top Level Domain, colorado అనేది Subdomain, CS అనేది డిపార్ట్‌మెంట్ Subdomain, మరియు Seshu అనేది User.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Example 2:</strong> <code>Seshu@Cricket.CS.Colorado.edu</code> (When Seshu has his own computer called 'cricket').</span>
+                    <span class="tel-text">ఉదాహరణ 2: సెషు కి 'cricket' అనే సొంత కంప్యూటర్ ఉన్నప్పుడు ఈ రకంగా అడ్రస్ ఉంటుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Example 3:</strong> <code>Seshus@wheelabrator.com</code> (where .com is for commercial entity and wheelabrator is the company subdomain).</span>
+                    <span class="tel-text">ఉదాహరణ 3: <code>Seshus@wheelabrator.com</code> (.com వాణిజ్య సంస్థను సూచిస్తుంది, wheelabrator కంపెనీ సబ్‌డొమైన్)[cite: 20, 21].</span>
+                </li>
+            </ul>
+
+            <div class="image-box">
+                <code style="font-size: 1.1rem; color: #1e88e5;">username @ hostname . subdomain . domain</code>
+                <div class="image-caption">Structure: Generic Syntax of an E-mail Address</div>
+            </div>
+        </div>
+
+        <!-- Section 6: E-mail Limitations & Components -->
+        <div class="card card-email-rules">
+            <h2>6. Technical Limits & Message Components / సాంకేతిక పరిమితులు మరియు మెసేజ్ భాగాలు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>Field & Character Limits:</strong> In an e-mail address, a single field (part separated by dots) can be no more than <strong>63 characters long</strong>. All fields combined must total <strong>less than 256 characters</strong>.</span>
+                    <span class="tel-text"><strong>అక్షరాల పరిమితి:</strong> ఈ-మెయిల్ చిరునామాలో చుక్కలతో (dots) వేరుచేయబడిన ఒక భాగం గరిష్టంగా <strong>63 అక్షరాల పొడవు</strong> మించకూడదు. మొత్తం అడ్రస్ కలిసి <strong>256 అక్షరాల కంటే తక్కువగా</strong> ఉండాలి.</span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
