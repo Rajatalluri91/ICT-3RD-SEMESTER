@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Short Answer Questions Q1, Q2 & Q4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --q1-card: #e3f2fd; --q1-border: #1e88e5;
+            --q2-card: #e8f5e9; --q2-border: #43a047;
+            --q4-card: #f3e5f5; --q4-border: #8e24aa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --q1-card: #152738; --q1-border: #42a5f5;
+            --q2-card: #182e1c; --q2-border: #66bb6a;
+            --q4-card: #281a2e; --q4-border: #ab47bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-q1 { background-color: var(--q1-card); border-left-color: var(--q1-border); }
+        .card-q2 { background-color: var(--q2-card); border-left-color: var(--q2-border); }
+        .card-q4 { background-color: var(--q4-card); border-left-color: var(--q4-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Information & Communication Technology</h1>
+            <p>Short Answer Questions (Q.1, Q.2, Q.4) - Complete Notes in English & Telugu</p>
+        </header>
+
+        <!-- Question 1 -->
+        <div class="card card-q1">
+            <h2>Q. 1. What are different ways of learning on the Internet? / ఇంటర్నెట్‌లో నేర్చుకోవడానికి ఉన్న వివిధ మార్గాలు ఏమిటి?</h2>
+            
+            <div class="sub-heading">1. Video tutorials / వీడియో ట్యుటోరియల్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">It is a well known fact that when information goes to your brain through eyes and ears, it is more likely to stay.</span>
+                    <span class="tel-text">కళ్ళు మరియు చెవుల ద్వారా సమాచారం మెదడుకు చేరినప్పుడు అది ఎక్కువ కాలం గుర్తుంటుంది అనేది సుప్రసిద్ధమైన నిజం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Through video tutorials on websites like <strong>YouTube, Vimeo, Dailymotion</strong>, you can impart knowledge on various topics.</span>
+                    <span class="tel-text"><strong>YouTube, Vimeo, Dailymotion</strong> వంటి వెబ్‌సైట్‌లలోని వీడియో ట్యుటోరియల్‌ల ద్వారా మీరు వివిధ అంశాలపై జ్ఞానాన్ని పొందవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The entire classroom session can be captured and posted on these websites so that the students may benefit from them.</span>
+                    <span class="tel-text">మొత్తం క్లాస్‌రూమ్ సెషన్‌ను రికార్డ్ చేసి ఈ వెబ్‌సైట్‌లలో పోస్ట్ చేయవచ్చు, తద్వారా విద్యార్థులు వాటి నుండి ప్రయోజనం పొందవచ్చు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">2. Vast ocean of knowledge / విస్తారమైన పరిజ్ఞానం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Internet has an immense amount of knowledge which can be searched easily, thanks to very smart search engines like <strong>Google</strong>, which anticipate the users' requirement and suggest them where to find the most useful information.</span>
+                    <span class="tel-text">ఇంటర్నెట్‌లో అపారమైన పరిజ్ఞానం ఉంది, దీనిని సులభంగా వెతకవచ్చు. <strong>Google</strong> వంటి స్మార్ట్ సెర్చ్ ఇంజిన్‌లు వినియోగదారుల అవసరాలను అంచనా వేసి అత్యంత ఉపయోగకరమైన సమాచారాన్ని ఎక్కడ కనుగొనాలో సూచిస్తాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The search engine programmes are so designed that the most relevant information is returned to the users.</span>
+                    <span class="tel-text">అత్యంత సంబంధితమైన సమాచారాన్ని వినియోగదారులకు అందించేలా సెర్చ్ ఇంజిన్ ప్రోగ్రామ్‌లు రూపొందించబడ్డాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">There are many websites which are dedicated to providing free knowledge to the users like <strong>Wikipedia, Quora.com, ask.com</strong> and many others.</span>
+                    <span class="tel-text">వినియోగదారులకు ఉచిత పరిజ్ఞానాన్ని అందించడానికి <strong>Wikipedia, Quora.com, ask.com</strong> వంటి అనేక వెబ్‌సైట్‌లు అందుబాటులో ఉన్నాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">3. Social media platform / సోషల్ మీడియా వేదికలు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Social media platforms are another great way to learn new things on the internet.</span>
+                    <span class="tel-text">ఇంటర్నెట్‌లో కొత్త విషయాలను నేర్చుకోవడానికి సోషల్ మీడియా ప్లాట్‌ఫారమ్‌లు మరొక అద్భుతమైన మార్గం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The pages of social media websites are filled with information and knowledge which you may not find anywhere else.</span>
+                    <span class="tel-text">సోషల్ మీడియా వెబ్‌సైట్‌ల పేజీలు వేరెక్కడా దొరకని సమాచారం మరియు పరిజ్ఞానంతో నిండి ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The best part of learning from internet is that you get updated and relevant information.</span>
+                    <span class="tel-text">ఇంటర్నెట్ నుండి నేర్చుకోవడంలో ఉత్తమమైన అంశం ఏమిటంటే మీరు ఎప్పటికప్పుడు తాజా మరియు సంబంధిత సమాచారాన్ని పొందుతారు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">4. Mobile application / మొబైల్ అప్లికేషన్లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">With mobile application becoming the buzzword now, they are an excellent way to learn on the go.</span>
+                    <span class="tel-text">ప్రస్తుతం మొబైల్ అప్లికేషన్‌లు బాగా ప్రాచుర్యం పొందడంతో, ప్రయాణంలో ఉన్నప్పుడు కూడా నేర్చుకోవడానికి ఇవి ఒక అద్భుతమైన మార్గం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Even when you are travelling, you can study about various topics on the mobile application.</span>
+                    <span class="tel-text">మీరు ప్రయాణిస్తున్నప్పుడు కూడా మొబైల్ అప్లికేషన్‌లో వివిధ అంశాల గురించి చదువుకోవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">You just need to have a smartphone with internet connection.</span>
+                    <span class="tel-text">దీని కోసం ఇంటర్నెట్ కనెక్షన్ ఉన్న ఒక స్మార్ట్‌ఫోన్ ఉంటే సరిపోతుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">5. Cloud services / క్లౌడ్ సేవలు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Cloud services like <strong>Skydrive, Dropbox and Google Drive</strong> etc. let you store the information in the form of data online.</span>
+                    <span class="tel-text"><strong>Skydrive, Dropbox, Google Drive</strong> వంటి క్లౌడ్ సేవలు డేటా రూపంలో సమాచారాన్ని ఆన్‌లైన్‌లో నిల్వ చేయడానికి మిమ్మల్ని అనుమతిస్తాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">This data can also be shared with people. These cloud services have made imparting and sharing knowledge even easier.</span>
+                    <span class="tel-text">ఈ డేటాను ఇతరులతో కూడా పంచుకోవచ్చు. ఈ క్లౌడ్ సేవలు పరిజ్ఞానాన్ని పంచడం మరియు మార్పిడి చేసుకోవడం మరింత సులభం చేశాయి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Link Tag -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%203.1.1.png?raw=true" alt="Ways of Learning on Internet">
+                <div class="image-caption">Figure 1: Overview of Learning Ways on Internet (Video, Social Media, Mobile Apps, Cloud)</div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card card-q2">
+            <h2>Q. 2. Explain ICT for learning. / అభ్యాసనంలో ఐసిటి (ICT) ని వివరించండి.</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">In educational context, ICT has the potential to increase access to education and improve its relevance and quality.</span>
+                    <span class="tel-text">విద్యా రంగంలో, విద్య అవకాశాలను పెంచడానికి మరియు దాని నాణ్యతను మెరుగుపరచడానికి ICT కి గొప్ప సామర్థ్యం ఉంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Tinio (2002) asserted that ICT has a tremendous impact on education in terms of acquisition and absorption of knowledge to both teachers and students through the promotion of:</span>
+                    <span class="tel-text">Tinio (2002) ప్రకారం, ఉపాధ్యాయులు మరియు విద్యార్థులు ఇద్దరూ జ్ఞానాన్ని పెంపొందించుకోవడానికి మరియు గ్రహించడానికి ICT ఎంతో దోహదపడుతుంది:</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(a) Active learning / చురుకైన అభ్యాసనం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">ICT tools help for the calculation and analysis of information obtained for examination and also students' performance report are all being computerised and made easily available for inquiry.</span>
+                    <span class="tel-text">పరీక్షల సమాచారాన్ని గణించడం మరియు విశ్లేషించడంలో ICT సాధనాలు సహాయపడతాయి. విద్యార్థుల పనితీరు నివేదికలు కంప్యూటరీకరించబడి విచారణ కోసం సులభంగా అందుబాటులో ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">In contrast to memorisation-based or rote learning, ICT promotes learner engagement as learners choose what to learn at their own pace and work on real life situations' problems.</span>
+                    <span class="tel-text">బట్టీ పట్టే విధానానికి భిన్నంగా, విద్యార్థులు తమ స్వంత వేగంతో నేర్చుకోవడానికి మరియు నిజ జీవిత సమస్యలపై పనిచేయడానికి ICT చురుకైన భాగస్వామ్యాన్ని ప్రోత్సహిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(b) Collaborative and Cooperative learning / సహకార అభ్యాసనం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">ICT encourages interaction and cooperation among students, teachers regardless of distance which is between them.</span>
+                    <span class="tel-text">దూరంతో సంబంధం లేకుండా విద్యార్థులు మరియు ఉపాధ్యాయుల మధ్య పరస్పర చర్య మరియు సహకారాన్ని ICT ప్రోత్సహిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It also provides students the chance to work with people from different cultures and working together in groups, hence help students to enhance their communicative skills as well as their global awareness.</span>
+                    <span class="tel-text">వివిధ సంస్కృతుల ప్రజలతో కలిసి పనిచేసే అవకాశాన్ని విద్యార్థులకు అందిస్తుంది. ఇది వారి కమ్యూనికేషన్ నైపుణ్యాలను మరియు ప్రపంచ అవగాహనను పెంచుతుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(c) Creative Learning / సృజనాత్మక అభ్యాసనం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">ICT promotes the manipulation of existing information and to create one's own knowledge to produce a tangible product or a given instructional purpose.</span>
+                    <span class="tel-text">అందుబాటులో ఉన్న సమాచారాన్ని ఉపయోగించి స్వంతంగా జ్ఞానాన్ని సృష్టించుకోవడానికి మరియు ఉపయోగకరమైన ఉత్పత్తులను రూపొందించడానికి ICT ప్రోత్సహిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(d) Integrative learning / సమగ్ర అభ్యాసనం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">ICT promotes an integrative approach to teaching and learning, by eliminating the synthetic separation between theory and practice unlike in the traditional classroom where emphasis encloses just a particular aspect.</span>
+                    <span class="tel-text">సాంప్రదాయ తరగతి గది మాదిరిగా కాకుండా, సిద్ధాంతం (theory) మరియు ఆచరణ (practice) మధ్య ఉన్న వ్యత్యాసాన్ని తొలగిస్తూ బోధన మరియు అభ్యాసంలో సమగ్ర దృక్పథాన్ని ICT ప్రోత్సహిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(e) Evaluative learning / మూల్యాంకన అభ్యాసనం:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Use of ICT for learning is student-centered and provides useful feedback through various interactive features.</span>
+                    <span class="tel-text">నేర్చుకోవడానికి ICT ఉపయోగం విద్యార్థి-కేంద్రీకృతమైనది మరియు వివిధ ఇంటరాక్టివ్ ఫీచర్ల ద్వారా ఉపయోగకరమైన ఫీడ్‌బ్యాక్‌ను అందిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">ICT allow students to discover and learn through new ways of teaching and learning which are sustained by constructivist theories of learning rather than students do memorisation and rote learning.</span>
+                    <span class="tel-text">విద్యార్థులు బట్టీ పట్టకుండా, నిర్మాణాత్మక అభ్యాస సిద్ధాంతాల ద్వారా కొత్త మార్గాల్లో ఆవిష్కరించడానికి మరియు నేర్చుకోవడానికి ICT అనుమతిస్తుంది.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Link Tag -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%203.3.1.png?raw=true" alt="ICT for Learning Dimensions">
+                <div class="image-caption">Figure 2: Key Dimensions of ICT in Education (Active, Collaborative, Creative, Integrative)</div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="card card-q4">
+            <h2>Q. 4. What is Moodle ? Explain ICT in Moodle. / మూడిల్ (Moodle) అంటే ఏమిటి? మూడిల్‌లో ఐసిటి ని వివరించండి.</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Moodle is a <strong>free and open-source software LMS (Learning Management System)</strong>.</span>
+                    <span class="tel-text">మూడిల్ (Moodle) అనేది ఒక <strong>ఉచిత మరియు ఓపెన్ సోర్స్ సాఫ్ట్‌వేర్ LMS (లెర్నింగ్ మేనేజ్‌మెంట్ సిస్టమ్)</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It is used for various forms of learning: to mention a few, <strong>blended learning, distance education, flipped classroom</strong> are some of its uses.</span>
+                    <span class="tel-text">ఇది వివిధ రకాల అభ్యాసాల కోసం ఉపయోగించబడుతుంది: <strong>బ్లెండెడ్ లెర్నింగ్, డిస్టెన్స్ ఎడ్యుకేషన్, ఫ్లిప్డ్ క్లాస్‌రూమ్</strong> మొదలైనవి దీని కొన్ని ఉపయోగాలు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It is especially used for e-learning projects in <strong>schools, universities, workplaces, etc.</strong></span>
+                    <span class="tel-text">పాఠశాలలు, విశ్వవిద్యాలయాలు, పని ప్రదేశాలలో ఇ-లెర్నింగ్ ప్రాజెక్ట్‌ల కోసం ఇది ప్రత్యేకంగా ఉపయోగించబడుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Moodle as a learning platform enhances existing learning environments. As an E-learning tool, Moodle has a wide range of standard and innovative features like <strong>calendar and Gradebook</strong>.</span>
+                    <span class="tel-text">మూడిల్ ఒక లెర్నింగ్ ప్లాట్‌ఫారమ్‌గా ఉన్నత విద్యా వాతావరణాన్ని మెరుగుపరుస్తుంది. ఇ-లెర్నింగ్ టూల్‌గా, మూడిల్‌లో <strong>క్యాలెండర్ మరియు గ్రేడ్‌బుక్</strong> వంటి అనేక ప్రామాణికమైన ఫీచర్లు ఉన్నాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Full Form and History / పూర్తి రూపం మరియు చరిత్ర:</div>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>MOODLE</strong> stands for <strong>Modular Object-Oriented Dynamic Learning Environment</strong>.</span>
+                    <span class="tel-text">MOODLE అనగా <strong>మాడ్యులర్ ఆబ్జెక్ట్-ఓరియంటెడ్ డైనమిక్ లెర్నింగ్ ఎన్విరాన్మెంట్</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">MOODLE is a Learning Management System (LMS) - a free, Open Source Software package designed using sound pedagogical principles, to help educators create effective quality courses and students learn.</span>
+                    <span class="tel-text">ఇది విద్యావేత్తలు నాణ్యమైన కోర్సులను రూపొందించడానికి మరియు విద్యార్థులు నేర్చుకోవడానికి సహాయపడే ఉచిత, ఓపెన్ సోర్స్ సాఫ్ట్‌వేర్ ప్యాకేజీ.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Martin Dougiamas</strong>, Founder and Lead Developer of Moodle, decided to create his own online learning environment in the open source format since 2000.</span>
+                    <span class="tel-text">మూడిల్ వ్యవస్థాపకుడు మరియు లీడ్ డెవలపర్ <strong>మార్టిన్ డౌజియామాస్ (Martin Dougiamas)</strong> 2000 సంవత్సరం నుండి దీనిని ఓపెన్ సోర్స్ ఫార్మాట్‌లో అభివృద్ధి చేశారు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Features and Advantages in Education / విద్యా రంగంలో ఫీచర్లు మరియు ఉపయోగాలు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Educators can add email, discussion boards, live chats, online quizzes, and a variety of other modules that fit their needs.</span>
+                    <span class="tel-text">ఉపాధ్యాయులు తమ అవసరాలకు తగినట్లుగా ఇమెయిల్, చర్చా వేదికలు (discussion boards), లైవ్ చాట్‌లు, ఆన్‌లైన్ క్విజ్‌లు మరియు ఇతర మాడ్యూళ్లను జోడించవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Another advantage of open source systems is that users can add new features and enhancements that are available to all users at no additional cost.</span>
+                    <span class="tel-text">ఓపెన్ సోర్స్ వల్ల అదనపు ఖర్చు లేకుండా వినియోగదారులు కొత్త ఫీచర్లు మరియు మెరుగుదలలను ఉచితంగా పొందే అవకాశం ఉంటుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Moodle was designed to support and promote users interested in developing constructivist, student-centered learning environments.</span>
+                    <span class="tel-text">విద్యార్థి-కేంద్రీకృతమైన మరియు నిర్మాణాత్మకమైన అభ్యాస వాతావరణాన్ని ప్రోత్సహించడానికి మూడిల్ రూపొందించబడింది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Moodle is also known as <strong>Virtual Learning Environment (VLE)</strong>.</span>
+                    <span class="tel-text">మూడిల్‌ను <strong>వర్చువల్ లెర్నింగ్ ఎన్విరాన్మెంట్ (VLE)</strong> అని కూడా పిలుస్తారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Moodle is an LMS that uses <strong>LAMP (Linux, Apache, PHP, MySQL)</strong> based protocol.</span>
+                    <span class="tel-text">మూడిల్ అనేది <strong>LAMP (Linux, Apache, PHP, MySQL)</strong> ప్రోటోకాల్ ఆధారంగా పనిచేసే LMS.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Link Tag -->
+            <div class="github-img-box">
+                <img src="https://www.vkcreativelearning.com/uploads/blog/moodle-learning-management-system.jpeg" alt="Moodle LMS Features Architecture">
+                <div class="image-caption">Figure 3: Moodle Open Source LMS Platform Architecture & Features</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
