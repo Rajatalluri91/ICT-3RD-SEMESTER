@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Question 1 - Computer Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #e3f2fd; --intro-border: #1e88e5;
+            --areas-card: #e8f5e9; --areas-border: #43a047;
+            --threats-card: #fff3e0; --threats-border: #fb8c00;
+            --malicious-card: #ffebee; --malicious-border: #e53935;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0a3d34 0%, #115e47 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #152738; --intro-border: #42a5f5;
+            --areas-card: #182e1c; --areas-border: #66bb6a;
+            --threats-card: #332a15; --threats-border: #ffb74d;
+            --malicious-card: #331a1d; --malicious-border: #ef5350;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-areas { background-color: var(--areas-card); border-left-color: var(--areas-border); }
+        .card-threats { background-color: var(--threats-card); border-left-color: var(--threats-border); }
+        .card-malicious { background-color: var(--malicious-card); border-left-color: var(--malicious-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Box */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 1. What is Computer security?</h1>
+            <p>కంప్యూటర్ సెక్యూరిటీ అంటే ఏమిటి?</p>
+        </header>
+
+        <!-- Definition & Overview -->
+        <div class="card card-intro">
+            <h2>1. What is Computer Security? / కంప్యూటర్ సెక్యూరిటీ నిర్వచనం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Computer security, also known as <strong>cyber security or IT security</strong>, is the protection of information systems from theft or damage to the hardware, the software, and to the information on them, as well as from disruption or misdirection of the services they provide.</span>
+                    <span class="tel-text">కంప్యూటర్ సెక్యూరిటీని <strong>సైబర్ సెక్యూరిటీ లేదా ఐటీ సెక్యూరిటీ</strong> అని కూడా పిలుస్తారు. ఇది ఇన్ఫర్మేషన్ సిస్టమ్‌లను హార్డ్‌వేర్, సాఫ్ట్‌వేర్ మరియు వాటిలోని సమాచారానికి జరిగే దొంగతనం లేదా నష్టం నుండి, అలాగే అవి అందించే సేవలకు ఆటంకం కలగకుండా రక్షించే విధానం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It includes controlling physical access to the hardware, as well as protecting against harm that may come via network access, data and code injection, and due to malpractice by operators, whether intentional, accidental, or due to them being tricked into deviating from secure procedures.</span>
+                    <span class="tel-text">ఇందులో హార్డ్‌వేర్‌కు భౌతిక యాక్సెస్ నింత్రణతో పాటు నెట్‌వర్క్ యాక్సెస్, డేటా మరియు కోడ్ ఇంజెక్షన్ ద్వారా వచ్చే హాని నుండి, మరియు ఆపరేటర్ల పొరపాట్లు (ఉద్దేశపూర్వకంగా, ప్రమాదవశాత్తు లేదా మోసపూరితంగా సురక్షిత పద్ధతుల నుండి పక్కదారి పట్టడం) నుండి రక్షించడం కూడా ఉంటుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Four Main Areas -->
+        <div class="card card-areas">
+            <h2>2. Four Main Areas of Computer Security / కంప్యూటర్ సెక్యూరిటీలోని 4 ముఖ్య ప్రాంతాలు</h2>
+            <p style="margin-bottom: 10px; font-weight: 500;">Computer Security is concerned with four main areas:</p>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>1. Confidentiality:</strong> Only authorized users can access the data resources and information.</span>
+                    <span class="tel-text"><strong>1. కాన్ఫిడెన్షియాలిటీ (రహస్యత):</strong> కేవలం అధికారిక వినియోగదారులు మాత్రమే డేటా వనరులను మరియు సమాచారాన్ని యాక్సెస్ చేయగలరు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>2. Integrity:</strong> Only authorized users should be able to modify the data when needed.</span>
+                    <span class="tel-text"><strong>2. ఇంటెగ్రిటీ (సమగ్రత):</strong> అవసరమైనప్పుడు డేటాను కేవలం అధికారిక వినియోగదారులు మాత్రమే సవరించగలగాలి (modify చేయగలగాలి).</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>3. Availability:</strong> Data should be available to users when needed.</span>
+                    <span class="tel-text"><strong>3. అవైలబిలిటీ (అందుబాటు):</strong> వినియోగదారులకు అవసరమైనప్పుడు డేటా అందుబాటులో ఉండాలి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>4. Authentication:</strong> Are you really communicating with whom you think you are communicating with.</span>
+                    <span class="tel-text"><strong>4. ఆథెంటికేషన్ (ధృవీకరణ):</strong> మీరు నిజంగా ఎవరితోనైతే సంప్రదిస్తున్నారని అనుకుంటున్నారో వారిత్లోనే కమ్యూనికేట్ చేస్తున్నారా అని సరిచూసుకోవడం.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 1 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%203.1.0.png?raw=true" alt="Four Pillars of Computer Security">
+                <div class="image-caption">Figure 1: The Four Pillars of Computer Security (CIA & Authentication)[cite: 31, 32]</div>
+            </div>
+        </div>
+
+        <!-- Data Theft & Intrusions -->
+        <div class="card card-threats">
+            <h2>3. Prevention of Data Theft & Unauthorized Intrusions / డేటా దొంగతనం మరియు అక్రమ ప్రవేశాల నివారణ</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Prevention of data theft such as bank account numbers, credit card information, passwords, work related documents or sheets, etc. is essential in today's communications since many of our day to day actions depend on the security of the data paths.</span>
+                    <span class="tel-text">మన దైనందిన కార్యకలాపాలు డేటా మార్గాల భద్రతపై ఆధారపడి ఉంటాయి కాబట్టి బ్యాంక్ ఖాతా సంఖ్యలు, క్రెడిట్ కార్డ్ సమాచారం, పాస్‌వర్డ్‌లు, పనికి సంబంధించిన డాక్యుమెంట్‌లు మొదలైన వాటి డేటా దొంగతనాన్ని నివారించడం అత్యవసరం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Data present in a computer can also be misused by unauthorized intrusions.</span>
+                    <span class="tel-text">కంప్యూటర్‌లో ఉన్న డేటా అనధికారిక ప్రవేశాల (unauthorized intrusions) ద్వారా దుర్వినియోగం అయ్యే అవకాశం ఉంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">An intruder can modify and change the program source codes and can also use your pictures or email accounts to create derogatory content such as pornographic images, fake misleading and offensive social accounts.</span>
+                    <span class="tel-text">అక్రమంగా ప్రవేశించే వ్యక్తి (intruder) ప్రోగ్రామ్ సోర్స్ కోడ్‌లను సవరించవచ్చు, అంతేకాకుండా అసభ్యకర చిత్రాలు, నకిలీ మరియు అభ్యంతరకరమైన సోషల్ మీడియా ఖాతాలను సృష్టించడానికి మీ ఫోటోలు లేదా ఈమెయిల్ ఖాతాలను దుర్వినియోగం చేయవచ్చు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Malicious Intents & DDoS Attacks -->
+        <div class="card card-malicious">
+            <h2>4. Malicious Intents & Cyber Attacks (DDoS) / దాడి ప్రక్రియలు మరియు DDoS దాడులు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Malicious intents can also be a factor in computer security. Intruders often use your computers for attacking other computers or websites or networks for creating havoc.</span>
+                    <span class="tel-text">దురుద్దేశాలు (Malicious intents) కూడా కంప్యూటర్ సెక్యూరిటీని దెబ్బతీస్తాయి. హ్యాకర్లు తరచుగా ఇతర కంప్యూటర్లు, వెబ్‌సైట్‌లు లేదా నెట్‌వర్క్‌లపై దాడులు చేయడానికి మరియు అలజడి సృష్టించడానికి మీ కంప్యూటర్‌ను వాడుకుంటారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Vengeful hackers might crash someone's computer system to create data loss.</span>
+                    <span class="tel-text">పగబట్టిన హ్యాకర్లు డేటాను నష్టపరచడానికి ఇతరుల కంప్యూటర్ సిస్టమ్‌ను క్రాష్ చేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>DDOS Attacks:</strong> DDOS attacks can be made to prevent access to websites by crashing the server.</span>
+                    <span class="tel-text"><strong>DDoS దాడులు:</strong> సర్వర్‌ను క్రాష్ చేయడం ద్వారా వెబ్‌సైట్‌లకు యాక్సెస్‌ను నిరోధించడానికి DDOS (Distributed Denial of Service) దాడులు చేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Above factors imply that your data should remain safe and confidential. Therefore, it is necessary to protect your computer and hence the need for Computer Security arises.</span>
+                    <span class="tel-text">పైన పేర్కొన్న అంశాలన్నీ మీ డేటా సురక్షితంగా మరియు రహస్యంగా ఉండాలని స్పష్టం చేస్తున్నాయి. అందువల్ల, మీ కంప్యూటర్‌ను సంరక్షించుకోవడం అవసరం, దీని ద్వారానే కంప్యూటర్ సెక్యూరిటీ యొక్క అవసరం ఏర్పడుతుంది.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 2 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/ICT%203.1.1.1.png?raw=true" alt="Cyber Security Threats and DDoS Attack Mechanism">
+                <div class="image-caption">Figure 2: Cyber Security Threats & DDoS Server Attack Mechanism</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
