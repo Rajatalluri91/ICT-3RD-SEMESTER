@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 9. Firewall & Its Uses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --what-card: #ffebee; --what-border: #e53935;
+            --function-card: #fff3e0; --function-border: #fb8c00;
+            --how-card: #e3f2fd; --how-border: #1e88e5;
+            --analogy-card: #f3e5f5; --analogy-border: #8e24aa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #711c1c 0%, #a82e14 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --what-card: #331a1d; --what-border: #ef5350;
+            --function-card: #332a15; --function-border: #ffb74d;
+            --how-card: #152738; --how-border: #42a5f5;
+            --analogy-card: #281a2e; --analogy-border: #ab47bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 10px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-what { background-color: var(--what-card); border-left-color: var(--what-border); }
+        .card-function { background-color: var(--function-card); border-left-color: var(--function-border); }
+        .card-how { background-color: var(--how-card); border-left-color: var(--how-border); }
+        .card-analogy { background-color: var(--analogy-card); border-left-color: var(--analogy-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 9. What is firewall? What is the use of firewall?</h1>
+            <p>ఫైర్‌వాల్ అంటే ఏమిటి?</p>
+        </header>
+
+        <!-- What is Firewall? Section -->
+        <div class="card card-what">
+            <h2>1. What is Firewall? / ఫైర్‌వాల్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A firewall is a <strong>network security device</strong> that monitors incoming and outgoing network traffic.</span>
+                    <span class="tel-text">ఫైర్‌వాల్ అనేది ఇన్‌కమింగ్ మరియు అవుట్‌గోయింగ్ నెట్‌వర్క్ ట్రాఫిక్‌ను పర్యవేక్షించే ఒక <strong>నెట్‌వర్క్ సెక్యూరిటీ పరికరం (network security device)</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It permits or blocks data packets based on a set of security rules.</span>
+                    <span class="tel-text">ఇది ముందే నిర్దేశించిన భద్రతా నియమాల (security rules) ఆధారంగా డేటా ప్యాకెట్లను అనుమతిస్తుంది లేదా నిరోధిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Function & Purpose -->
+        <div class="card card-function">
+            <h2>2. Main Function & Purpose / ప్రధాన విధి మరియు ఉద్దేశ్యం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Its purpose is to establish a <strong>barrier between your internal network and incoming traffic from external sources</strong> (such as the internet) in order to block malicious traffic like viruses and hackers.</span>
+                    <span class="tel-text">దీని ముఖ్య ఉద్దేశ్యం <strong>మీ అంతర్గత నెట్‌వర్క్ (internal network) మరియు బాహ్య వనరుల (ఇంటర్నెట్ వంటివి) నుండి వచ్చే ట్రాఫిక్ మధ్య ఒక అవరోధాన్ని (barrier) ఏర్పాటు చేయడం</strong>. దీని ద్వారా వైరస్‌లు మరియు హ్యాకర్ల వంటి హానికరమైన ట్రాఫిక్‌ను నిరోధిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Firewalls carefully analyze incoming traffic based on pre-established rules and filter traffic coming from unsecured or suspicious sources to prevent attacks.</span>
+                    <span class="tel-text">ఫైర్‌వాల్‌లు ముందుగా ఏర్పాటు చేసిన నియమాల ఆధారంగా ఇన్‌కమింగ్ ట్రాఫిక్‌ను జాగ్రత్తగా విశ్లేషిస్తాయి మరియు దాడులను నిరోధించడానికి సురక్షితం కాని లేదా అనుమానాస్పద వనరుల నుండి వచ్చే ట్రాఫిక్‌ను వడపోస్తాయి (filter).</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Working and Uses -->
+        <div class="card card-how">
+            <h2>3. How Firewalls are Used & Their Functions / ఫైర్‌వాల్ ఉపయోగాలు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Firewalls guard traffic at a computer's entry point, called <strong>ports</strong>, which is where information is exchanged with external devices.</span>
+                    <span class="tel-text">కంప్యూటర్ యొక్క ప్రవేశ ద్వారాల వద్ద ఫైర్‌వాల్‌లు ట్రాఫిక్‌ను కాపాడతాయి, వీటిని <strong>పోర్ట్‌లు (ports)</strong> అంటారు. ఇక్కడే బాహ్య పరికరాలతో సమాచారం మార్పిడి జరుగుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">For example, "Source address 172.18.1.1 is allowed to reach destination 172.18.2.1 over port 22". This precise control is how firewalls maintain security.</span>
+                    <span class="tel-text">ఉదాహరణకు, "సోర్స్ చిరునామా 172.18.1.1 ని పోర్ట్ 22 ద్వారా గమ్యస్థానం 172.18.2.1 కి చేరడానికి అనుమతిస్తారు". ఈ ఖచ్చితమైన నియంత్రణ ద్వారా ఫైర్‌వాల్‌లు భద్రతను నిర్వహిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 1 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.9.1.png?raw=true" alt="Firewall Traffic Flow and Analogy">
+                <div class="image-caption">Figure 1: Firewall Filtering Process (Allowed vs Blocked Traffic) </div>
+            </div>
+        </div>
+
+        <!-- Effective Analogy Section -->
+        <div class="card card-analogy">
+            <h2>4. An Effective Analogy / ఒక స్పష్టమైన ఉదాహరణ (పోలిక)</h2>
+            <p style="margin-bottom: 10px; font-weight: 500;">Think of firewalls in terms of IP addresses as houses, and port numbers as rooms:</p>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>Only trusted people (source addresses)</strong> are allowed to enter the house (destination address) at all—then it's further filtered so that people within the house are <strong>only allowed to access certain rooms (destination ports)</strong>.</span>
+                    <span class="tel-text"><strong>నమ్మదగిన వ్యక్తులు (source addresses)</strong> మాత్రమే ఇంటిలోకి (destination address) ప్రవేశించడానికి అనుమతించబడతారు. తర్వాత, ఇంటిలోని వ్యక్తులు <strong>కొన్ని గదులను (destination ports) మాత్రమే యాక్సెస్ చేయడానికి అనుమతించేలా</strong> మరింత వడపోత (filter) జరుగుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Depending on if they're the owner, a child, or a guest. The owner is allowed to any room (any port), while children and guests are allowed into a certain set of rooms (specific ports).</span>
+                    <span class="tel-text">వారు యజమాని, బిడ్డ, లేదా అతిథి అనే దానిపై ఆధారపడి ఉంటుంది. యజమాని ఏ గదినికైనా (ఏ పోర్ట్‌నైనా) యాక్సెస్ చేయవచ్చు, కానీ పిల్లలు మరియు అతిథులు కొన్ని నిర్దిష్ట గదులను (specific ports) మాత్రమే యాక్సెస్ చేయడానికి అనుమతించబడతారు.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
