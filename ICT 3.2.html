@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 2. Classification of Computer Viruses and Worms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --intro-card: #ffebee; --intro-border: #e53935;
+            --virus-card: #fff3e0; --virus-border: #fb8c00;
+            --worm-card: #e3f2fd; --worm-border: #1e88e5;
+            --type-card: #f3e5f5; --type-border: #8e24aa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #5f0909 0%, #3b0000 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #331a1d; --intro-border: #ef5350;
+            --virus-card: #332a15; --virus-border: #ffb74d;
+            --worm-card: #152738; --worm-border: #42a5f5;
+            --type-card: #281a2e; --type-border: #ab47bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-virus { background-color: var(--virus-card); border-left-color: var(--virus-border); }
+        .card-worm { background-color: var(--worm-card); border-left-color: var(--worm-border); }
+        .card-type { background-color: var(--type-card); border-left-color: var(--type-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Box Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 2. Write about classification of computer viruses and worms.</h1>
+            <p>కంప్యూటర్ వైరస్‌లు మరియు వర్మ్స్ వర్గీకరణ.</p>
+        </header>
+
+        <!-- Intro Section -->
+        <div class="card card-intro">
+            <h2>1. Introduction / పరిచయం</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Computer Viruses are classified according to their nature of infection and behavior. Different types of computer virus classification are given below.</span>
+                    <span class="tel-text">కంప్యూటర్ వైరస్‌లు ఇన్ఫెక్షన్ కలిగించే స్వభావం మరియు ప్రవర్తన ఆధారంగా వర్గీకరించబడతాయి. వివిధ రకాల కంప్యూటర్ వైరస్ వర్గీకరణలు క్రింద ఇవ్వబడ్డాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Virus Classification Section -->
+        <div class="card card-virus">
+            <h2>2. Classification of Computer Viruses / కంప్యూటర్ వైరస్‌ల వర్గీకరణ</h2>
+
+            <div class="sub-heading">(a) Boot Sector Virus / బూట్ సెక్టర్ వైరస్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">A Boot Sector Virus infects the first sector of the hard drive, where the Master Boot Record (MBR) is stored. The Master Boot Record (MBR) stores the disk's primary partition table and to store bootstrapping instructions which are executed after the computer's BIOS passes execution to machine code.</span>
+                    <span class="tel-text">బూట్ సెక్టర్ వైరస్ మాస్టర్ బూట్ రికార్డ్ (MBR) నిల్వ చేయబడిన హార్డ్ డ్రైవ్ యొక్క మొదటి సెక్టార్‌ను ఇన్ఫెక్ట్ చేస్తుంది. MBR అనేది డిస్క్ ప్రాథమిక పార్టిషన్ పట్టికను మరియు బూట్‌స్ట్రాపింగ్ సూచనలను నిల్వ చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">If a computer is infected with Boot Sector Virus, when the computer is turned on, the virus launches immediately and is loaded into memory, enabling it to control the computer.</span>
+                    <span class="tel-text">కంప్యూటర్ ఆన్ చేసిన వెంటనే ఈ వైరస్ వెంటనే రన్ అయి మెమరీలోకి లోడ్ అవుతుంది, తద్వారా కంప్యూటర్‌ను తన నియంత్రణలోకి తీసుకుంటుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(b) File Deleting Viruses / ఫైల్ డిలీటింగ్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">A File Deleting Virus is designed to delete critical files which are the part of Operating System or data files.</span>
+                    <span class="tel-text">ఆపరేటింగ్ సిస్టమ్‌లో భాగమైన ముఖ్యమైన ఫైళ్లను లేదా డేటా ఫైళ్లను తొలగించడానికి ఇది రూపొందించబడింది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(c) Mass Mailer Viruses / మాస్ మెయిలర్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Mass Mailer Viruses search e-mail programs like MS outlook for e-mail addresses which are stored in the address book and replicate by e-mailing themselves to the addresses stored in the address book of the e-mail program.</span>
+                    <span class="tel-text">MS Outlook వంటి ఈ-మెయిల్ ప్రోగ్రామ్‌లలోని అడ్రస్ బుక్‌లో ఉన్న ఈ-మెయిల్ అడ్రస్‌లను వెతికి, ఆ అడ్రస్‌లకు తమను తాము ఈ-మెయిల్ చేసుకుంటూ వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(d) Macro Viruses / మ్యాక్రో వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Macro viruses are written by using the Macro programming languages like VBA, which is a feature of MS office package. A macro is a way to automate and simplify a task that you perform repeatedly in MS office suit (MS Excel, MS Word etc).</span>
+                    <span class="tel-text">MS Office ప్యాకేజీలోని VBA వంటి మ్యాక్రో ప్రోగ్రామింగ్ భాషలను ఉపయోగించి ఇవి రాయబడతాయి. MS Excel, MS Wordలలో పునరావృతమయ్యే పనులను స్వయంచాలకం చేయడానికి మ్యాక్రోలు ఉపయోగపడతాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">These macros are usually stored as part of the document or spreadsheet and can travel to other systems when these files are transferred to another computers.</span>
+                    <span class="tel-text">ఈ మ్యాక్రోలు డాక్యుమెంట్ లేదా స్ప్రెడ్‌షీట్‌లో భాగంగా నిల్వ చేయబడతాయి, మరియు ఈ ఫైళ్లను ఇతర కంప్యూటర్లకు పంపినప్పుడు అక్కడికి వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(e) Polymorphic Viruses / పాలిమార్ఫిక్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Polymorphic Viruses have the capability to change their appearance and change their code every time they infect a different system. This helps the Polymorphic Viruses to hide from anti-virus software.</span>
+                    <span class="tel-text">ఇవి వేర్వేరు సిస్టమ్‌లను ఇన్ఫెక్ట్ చేసిన ప్రతిసారీ తమ రూపాన్ని మరియు కోడ్‌ను మార్చుకునే సామర్థ్యాన్ని కలిగి ఉంటాయి. ఇది యాంటీ-వైరస్ సాఫ్ట్‌వేర్ నుండి దాక్కోవడానికి సహాయపడుతుంది.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(f) Armored Viruses / ఆర్మర్డ్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Armored Viruses are type of viruses that are designed and written to make itself difficult to detect or analyze. An Armored Virus may also have the ability to protect itself from antivirus programs, making it more difficult to disinfect.</span>
+                    <span class="tel-text">తమను గుర్తించడం లేదా విశ్లేషించడం కష్టమయ్యేలా ఇవి డిజైన్ చేయబడతాయి. యాంటీవైరస్ ప్రోగ్రామ్‌ల నుండి తమను తాము రక్షించుకునే సామర్థ్యాన్ని కలిగి ఉండి, తొలగించడాన్ని సవాలుగా మారుస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(g) Stealth Viruses / స్టెల్త్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Stealth viruses have the capability to hide from operating system or anti-virus software by making changes to file sizes or directory structure. Stealth viruses are anti-heuristic nature which helps them to hide from heuristic detection.</span>
+                    <span class="tel-text">ఫైల్ సైజులు లేదా డైరెక్టరీ నిర్మాణంలో మార్పులు చేయడం ద్వారా ఆపరేటింగ్ సిస్టమ్ లేదా యాంటీ-వైరస్ నుండి దాక్కుంటాయి. ఇవి హ్యూరిస్టిక్ డిటెక్షన్ నుండి తప్పించుకోగలవు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(h) Polymorphic Viruses (Mutation Feature) / మ్యుటేషన్ ఫీచర్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Polymorphic viruses change their form in order to avoid detection and disinfection by anti-virus applications. After the work, these types of viruses try to hide from the anti-virus application by encrypting parts of the virus itself. This is known as mutation.</span>
+                    <span class="tel-text">గుర్తింపును నివారించడానికి ఇవి రూపాంతరం చెందుతాయి. పని పూర్తయిన తర్వాత వైరస్ భాగాన్ని ఎన్క్రిప్ట్ చేసి దాక్కుంటాయి, దీనిని మ్యుటేషన్ అంటారు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(i) Retrovirus / రెట్రోవైరస్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Retrovirus is another type virus which tries to attack and disable the anti-virus application running on the computer. A retrovirus can be considered anti-antivirus. Some Retroviruses attack the anti-virus application and stop it from running or some other destroys the virus definition database.</span>
+                    <span class="tel-text">కంప్యూటర్‌లో రన్ అయ్యే యాంటీ-వైరస్ అప్లికేషన్‌పైనే దాడి చేసి దాన్ని నిలిపివేయడానికి ప్రయత్నించే వైరస్ ఇది. ఇవి యాంటీవైరస్ ప్రోగ్రామ్‌ను ఆపివేయడం లేదా వైరస్ డెఫినిషన్ డేటాబేస్‌ను నాశనం చేయడం చేస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(j) Multiple Characteristic Viruses / మల్టిపుల్ క్యారెక్టరిస్టిక్ వైరస్‌లు:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Multiple Characteristic viruses has different characteristics of viruses and have different capabilities.</span>
+                    <span class="tel-text">వివిధ రకాల వైరస్ లక్షణాలను మరియు విభిన్న సామర్థ్యాలను ఒకేసారి కలిగి ఉండే వైరస్‌లు ఇవి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 1 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.2.1.png?raw=true" alt="Computer Virus Classification Diagram">
+                <div class="image-caption">Figure 1: Classification Types of Computer Viruses</div>
+            </div>
+        </div>
+
+        <!-- Worms Classification Section -->
+        <div class="card card-worm">
+            <h2>3. Classification of Computer Worms / కంప్యూటర్ వర్మ్స్ వర్గీకరణ</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">A worm has similar characteristics of a virus. Worms are also self-replicating, but self-replication of a worm is in a different way. Worms are standalone and when it is infected on a computer, it searches for other computers connected through a local area network (LAN) or Internet connection.</span>
+                    <span class="tel-text">వర్మ్ కూడా వైరస్ లాంటి లక్షణాలనే కలిగి ఉంటుంది, కానీ స్వయం-పునరావృతం వేరే విధంగా ఉంటుంది. ఇది స్వతంత్రమైనది; కంప్యూటర్‌లోకి ప్రవేశించగానే LAN లేదా ఇంటర్నెట్ ద్వారా అనుసంధానించబడిన ఇతర కంప్యూటర్ల కోసం వెతుకుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">When a worm finds another computer, it replicates itself to the new computer and continues to search for other computers on the network to replicate.</span>
+                    <span class="tel-text">మరొక కంప్యూటర్ లభించగానే దానికి వ్యాపించి, నెట్‌వర్క్‌లోని ఇతర కంప్యూటర్ల కోసం వెతకడం కొనసాగిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Due to the nature of replication through the network, a worm normally consumes much system resources including network bandwidth, causing network servers to stop responding.</span>
+                    <span class="tel-text">నెట్‌వర్క్ ద్వారా వ్యాపించడం వల్ల ఇవి బ్యాండ్‌విడ్త్‌తో సహా ఎక్కువ సిస్టమ్ వనరులను వినియోగించుకుని, నెట్‌వర్క్ సర్వర్లు పనిచేయకుండా చేస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">Different types of Computer Worms are / వర్మ్స్ రకాలు:</div>
+
+            <div class="sub-heading">(a) Email Worms / ఈమెయిల్ వర్మ్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Email Worms spread through infected email messages as an attachment or a link of an infected website.</span>
+                    <span class="tel-text">ఇన్ఫెక్ట్ అయిన ఈమెయిల్ మెసేజ్‌లు, అటాచ్‌మెంట్‌లు లేదా లింక్‌ల ద్వారా ఇవి వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(b) Instant Messaging Worms / ఇన్‌స్టంట్ మెసేజింగ్ వర్మ్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Instant Messaging Worms spread by sending links to the contact list of instant messaging applications.</span>
+                    <span class="tel-text">ఇన్‌స్టంట్ మెసేజింగ్ యాప్‌లలోని కాంటాక్ట్ లిస్ట్‌కు లింక్‌లను పంపడం ద్వారా వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(c) Internet Worms / ఇంటర్నెట్ వర్మ్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Internet worm will scan all available network resources using local operating system services and/or scan the Internet for vulnerable machines. If a computer is found vulnerable it will attempt to connect and gain access to them.</span>
+                    <span class="tel-text">ఇంటర్నెట్ వర్మ్‌లు లభ్యమయ్యే నెట్‌వర్క్ వనరులను, బలహీనంగా ఉన్న సిస్టమ్‌లను స్కాన్ చేసి, వాటితో కనెక్ట్ అయి యాక్సెస్ పొందడానికి ప్రయత్నిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(d) IRC Worms / IRC వర్మ్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">IRC Worms spread through IRC chat channels, sending infected files or links to infected websites.</span>
+                    <span class="tel-text">IRC చాట్ ఛానెళ్ల ద్వారా ఇన్ఫెక్ట్ అయిన ఫైళ్లు లేదా లింక్‌లను పంపడం ద్వారా ఇవి వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">(e) File-sharing Networks Worms / ఫైల్-షేరింగ్ నెట్‌వర్క్స్ వర్మ్స్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Worms place a copy of them in a shared folder and spread via P2P network.</span>
+                    <span class="tel-text">ఇవి షేర్డ్ ఫోల్డర్‌లో తమ కాపీని ఉంచి P2P నెట్‌వర్క్ ద్వారా వ్యాపిస్తాయి.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Container 2 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.2.2.png?raw=true" alt="Computer Worm Types and Propagation Diagram">
+                <div class="image-caption">Figure 2: Types of Computer Worms and Network Propagation Methods</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
