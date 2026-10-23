@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 11. What is Antivirus & Methods to Identify Antivirus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --def-card: #e8f5e9; --def-border: #43a047;
+            --scan-card: #e3f2fd; --scan-border: #1e88e5;
+            --update-card: #fff3e0; --update-border: #fb8c00;
+            --feat-card: #f3e5f5; --feat-border: #8e24aa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #004d40 0%, #1b5e20 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --def-card: #182e1c; --def-border: #66bb6a;
+            --scan-card: #152738; --scan-border: #42a5f5;
+            --update-card: #332a15; --update-border: #ffb74d;
+            --feat-card: #281a2e; --feat-border: #ab47bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 10px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-def { background-color: var(--def-card); border-left-color: var(--def-border); }
+        .card-scan { background-color: var(--scan-card); border-left-color: var(--scan-border); }
+        .card-update { background-color: var(--update-card); border-left-color: var(--update-border); }
+        .card-feat { background-color: var(--feat-card); border-left-color: var(--feat-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 11. What is anti-virus ? What are the methods to identify the anti-virus in the system ?</h1>
+            <p>యాంటీ-వైరస్ అంటే ఏమిటి?</p>
+        </header>
+
+        <!-- Definition Section -->
+        <div class="card card-def">
+            <h2>1. What is Antivirus? / యాంటీ-వైరస్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Antivirus software is a type of program designed and developed to <strong>protect computers from malware</strong> like viruses, computer worms, spyware, botnets, rootkits, keyloggers and such.</span>
+                    <span class="tel-text">యాంటీ-వైరస్ సాఫ్ట్‌వేర్ అనేది వైరస్‌లు, కంప్యూటర్ వర్మ్‌లు, స్పైవేర్, బాట్‌నెట్‌లు, రూట్‌కిట్‌లు, కీలాగర్‌లు వంటి <strong>మాల్వేర్‌ల నుండి కంప్యూటర్‌లను రక్షించడానికి</strong> రూపొందించబడిన ఒక రకమైన ప్రోగ్రామ్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Antivirus programs function to <strong>scan, detect and remove viruses</strong> from your computer.</span>
+                    <span class="tel-text">యాంటీ-వైరస్ ప్రోగ్రామ్‌లు మీ కంప్యూటర్ నుండి <strong>వైరస్‌లను స్కాన్ చేయడం, గుర్తించడం (detect) మరియు తొలగించడం (remove)</strong> ద్వారా పనిచేస్తాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The prime objective of any antivirus program is to protect computers and remove viruses once detected.</span>
+                    <span class="tel-text">ఏదైనా యాంటీ-వైరస్ ప్రోగ్రామ్ యొక్క ప్రధాన ఉద్దేశ్యం కంప్యూటర్‌లను రక్షించడం మరియు గుర్తించిన వైరస్‌లను తొలగించడం.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Identification Methods -->
+        <div class="card card-scan">
+            <h2>2. Methods of Virus Detection and Scanning / యాంటీ-వైరస్ స్స్కానింగ్ పద్ధతులు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Most antivirus programs incorporate both <strong>automated and manual filtering abilities</strong>.</span>
+                    <span class="tel-text">చాలా యాంటీ-వైరస్ ప్రోగ్రామ్‌లు <strong>ఆటోమేటెడ్ మరియు మాన్యువల్ ఫిల్టరింగ్ సామర్థ్యాలు</strong> రెండింటినీ కలిగి ఉంటాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Instant Scanning:</strong> May check files downloaded from the Internet, discs embedded into the PC, and files made by software installers.</span>
+                    <span class="tel-text"><strong>ఇన్‌స్టంట్ స్స్కానింగ్:</strong> ఇంటర్నెట్ నుండి డౌన్‌లోడ్ చేసిన ఫైళ్లు, సిస్టమ్‌లో చొప్పించిన డిస్క్‌లు మరియు సాఫ్ట్‌వేర్ ఇన్‌స్టాలర్ల ద్వారా తయారైన ఫైళ్లను వెంటనే తనిఖీ చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Programmed Scanning:</strong> May check the entire hard drive on a day-to-day basis.</span>
+                    <span class="tel-text"><strong>ప్రోగ్రామ్డ్ స్స్కానింగ్:</strong> రోజువారీ ప్రాతిపదికన మొత్తం హార్డ్ డ్రైవ్‌ను తనిఖీ చేయవచ్చు.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>Manual Scanning:</strong> Enables you to check single documents or scan the complete network at whatever point you feel necessary.</span>
+                    <span class="tel-text"><strong>మాన్యువల్ స్స్కానింగ్:</strong> అవసరమనిపించినప్పుడు సింగిల్ డాక్యుమెంట్‌లను లేదా మొత్తం నెట్‌వర్క్‌ను తనిఖీ చేయడానికి ఇది మిమ్మల్ని అనుమతిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Database Updates -->
+        <div class="card card-update">
+            <h2>3. Malware Definitions & Database Refresh / మాల్వేర్ డెఫినిషన్లు మరియు అప్‌డేట్‌లు</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Since new infections evolve every day, antivirus programs must keep an <strong>updated database of the most recent malware codes</strong>.</span>
+                    <span class="tel-text">రోజూ కొత్త ఇన్ఫెక్షన్లు ఉద్భవిస్తున్నందున, యాంటీ-వైరస్ ప్రోగ్రామ్‌లు <strong>ఇటీవలి మాల్వేర్ కోడ్‌ల యొక్క అప్‌డేట్ చేసిన డేటాబేస్‌ను</strong> నిర్వహించాలి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">This database incorporates a list of "malware definitions" that the antivirus software implements when filtering records.</span>
+                    <span class="tel-text">ఈ డేటాబేస్ ఫైళ్లను ఫిల్టర్ చేసేటప్పుడు యాంటీ-వైరస్ ఉపయోగించే "మాల్వేర్ డెఫినిషన్ల" జాబితాను కలిగి ఉంటుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Most antivirus programs naturally refresh the infection database all the time to ensure complete protection.</span>
+                    <span class="tel-text">పూర్తి రక్షణను నిర్ధారించడానికి చాలా యాంటీ-వైరస్ ప్రోగ్రామ్‌లు ఇన్ఫెక్షన్ డేటాబేస్‌ను స్వయంచాలకంగా ఎప్పటికప్పుడు రిఫ్రెష్ (అప్‌డేట్) చేస్తాయి.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Modern antivirus utilities also include firewall features, commonly known as an <strong>"Internet Security Suite"</strong>.</span>
+                    <span class="tel-text">ఆధునిక యాంటీ-వైరస్ ప్రోగ్రామ్‌లు ఫైర్‌వాల్ ఫీచర్‌లను కూడా కలిగి ఉంటాయి, వీటిని సాధారణంగా <strong>"ఇంటర్నెట్ సెక్యూరిటీ సూట్"</strong> అని పిలుస్తారు.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Box 1 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.11.1.png?raw=true" alt="Antivirus Scanning and Database Update Mechanics">
+                <div class="image-caption">Figure 1: Antivirus Scanning Modes and Automatic Malware Database Updates</div>
+            </div>
+        </div>
+
+        <!-- Features of Effective Antivirus -->
+        <div class="card card-feat">
+            <h2>4. Features of an Effective Antivirus / సమర్థవంతమైన యాంటీ-వైరస్ యొక్క ముఖ్య ఫీచర్లు</h2>
+            <p style="margin-bottom: 10px; font-weight: 500;">The following features of an antivirus are to be looked for when deciding to install one:</p>
+            <ul>
+                <li>
+                    <span class="eng-text"><strong>(a) Default-Deny Protection:</strong> Default-Deny protection that is implemented to prevent the entry of suspicious files by default.</span>
+                    <span class="tel-text"><strong>(a) డిఫాల్ట్-డినా ఫ్రొటెక్షన్:</strong> అనుమానాస్పద ఫైళ్లు సిస్టమ్‌లోకి ప్రవేశించకుండా డిఫాల్ట్‌గా నిరోధించే రక్షణ వ్యవస్థ.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(b) Auto Sandbox Technology:</strong> A virtual environment where suspicious and unknown files are secluded and run to check for any malicious activity without interfering with normal operations.</span>
+                    <span class="tel-text"><strong>(b) ఆటో శాండ్‌బాక్స్ టెక్నాలజీ:</strong> సాధారణ ఆపరేషన్లకు అంతరాయం కలిగించకుండా, అనుమానాస్పద ఫైళ్లను ప్రత్యేక వర్చువల్ వాతావరణంలో రన్ చేసి పరిశీలించే సాంకేతికత.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(c) Containment Technology:</strong> Validates and authorizes the programs that are executable and ensures that the processes are run without effecting regular operations of the system.</span>
+                    <span class="tel-text"><strong>(c) కంటైన్‌మెంట్ టెక్నాలజీ:</strong> ఎగ్జిక్యూటబుల్ ప్రోగ్రామ్‌లను ధృవీకరించి, సిస్టమ్ సాధారణ పనులకు నష్టం జరగకుండా ప్రక్రియలను అనుమతిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text"><strong>(d) Host Intrusion Protection System (HIPS):</strong> Oversees all application and program activities on a protocol-based system. It terminates any malicious activities once found, preventing malware from infecting the OS, registry keys, or personal data.</span>
+                    <span class="tel-text"><strong>(d) హోస్ట్ ఇంట్రూజన్ ప్రొటెక్షన్ సిస్టమ్ (HIPS):</strong> ప్రోటోకాల్ ఆధారంగా అన్ని అప్లికేషన్ కార్యకలాపాలను పర్యవేక్షిస్తుంది. ఏదైనా హానికరమైన చర్య కనిపిస్తే వెంటనే దాన్ని నిలిపివేసి OS, రిజిస్ట్రీ కీలు మరియు పర్సనల్ డేటా ఇన్ఫెక్ట్ కాకుండా కాపాడుతుంది.</span>
+                </li>
+            </ul>
+
+            <!-- GitHub Image Box 2 -->
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.11.2.png?raw=true" alt="Antivirus Sandbox and HIPS Protection Architecture">
+                <div class="image-caption">Figure 2: Antivirus Sandbox and Host Intrusion Protection System (HIPS) Architecture</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
