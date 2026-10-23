@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 7. What is Malware and Types of Malware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #d32f2f 0%, #c2185b 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #ffebee; --intro-border: #e53935;
+            --virus-card: #fff3e0; --virus-border: #fb8c00;
+            --spy-card: #f3e5f5; --spy-border: #8e24aa;
+            --ad-card: #e8f5e9; --ad-border: #43a047;
+            --root-card: #e0f2f1; --root-border: #00897b;
+            --trojan-card: #e3f2fd; --trojan-border: #1e88e5;
+            --worm-card: #fff8e1; --worm-border: #fbc02d;
+            --ransom-card: #fbe9e7; --ransom-border: #d84315;
+            --key-card: #fce4ec; --key-border: #d81b60;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #5f0909 0%, #4a0018 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #331a1d; --intro-border: #ef5350;
+            --virus-card: #332a15; --virus-border: #ffb74d;
+            --spy-card: #281a2e; --spy-border: #ab47bc;
+            --ad-card: #182e1c; --ad-border: #66bb6a;
+            --root-card: #112926; --root-border: #26a69a;
+            --trojan-card: #152738; --trojan-border: #42a5f5;
+            --worm-card: #333015; --worm-border: #fdd835;
+            --ransom-card: #331e1a; --ransom-border: #ff8a65;
+            --key-card: #331825; --key-border: #f48fb1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 10px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-virus { background-color: var(--virus-card); border-left-color: var(--virus-border); }
+        .card-spy { background-color: var(--spy-card); border-left-color: var(--spy-border); }
+        .card-ad { background-color: var(--ad-card); border-left-color: var(--ad-border); }
+        .card-root { background-color: var(--root-card); border-left-color: var(--root-border); }
+        .card-trojan { background-color: var(--trojan-card); border-left-color: var(--trojan-border); }
+        .card-worm { background-color: var(--worm-card); border-left-color: var(--worm-border); }
+        .card-ransom { background-color: var(--ransom-card); border-left-color: var(--ransom-border); }
+        .card-key { background-color: var(--key-card); border-left-color: var(--key-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 7. What is malware ? What are the types of malwares ?</h1>
+            <p>మాల్వేర్ అంటే ఏమిటి? మాల్వేర్ రకాలు</p>
+        </header>
+
+        <!-- Definition Section -->
+        <div class="card card-intro">
+            <h2>1. What is Malware? / మాల్వేర్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The term malware is a contraction of <strong>malicious software</strong>.</span>
+                    <span class="tel-text">మాల్వేర్ (Malware) అనే పదం <strong>Malicious Software</strong> అనే పదాల కలయిక నుండి ఏర్పడింది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Put simply, malware is any piece of software that was written with the intent of doing harm to data, devices or to people.</span>
+                    <span class="tel-text">సరళంగా చెప్పాలంటే, డేటా, పరికరాలు లేదా వ్యక్తులకు హాని తలపెట్టే ఉద్దేశంతో రాయబడిన ఏదైనా సాఫ్ట్‌వేర్ ప్రోగ్రామ్‌ను మాల్వేర్ అంటారు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">When you hear talk of viruses, Trojans, spyware and the like, what you're really hearing is talk of different kinds of malware.</span>
+                    <span class="tel-text">మనం సాధారణంగా వినే వైరస్‌లు, ట్రోజన్లు, స్పైవేర్ మొదలైనవన్నీ కూడా వివిధ రకాల మాల్వేర్‌ల కిందకే వస్తాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Types of Malware Section -->
+        <div class="card card-intro">
+            <h2>2. Different Types of Malware / వివిధ రకాల మాల్వేర్‌లు</h2>
+            <p style="font-weight: 500;">Below are the primary categories of malware threats:</p>
+        </div>
+
+        <!-- (a) Computer Virus -->
+        <div class="card card-virus">
+            <h2>(a) Computer Virus / కంప్యూటర్ వైరస్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Created to relentlessly <strong>self-replicate</strong>, it infects programs and files.</span>
+                    <span class="tel-text">ఇది ప్రోగ్రామ్‌లు మరియు ఫైళ్లను ఇన్ఫెక్ట్ చేస్తూ, నిరంతరం <strong>తన కాపీలను తానే స్వయంచాలకంగా తయారుచేసుకుంటూ (self-replicate)</strong> వ్యాపిస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The malicious activities may be targeted at destroying valuable data or causing unrepairable damages.</span>
+                    <span class="tel-text">దీని హానికరమైన చర్యలు విలువైన డేటాను నాశనం చేయడానికి లేదా పునరుద్ధరించలేని నష్టాన్ని కలిగించడానికి ఉద్దేశించబడతాయి.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (b) Spyware -->
+        <div class="card card-spy">
+            <h2>(b) Spyware / స్పైవేర్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The name says it all, the software is created to <strong>spy on the victim</strong> so, it is secretly implanted on the computing device by the hacker.</span>
+                    <span class="tel-text">పేరులోనే ఉన్నట్లుగా, ఇది బాధితుడిపై <strong>రహస్యంగా నిఘా పెట్టడానికి (spy)</strong> రూపొందించబడిన సాఫ్ట్‌వేర్. హ్యాకర్ దీనిని కంప్యూటర్‌లో రహస్యంగా ఇన్‌స్టాల్ చేస్తాడు.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The spyware gathers information and sends it to the hacker.</span>
+                    <span class="tel-text">స్పైవేర్ కంప్యూటర్ నుండి సమాచారాన్ని సేకరించి హ్యాకర్‌కు పంపుతుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (c) Adware -->
+        <div class="card card-ad">
+            <h2>(c) Adware / యాడ్‌వేర్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The malicious program is devised to <strong>pop-up unwanted advertisements</strong> on the victim's computer without their permission.</span>
+                    <span class="tel-text">వినియోగదారుని అనుమతి లేకుండా వారి కంప్యూటర్ స్క్రీన్‌పై <strong>అనాలోచిత ప్రకటనలను (pop-up ads)</strong> ప్రదర్శించడానికి ఇది రూపొందించబడింది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The pop-ups are uncontrollable and tend to behave erratically, they usually appear numerous times on the screen and it becomes tedious to close them.</span>
+                    <span class="tel-text">ఈ పాప్-అప్‌లు అనియంత్రితంగా స్క్రీన్‌పై అనేకసార్లు ప్రత్యక్షమవుతాయి మరియు వాటిని మూసివేయడం కష్టంగా మారుతుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (d) Rootkit -->
+        <div class="card card-root">
+            <h2>(d) Rootkit / రూట్‌కిట్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Rootkit Virus assists a hacker in <strong>remotely accessing or controlling</strong> a computing device or network without being exposed.</span>
+                    <span class="tel-text">గుర్తించబడకుండా ఒక కంప్యూటర్ లేదా నెట్‌వర్క్‌ను <strong>రిమోట్‌గా యాక్సెస్ చేయడానికి లేదా నియంత్రించడానికి</strong> రూట్‌కిట్ హ్యాకర్‌కు సహాయపడుతుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">They are hard to detect due to the reason that they become active even before the system's Operating System is booted up.</span>
+                    <span class="tel-text">ఆపరేటింగ్ సిస్టమ్ బూట్ అవ్వడానికి ముందే ఇవి యాక్టివ్ అవుతాయి కాబట్టి వీటిని గుర్తించడం చాలా కష్టం.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (e) Trojan Horse -->
+        <div class="card card-trojan">
+            <h2>(e) Trojan Horse / ట్రోజన్ హార్స్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The name "Trojan horse" arrives from the ancient Greek tale on Trojan War.</span>
+                    <span class="tel-text">దీనికి పురాతన గ్రీక్ ట్రోజన్ యుద్ధ కథ నుండి ఈ పేరు వచ్చింది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Similar to the story, the malicious program sneaks into the victim's computer <strong>disguised as a legitimate program</strong> that users will accept and want to use.</span>
+                    <span class="tel-text">వినియోగదారులు విశ్వసించి ఉపయోగించే ఒక <strong>చట్టబద్ధమైన మంచి సాఫ్ట్‌వేర్‌లా నటిస్తూ (disguise)</strong> ఇది కంప్యూటర్‌లోకి ప్రవేశిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- GitHub Image Box 1 -->
+        <div class="github-img-box">
+            <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.7.1.png?raw=true" alt="Overview of Malware Types">
+            <div class="image-caption">Figure 1: Classification of Common Malware Types (Virus, Spyware, Adware, Trojan)</div>
+        </div>
+
+        <!-- (f) Worm -->
+        <div class="card card-worm">
+            <h2>(f) Worm / వర్మ్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The Worm Virus is a malicious code that <strong>copy's itself and spreads to other computers</strong>.</span>
+                    <span class="tel-text">వర్మ్ అనేది తన కాపీలను తానే తయారుచేసుకుంటూ <strong>నెట్‌వర్క్ ద్వారా ఇతర కంప్యూటర్లకు వ్యాపించే</strong> హానికరమైన కోడ్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The Worm makes use of the network to spread to other devices, which may slow down and face unexpected hiccups on full-swing.</span>
+                    <span class="tel-text">ఇది నెట్‌వర్క్‌ను ఉపయోగిస్తూ ఇతర పరికరాలకు వ్యాపించి, సిస్టమ్‌ను నెమ్మదింపజేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">While a Computer Virus attaches itself to different programs and executable codes, the Worm Virus spreads across the networks, this is the notable difference between the two.</span>
+                    <span class="tel-text">వైరస్ అనేది ఏదైనా ఒక ప్రోగ్రామ్‌కు జతచేయబడి పనిచేస్తే, వర్మ్ అనేది నెట్‌వర్క్ ద్వారా స్వతంత్రంగా వ్యాపిస్తుంది - ఇది రెండింటి మధ్య ముఖ్యమైన తేడా.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (g) Ransomware -->
+        <div class="card card-ransom">
+            <h2>(g) Ransomware / రాన్సమ్‌వేర్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">As the name interprets, the ransomware is a ransom malware.</span>
+                    <span class="tel-text">పేరు సూచించినట్లే, ఇది <strong>అపహరణ రుసుము (కప్పం/Ransom)</strong> డిమాండ్ చేసే మాల్వేర్.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The ransom virus blocks the user from accessing the files or programs and demands to <strong>pay the ransom</strong> through certain online payment methods.</span>
+                    <span class="tel-text">ఇది యూజర్ యొక్క ఫైళ్లు మరియు ప్రోగ్రామ్‌లను లాక్ చేసి, ఆంక్షలు తొలగించడానికి <strong>డబ్బులు (కప్పం) చెల్లించాలని</strong> డిమాండ్ చేస్తుంది.</span>
+                </li>
+                <li>
+                    <span class="eng-text">Once the amount is paid the user can resume using their system.</span>
+                    <span class="tel-text">చెల్లింపు పూర్తయిన తర్వాతే యూజర్లు వారి సిస్టమ్‌ను మళ్లీ వినియోగించుకునేలా అనుమతిస్తుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- (h) Keylogger -->
+        <div class="card card-key">
+            <h2>(h) Keylogger / కీలాగర్</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">The Keylogger records <strong>every keystroke</strong> that a user makes on their device by running in the background.</span>
+                    <span class="tel-text">కీలాగర్ బ్యాక్‌గ్రౌండ్‌లో రన్ అవుతూ, యూజర్ కీబోర్డ్ ద్వారా టైప్ చేసే <strong>ప్రతి అక్షరాన్ని (keystroke) రికార్డ్ చేస్తుంది</strong>.</span>
+                </li>
+                <li>
+                    <span class="eng-text">It steals user credentials and confidential data and forwards it to the hacker for malicious purpose.</span>
+                    <span class="tel-text">ఇది వినియోగదారుల పాస్‌వర్డ్‌లు, లాగిన్ వివరాలు మరియు రహస్య సమాచారాన్ని దొంగిలించి హ్యాకర్‌కు పంపుతుంది.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- GitHub Image Box 2 -->
+        <div class="github-img-box">
+            <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.7.2.png?raw=true" alt="Ransomware and Keylogger Mechanism">
+            <div class="image-caption">Figure 2: Working Mechanism of Ransomware and Keylogger Malware</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
