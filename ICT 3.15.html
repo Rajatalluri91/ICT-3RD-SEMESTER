@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 15. What is SWAYAM? Explain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --intro-card: #fff3e0; --intro-border: #fb8c00;
+            --features-card: #e8f5e9; --features-border: #43a047;
+            --credit-card: #e3f2fd; --credit-border: #1e88e5;
+            --adv-card: #f3e5f5; --adv-border: #8e24aa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #bf360c 0%, #4e1d00 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --intro-card: #332a15; --intro-border: #ffb74d;
+            --features-card: #182e1c; --features-border: #66bb6a;
+            --credit-card: #152738; --credit-border: #42a5f5;
+            --adv-card: #281a2e; --adv-border: #ab47bc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 10px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-intro { background-color: var(--intro-card); border-left-color: var(--intro-border); }
+        .card-features { background-color: var(--features-card); border-left-color: var(--features-border); }
+        .card-credit { background-color: var(--credit-card); border-left-color: var(--credit-border); }
+        .card-adv { background-color: var(--adv-card); border-left-color: var(--adv-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li {
+            counter-increment: item;
+            padding-left: 28px;
+        }
+
+        ol li::before {
+            content: "(" counter(item) ")";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 15. What is SWAYAM ? Explain.</h1>
+            <p>స్వయం (SWAYAM) అంటే ఏమిటి? వివరించండి.</p>
+        </header>
+
+        <!-- Section 1: Introduction and Definition -->
+        <div class="card card-intro">
+            <h2>1. What is SWAYAM? / స్వయం అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">SWAYAM is a programme initiated by the Government of India and designed to achieve the three cardinal principles of Education Policy viz., <strong>access, equity and quality</strong>.</div>
+                    <div class="tel-text">స్వయం (SWAYAM) అనేది భారత ప్రభుత్వం చేత ప్రారంభించబడిన ఒక కార్యక్రమం. ఇది విద్యా విధానం యొక్క మూడు ప్రధాన సూత్రాలైన <strong>అందుబాటు (access), సమానత్వం (equity) మరియు నాణ్యత (quality)</strong> లను సాధించడానికి రూపొందించబడింది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">The objective of this effort is to take the best teaching learning resources to all, including the most disadvantaged.[cite: 30, 31]</div>
+                    <div class="tel-text">అత్యంత వెనుకబడిన వారితో సహా ప్రతి ఒక్కరికీ అత్యుత్తమ బోధనా-అభ్యాస వనరులను అందించడమే ఈ ప్రయత్నం యొక్క ముఖ్య ఉద్దేశ్యం.</div>
+                </li>
+                <li>
+                    <div class="eng-text"><strong>SWAYAM</strong> (meaning 'Self') is a Sanskrit acronym that stands for <strong>"Study Webs of Active-Learning for Young Aspiring Minds"</strong>.</div>
+                    <div class="tel-text"><strong>SWAYAM</strong> (అనగా సంస్కృతంలో 'స్వయం' లేదా 'తనంతట తాను') అనేది <strong>"Study Webs of Active-Learning for Young Aspiring Minds"</strong> యొక్క సంక్షిప్త రూపం.</div>
+                </li>
+                <li>
+                    <div class="eng-text">It is an Indian <strong>Massive Open Online Course (MOOC)</strong> platform that offers free access to everyone and hosts courses from class 9 till post-graduation.</div>
+                    <div class="tel-text">ఇది ఒక భారతీయ <strong>MOOC (మాసివ్ ఓపెన్ ఆన్‌లైన్ కోర్స్)</strong> ప్లాట్‌ఫారమ్. ఇది 9వ తరగతి నుండి పోస్ట్-గ్రాడ్యుయేషన్ వరకు అందరికీ ఉచితంగా కోర్సులను అందిస్తుంది.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Platform Overview & Technical Specs -->
+        <div class="card card-features">
+            <h2>2. Platform Overview & Infrastructure / వేదిక వివరాలు మరియు మౌలిక సదుపాయాలు</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">The program of Human Resource Development Ministry (MHRD) spells out as Study Webs of Active-Learning for Young Aspiring Minds (SWAYAM).</div>
+                    <div class="tel-text">మానవ వనరుల అభివృద్ధి మంత్రిత్వ శాఖ (MHRD) ద్వారా ఈ కార్యక్రమం రూపొందించబడింది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">It offers courses ranging into hundreds that are taught at school, college, and university level. The program will also likely rope in foreign teachers for some courses.</div>
+                    <div class="tel-text">పాఠశాల, కళాశాల మరియు విశ్వవిద్యాలయ స్థాయిలలో వందలాది కోర్సులను ఇది అందిస్తుంది. కొన్ని కోర్సుల కోసం విదేశీ ఉపాధ్యాయులను కూడా భాగస్వామ్యం చేసే అవకాశం ఉంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">The SWAYAM platform is indigenously developed by the <strong>Ministry of Human Resource Development (MHRD)</strong> and <strong>All India Council for Technical Education (AICTE)</strong>.</div>
+                    <div class="tel-text">స్వయం ప్లాట్‌ఫారమ్‌ను మానవ వనరుల అభివృద్ధి మంత్రిత్వ శాఖ (MHRD) మరియు ఆల్ ఇండియా కౌన్సిల్ ఫర్ టెక్నికల్ ఎడ్యుకేషన్ (AICTE) సంయుక్తంగా స్వదేశీ పరిజ్ఞానంతో అభివృద్ధి చేశాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">It can host <strong>2000 courses and 80,000 hours of learning</strong>.</div>
+                    <div class="tel-text">ఈ ప్లాట్‌ఫారమ్ <strong>2000 కోర్సులను మరియు 80,000 గంటల లెర్నింగ్ కంటెంట్‌ను</strong> హోస్ట్ చేయగలదు.</div>
+                </li>
+            </ul>
+
+            
+        </div>
+
+        <!-- Section 3: Credit Transfer & Certification -->
+        <div class="card card-credit">
+            <h2>3. Integration with Education & Certification / విద్యా విధానంతో అనుసంధానం మరియు సర్టిఫికేషన్</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">Furthermore, it can easily be integrated into one's formal traditional education.</div>
+                    <div class="tel-text">అంతేకాకుండా, దీనిని ఒకరి సాంప్రదాయ విద్యా విధానంలోకి సులభంగా అనుసంధానించవచ్చు.</div>
+                </li>
+                <li>
+                    <div class="eng-text">The system allows the <strong>transfer of credits</strong> that a college student earns from a course directly into their academic records.</div>
+                    <div class="tel-text">ఒక కళాశాల విద్యార్థి ఈ కోర్సు నుండి పొందే <strong>క్రెడిట్‌లను (credits) నేరుగా వారి అకడమిక్ రికార్డులకు బదిలీ చేయడానికి</strong> ఈ వ్యవస్థ అనుమతిస్తుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">It also provides courses of vocational nature and also for those who want to study while continuing with their jobs.</div>
+                    <div class="tel-text">ఇది వృత్తి విద్యా (vocational) కోర్సులను అందించడంతో పాటు ఉద్యోగాలు చేస్తూ చదువుకోవాలనుకునే వారికి కూడా ఉపయోగపడుతుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text"><strong>Fee Structure:</strong> All courses are free in Swayam and the fee is only for issuing of a certificate.</div>
+                    <div class="tel-text"><strong>రుసుము వివరాలు:</strong> స్వయంలోని అన్ని కోర్సులు ఉచితం, సర్టిఫికేట్ పొందాలనుకునే వారికి మాత్రమే స్వల్ప రుసుము ఉంటుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Students who want certifications will have to get registered and will be assessed after the end of each course through a <strong>proctored examination</strong>.</div>
+                    <div class="tel-text">సర్టిఫికేట్ కావాలనుకునే విద్యార్థులు రిజిస్టర్ చేసుకోవాలి. కోర్సు ముగిసిన తర్వాత నిర్వహించే <strong>ప్రోక్టర్డ్ పరీక్ష (proctored exam)</strong> ద్వారా వారిని మూల్యాంకనం చేస్తారు.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Key Advantages -->
+        <div class="card card-adv">
+            <h2>4. Key Advantages of SWAYAM / స్వయం యొక్క ముఖ్యమైన ప్రయోజనాలు</h2>
+            <p style="margin-bottom: 12px; font-weight: 500;">In comparison to in-person, physical learning, the Swayam online education platform offers a slew of potent advantages:</p>
+            <ol>
+                <li>
+                    <div class="eng-text">Students can connect with each other from across India using the digital web.</div>
+                    <div class="tel-text">డిజిటల్ వెబ్ ద్వారా భారతదేశం నలుమూలల నుండి విద్యార్థులు ఒకరితో ఒకరు అనుసంధానమవ్వవచ్చు.</div>
+                </li>
+                <li>
+                    <div class="eng-text">The courses are available free of cost.</div>
+                    <div class="tel-text">కోర్సులన్నీ పూర్తిగా ఉచితంగా లభిస్తాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Swayam MOOC courses are prepared by some of India's best teachers.</div>
+                    <div class="tel-text">స్వయం కోర్సులు భారతదేశంలోని అత్యుత్తమ ఉపాధ్యాయులచే రూపొందించబడతాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Course format is easy — video lectures, specially prepared reading material available.</div>
+                    <div class="tel-text">కోర్సు ఫార్మాట్ చాలా సులభం — వీడియో లెక్చర్లు, ప్రత్యేకంగా సిద్ధం చేసిన రీడింగ్ మెటీరియల్ అందుబాటులో ఉంటాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">National educational bodies such as <strong>NPTEL, IGNOU, UGC and even the IIMs</strong> are hosting courses on the Swayam portal.</div>
+                    <div class="tel-text"><strong>NPTEL, IGNOU, UGC మరియు IIMల</strong> వంటి జాతీయ విద్యా సంస్థలు స్వయం పోర్టల్‌లో కోర్సులను అందిస్తున్నాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Swayam course certificates are provided to all learners after passing an exam, as a proof of their skills.</div>
+                    <div class="tel-text">పరీక్ష ఉత్తీర్ణులైన అభ్యర్థుల నైపుణ్యాలకు నిరూపణగా సర్టిఫికేట్లు అందించబడతాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">For those interested in legal studies, there is a database of over 90 Swayam law courses on this platform.</div>
+                    <div class="tel-text">న్యాయ విద్యపై ఆసక్తి ఉన్నవారి కోసం ఈ ప్లాట్‌ఫారమ్‌లో 90కి పైగా చట్టపరమైన (law) కోర్సులు అందుబాటులో ఉన్నాయి.</div>
+                </li>
+            </ol>
+
+            
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
