@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 5. What is Hacking and Hacking Techniques</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #d32f2f 0%, #7b1fa2 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            --c1: #ffebee; --b1: #e53935;
+            --c2: #fff3e0; --b2: #fb8c00;
+            --c3: #f3e5f5; --b3: #8e24aa;
+            --c4: #e3f2fd; --b4: #1e88e5;
+            --c5: #e8f5e9; --b5: #43a047;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #4a0000 0%, #311b92 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --c1: #331a1d; --b1: #ef5350;
+            --c2: #332a15; --b2: #ffb74d;
+            --c3: #281a2e; --b3: #ab47bc;
+            --c4: #152738; --b4: #42a5f5;
+            --c5: #182e1c; --b5: #66bb6a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-1 { background-color: var(--c1); border-left-color: var(--b1); }
+        .card-2 { background-color: var(--c2); border-left-color: var(--b2); }
+        .card-3 { background-color: var(--c3); border-left-color: var(--b3); }
+        .card-4 { background-color: var(--c4); border-left-color: var(--b4); }
+        .card-5 { background-color: var(--c5); border-left-color: var(--b5); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header { padding-top: 55px; }
+            .toggle-container { top: 10px; right: 50%; transform: translateX(50%); }
+            body { padding: 8px; }
+            .card { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Q. 5. What is hacking? Write about the techniques.</h1>
+            <p>హ్యాకింగ్ అంటే ఏమిటి? దాని సాంకేతిక పద్ధతులను వివరించండి.</p>
+        </header>
+
+        <!-- Definition -->
+        <div class="card card-1">
+            <h2>1. What is Hacking? / హ్యాకింగ్ అంటే ఏమిటి?</h2>
+            <ul>
+                <li>
+                    <span class="eng-text">Hacking refers to unauthorized access or intrusion into a computer system or network to bypass security features or alter functionality.</span>
+                    <span class="tel-text">హ్యాకింగ్ అనగా ఒక కంప్యూటర్ సిస్టమ్ లేదా నెట్‌వర్క్‌లోకి అనుమతి లేకుండా ప్రవేశించి, దాని సెక్యూరిటీని అధిగమించడం లేదా ఫంక్షనాలిటీని మార్చడం.</span>
+                </li>
+                <li>
+                    <span class="eng-text">The individual performing these unauthorized activities is known as a <strong>Hacker</strong>.</span>
+                    <span class="tel-text">ఈ అనుమతి లేని కార్యకలాపాలను నిర్వహించే వ్యక్తినే <strong>హ్యాకర్ (Hacker)</strong> అని పిలుస్తారు.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Major Hacking Techniques 1-4 -->
+        <div class="card card-2">
+            <h2>2. Common Hacking Techniques (Part 1) / హ్యాకింగ్ పద్ధతులు (భాగం 1)</h2>
+
+            <div class="sub-heading">1. Phishing / ఫిషింగ్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">A technique using fraudulent emails or fake websites to trick users into revealing sensitive data like credit card details and passwords.</span>
+                    <span class="tel-text">వినియోగదారులను మోసం చేసి పాస్‌వర్డ్‌లు, క్రెడిట్ కార్డ్ వివరాల వంటి రహస్య సమాచారాన్ని సేకరించడానికి నకిలీ ఈమెయిళ్లు లేదా వెబ్‌సైట్‌లను వాడే పద్ధతి.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">2. Viruses and Malicious Code / వైరస్‌లు మరియు మాల్వేర్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Hackers deploy malicious scripts or software into target databases to extract information or corrupt files.</span>
+                    <span class="tel-text">డేటాబేస్‌ల నుండి సమాచారాన్ని దొంగిలించడానికి లేదా ఫైళ్లను నాశనం చేయడానికి హ్యాకర్లు హానికరం ఐన కోడ్ లేదా సాఫ్ట్‌వేర్‌ను ప్రవేశపెడతారు.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">3. UI Redress (Clickjacking) / యుఐ రెడ్రెస్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Involves creating hidden, transparent interfaces over legitimate buttons so users perform unintended actions.</span>
+                    <span class="tel-text">అసలైన బటన్‌ల పైన కంటికి కనిపించని నకిలీ ఇంటర్‌ఫేస్‌ను ఉంచి, యూజర్లు తెలియకుండా వేరే చర్యలు చేసేలా మోసం చేసే విధానం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">4. Cookie Theft / కుకీ థెఫ్ట్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Stealing browser cookies using malicious code to access browsing history, usernames, and active session tokens.</span>
+                    <span class="tel-text">బ్రౌజర్ కుకీలను దొంగిలించడం ద్వారా వినియోగదారుల లాగిన్ సెషన్లు, బ్రౌజింగ్ హిస్టరీ మరియు పాస్‌వర్డ్‌లను హ్యాక్ చేయడం.</span>
+                </li>
+            </ul>
+
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.5.1.png?raw=true" alt="Hacking Techniques Part 1">
+                <div class="image-caption">Figure 1: Phishing and Cookie Theft Vectors</div>
+            </div>
+        </div>
+
+        <!-- Hacking Techniques 5-7 -->
+        <div class="card card-3">
+            <h2>3. Common Hacking Techniques (Part 2) / హ్యాకింగ్ పద్ధతులు (భాగం 2)</h2>
+
+            <div class="sub-heading">5. Denial of Service (DoS / DDoS) / డినైయల్ ఆఫ్ సర్వీస్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Flooding a server with massive fake traffic using botnets to crash the website and make it unavailable to real users.</span>
+                    <span class="tel-text">బాట్‌నెట్ నెట్‌వర్క్ ద్వారా సర్వర్‌పైకి విపరీతమైన నకిలీ ట్రాఫిక్‌ను పంపి, అది క్రాష్ అయ్యేలా చేసి అసలైన యూజర్లకు సేవలు అందకుండా చేయడం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">6. DNS Spoofing / డిఎన్ఎస్ స్పూఫింగ్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Corrupting Domain Name System cache data to redirect traffic from a genuine site to a fake malicious webpage.</span>
+                    <span class="tel-text">డిఎన్ఎస్ క్యాష్ డేటాను మార్చడం ద్వారా వినియోగదారులను నిజమైన వెబ్‌సైట్ నుండి హ్యాకర్లు తయారు చేసిన నకిలీ సైట్‌కి మళ్లించడం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">7. SQL Injection / ఎస్క్యూఎల్‌ ఇంజెక్షన్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Injecting malicious SQL commands into vulnerable website input fields to gain unauthorized database access.</span>
+                    <span class="tel-text">వెబ్‌సైట్ ఇన్‌పుట్ ఫీల్డ్‌లలోకి హానికరం ఐన SQL కోడ్‌ను పంపి డేటాబేస్‌లోని రహస్య సమాచారాన్ని యాక్సెస్ చేయడం.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hacking Techniques 8-10 -->
+        <div class="card card-4">
+            <h2>4. Advanced Hacking Techniques / అధునాతన హ్యాకింగ్ పద్ధతులు</h2>
+
+            <div class="sub-heading">8. Keylogger Injection / కీలాగర్ ఇంజెక్షన్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Installing malware that records all keystrokes typed by the user, sending login credentials directly to the hacker.</span>
+                    <span class="tel-text">యూజర్ కీబోర్డుపై టైప్ చేసే ప్రతీ అక్షరాన్ని రికార్డు చేసే సాఫ్ట్‌వేర్‌ను ప్రవేశపెట్టి, పాస్‌వర్డ్‌లను దొంగిలించడం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">9. Non-targeted Website Hack / నాన్-టార్గెటెడ్ వెబ్‌సైట్ హ్యాక్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Scanning thousands of sites automatically for known vulnerabilities in CMS plugins or templates to breach them.</span>
+                    <span class="tel-text">ఏదైనా నిర్దిష్ట వెబ్‌సైట్‌ను కాకుండా, బలహీనంగా ఉన్న ఏ వెబ్‌సైట్‌నైనా ఆటోమేటిక్ టూల్స్ ద్వారా వెతికి హ్యాక్ చేయడం.</span>
+                </li>
+            </ul>
+
+            <div class="sub-heading">10. Brute Force Attack / బ్రూట్ ఫోర్స్ ఎటాక్:</div>
+            <ul>
+                <li>
+                    <span class="eng-text">Automated trial and error of millions of username and password combinations until the correct key is found.</span>
+                    <span class="tel-text">సరైన పాస్‌వర్డ్ దొరికే వరకు సాఫ్ట్‌వేర్ సహాయంతో వేలాది పాస్‌వర్డ్ కాంబినేషన్‌లను ఒకదాని తర్వాత ఒకటి నిరంతరం ప్రయత్నించడం.</span>
+                </li>
+            </ul>
+
+            <div class="github-img-box">
+                <img src="https://github.com/Rajatalluri91/ICT-3RD-SEMESTER/blob/main/3.5.2.png?raw=true" alt="SQL Injection and Keylogger Mechanics">
+                <div class="image-caption">Figure 2: SQL Injection & Keylogger Working Mechanism</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
