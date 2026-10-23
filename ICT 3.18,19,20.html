@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Questions Q18, Q19 & Q20 - Complete Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --header-bg: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            /* Card Accent Colors */
+            --q18-card: #e3f2fd; --q18-border: #1e88e5;
+            --q19-card: #e8f5e9; --q19-border: #43a047;
+            --q20-card: #fff3e0; --q20-border: #fb8c00;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --header-bg: linear-gradient(135deg, #0d47a1 0%, #002171 100%);
+            --header-text: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+            --q18-card: #152738; --q18-border: #42a5f5;
+            --q19-card: #182e1c; --q19-border: #66bb6a;
+            --q20-card: #332a15; --q20-border: #ffb74d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Mandali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 10px 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid #ccc;
+        }
+
+        .card-q18 { background-color: var(--q18-card); border-left-color: var(--q18-border); }
+        .card-q19 { background-color: var(--q19-card); border-left-color: var(--q19-border); }
+        .card-q20 { background-color: var(--q20-card); border-left-color: var(--q20-border); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .eng-text {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tel-text {
+            display: block;
+            opacity: 0.95;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            color: #d32f2f;
+        }
+
+        [data-theme="dark"] strong {
+            color: #ff6b6b;
+        }
+
+        /* GitHub Image Container Styling */
+        .github-img-box {
+            width: 100%;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        [data-theme="dark"] .github-img-box {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .github-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 55px;
+            }
+            .toggle-container {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            body {
+                padding: 8px;
+            }
+            .card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="toggle-container">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="toggleIcon">🌙</span> <span id="toggleText">Dark Mode</span>
+                </button>
+            </div>
+            <h1>Information & Communication Technology</h1>
+            <p>Q.18 (e-Acharya), Q.19 (Virtual Labs) & Q.20 (e-Yantra) - Complete Notes</p>
+        </header>
+
+        <!-- Question 18 -->
+        <div class="card card-q18">
+            <h2>Q. 18. What is e-Acharya ? Explain its objectives. / ఇ-ఆచార్య (e-Acharya) అంటే ఏమిటి? దాని లక్ష్యాలను వివరించండి.</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">e-Acharya, also called <strong>'Integrated e-Content Portal'</strong> of NMEICT, is the official repository of NMEICT e-content.</div>
+                    <div class="tel-text">ఇ-ఆచార్య (e-Acharya) ను NMEICT యొక్క <strong>'ఇంటిగ్రేటెడ్ ఇ-కంటెంట్ పోర్టల్'</strong> అని కూడా పిలుస్తారు. ఇది NMEICT ద్వారా ఉత్పత్తి చేయబడిన ఇ-కంటెంట్ యొక్క అధికారిక డిజిటల్ నిల్వ కేంద్రం (repository).</div>
+                </li>
+                <li>
+                    <div class="eng-text">All content produced under NMEICT is being put at this Repository platform at <strong>INFLIBNET Centre, Gandhinagar</strong>, so as to apply basic tenets of preservation for digital content, implement standard Metadata schema of different types for digital content, and ensure their long-term availability.</div>
+                    <div class="tel-text">NMEICT కింద రూపొందించబడిన మొత్తం సమాచారాన్ని <strong>గాంధీనగర్‌లోని INFLIBNET సెంటర్‌లోని</strong> ఈ డిపాజిటరీ ప్లాట్‌ఫారమ్‌లో ఉంచుతున్నారు. ఇది డిజిటల్ కంటెంట్‌ను భద్రపరచడానికి, ప్రామాణిక మెటాడేటా స్కీమాను అమలు చేయడానికి మరియు సుదీర్ఘకాలం అందుబాటులో ఉండేలా చూసేందుకు దోహదపడుతుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">All Project Investigators awarded development of e-Content under NMEICT have been requested to ensure deliverables are placed at the earliest in the Integrated Portal/e-Acharya of MHRD.</div>
+                    <div class="tel-text">NMEICT కింద ఇ-కంటెంట్ అభివృద్ధి బాధ్యత పొందిన ప్రాజెక్ట్ పరిశోధకులందరూ తమ కంటెంట్‌ను MHRD యొక్క ఈ ఇ-ఆచార్య పోర్టల్‌లో వెంటనే అందుబాటులో ఉంచాల్సిందిగా కోరడమైనది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">NCERT shall provide e-content Links to e-Acharya and NIOS shall provide content on HDD to the e-Acharya repository, ensuring all content including e-Books are made available.</div>
+                    <div class="tel-text">NCERT ఇ-ఆచార్యకు ఇ-కంటెంట్ లింక్‌లను అందిస్తుంది, మరియు NIOS హార్డ్ డిస్క్ (HDD) లభించే కంటెంట్‌ను అందిస్తుంది. ఇవన్నీ ఇ-పుస్తకాలతో సహా అందుబాటులో ఉండేలా చూస్తాయి.</div>
+                </li>
+                <li>
+                    <div class="eng-text">e-Acharya forms a vertical of <strong>'National Digital Library' (NDL)</strong>, implemented by IIT Kharagpur, and is backed by a robust 24X7 Data Centre integrated with NMEICT Cloud network (<strong>'Baadal'</strong>) set up at NIC/NKN Data Centre by IIT-Delhi.</div>
+                    <div class="tel-text">IIT ఖరగ్‌పూర్ చేత నిర్వహించబడుతున్న <strong>'నేషనల్ డిజిటల్ లైబ్రరీ' (NDL)</strong> యొక్క ముఖ్య విభాగాలుగా ఇ-ఆచార్య పనిచేస్తుంది. దీనికి IIT-ఢిల్లీ ద్వారా NIC/NKN డేటా సెంటర్‌లో ఏర్పాటు చేయబడిన <strong>'బాదల్' (Baadal)</strong> అనే 24X7 క్లౌడ్ నెట్‌వర్క్ డేటా సెంటర్ మద్దతు ఇస్తుంది.</div>
+                </li>
+            </ul>
+
+           
+        </div>
+
+        <!-- Question 19 -->
+        <div class="card card-q19">
+            <h2>Q. 19. What are virtual labs ? Explain the objectives. / వర్చువల్ ల్యాబ్స్ అంటే ఏమిటి? దాని లక్ష్యాలను వివరించండి.</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">Physical distances and the lack of resources make us unable to perform experiments, especially when they involve sophisticated instruments, which are always a scarce resource.</div>
+                    <div class="tel-text">భౌతిక దూరం మరియు వనరుల కొరత కారణంగా, ముఖ్యంగా ఖరీదైన సంక్లిష్ట పరికరాలతో ప్రయోగాలు చేయడం విద్యార్థులకు కష్టమవుతుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Web-enabled experiments can be designed for remote operation and viewing so as to enthuse curiosity and innovation into students, helping in learning basic and advanced concepts through <strong>remote experimentation</strong>.</div>
+                    <div class="tel-text">రిమోట్ ఆపరేషన్ ద్వారా విద్యార్థులలో జిజ్ఞాసను పెంచడానికి వెబ్-ఆధారిత ప్రయోగాలను రూపొందించవచ్చు. ఇది <strong>రిమోట్ ప్రయోగాల (remote experimentation)</strong> ద్వారా ప్రాథమిక మరియు అధునాతన అంశాలను నేర్చుకోవడంలో సహాయపడుతుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Virtual Lab does not require any additional infrastructural setup for conducting experiments at user premises; one computer terminal with broadband Internet connectivity is all that is needed.</div>
+                    <div class="tel-text">వర్చువల్ ల్యాబ్ కోసం వినియోగదారు ప్రాంగణంలో ప్రత్యేక మౌలిక సదుపాయాలు అవసరం లేదు; బ్రాడ్‌బ్యాండ్ ఇంటర్నెట్ కనెక్షన్ ఉన్న ఒక కంప్యూటర్ టెర్మినల్ ఉంటే సరిపోతుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Over 205 virtual labs in 9 Engineering & Science disciplines, comprising about 1515 experiments, are operational and currently being accessed by more than 6 lakh students.</div>
+                    <div class="tel-text">9 ఇంజనీరింగ్ మరియు సైన్స్ విభాగాలలో 205 కి పైగా వర్చువల్ ల్యాబ్‌లు, సుమారు 1515 ప్రయోగాలు అందుబాటులో ఉన్నాయి. వీటిని ప్రస్తుతం 6 లక్షల మందికి పైగా విద్యార్థులు వినియోగిస్తున్నారు.</div>
+                </li>
+            </ul>
+
+            
+        </div>
+
+        <!-- Question 20 -->
+        <div class="card card-q20">
+            <h2>Q. 20. What is e-Yantra ? Explain. / ఇ-యంత్ర (e-Yantra) అంటే ఏమిటి? వివరించండి.</h2>
+            <ul>
+                <li>
+                    <div class="eng-text">An MHRD initiative under NMEICT Programme, named <strong>"e-Yantra"</strong> is implemented to incorporate Robotics into engineering education with the objective of engaging students through exciting hands-on application of mathematics, computer science, and engineering principles.</div>
+                    <div class="tel-text">NMEICT ప్రోగ్రామ్ కింద MHRD ద్వారా ప్రారంభించబడిన <strong>"ఇ-యంత్ర" (e-Yantra)</strong> ప్రాజెక్ట్, ఇంజనీరింగ్ విద్యలో రోబోటిక్స్‌ను చేర్చడానికి అమలు చేయబడింది. ఇది గణితం, కంప్యూటర్ సైన్స్ మరియు ఇంజనీరింగ్ సూత్రాలను ప్రాక్టికల్‌గా వర్తింపజేయడం ద్వారా విద్యార్థులను భాగస్వాములను చేస్తుంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">Creation of robotic platforms has been successfully demonstrated during Phase-I of the project. Presently, e-Yantra has been implemented in 100 colleges.</div>
+                    <div class="tel-text">రోబోటిక్ ప్లాట్‌ఫారమ్‌ల రూపకల్పన ప్రాజెక్ట్ మొదటి దశలో విజయవంతంగా ప్రదర్శించబడింది. ప్రస్తుతం ఇ-యంత్ర 100 కళాశాలల్లో అమలు చేయబడింది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">e-Yantra is creating skills by setting up lab infrastructure for project-based learning and training teachers in these 100 engineering colleges.</div>
+                    <div class="tel-text">ఈ 100 ఇంజనీరింగ్ కళాశాలల్లో ల్యాబ్ మౌలిక సదుపాయాలను ఏర్పాటు చేయడం మరియు ఉపాధ్యాయులకు శిక్షణ ఇవ్వడం ద్వారా ప్రాజెక్ట్-ఆధారిత అభ్యాస నైపుణ్యాలను ఇ-యంత్ర పెంపొందిస్తోంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">MHRD sees the core skills developed by IITB (IIT Bombay) as generating, distributing, and analyzing content to further create manpower with practical skills.</div>
+                    <div class="tel-text">IIT బాంబే (IITB) ద్వారా అభివృద్ధి చేయబడిన ఈ నైపుణ్యాలను ప్రాక్టికల్ పరిజ్ఞానం ఉన్న మానవ వనరులను సృష్టించడానికి ఉపయోగపడతాయని MHRD భావిస్తోంది.</div>
+                </li>
+                <li>
+                    <div class="eng-text">All the projects and code are available on the e-Yantra web-site <strong>www.eyantra.org</strong> as open source content.</div>
+                    <div class="tel-text">అన్ని ప్రాజెక్ట్‌లు మరియు కోడ్ ఇ-యంత్ర అధికారిక వెబ్‌సైట్ <strong>www.eyantra.org</strong> లో ఓపెన్ సోర్స్ కంటెంట్‌గా ఉచితంగా లభిస్తాయి.</div>
+                </li>
+            </ul>
+
+            
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            
+            const toggleIcon = document.getElementById('toggleIcon');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (targetTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
